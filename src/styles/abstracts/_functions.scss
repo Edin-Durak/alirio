@@ -1,0 +1,16 @@
+// SCSS Functions
+
+// Convert px to rem
+@function rem($pixels) {
+  @return ($pixels / 16) * 1rem;
+}
+
+// Convert px to em
+@function em($pixels, $context: 16px) {
+  @return ($pixels / $context) * 1em;
+}
+
+// Get color with opacity
+@function rgba-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}

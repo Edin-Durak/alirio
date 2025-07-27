@@ -1,0 +1,18 @@
+// Base styles
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $light-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include mobile {
+    padding: 0 $spacing-sm;
+  }
+}

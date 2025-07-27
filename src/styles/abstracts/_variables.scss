@@ -1,0 +1,95 @@
+// Primary Colors
+$white: #ffffff;
+$black: #000000;
+$brand-red: #e06464;
+
+// Brand Red Variations
+$brand-red-50: #fafafa;
+$brand-red-100: #fef2f2;
+$brand-red-200: #fde9e9;
+$brand-red-300: #fac7c7;
+$brand-red-400: #e06464;
+$brand-red-500: #f37373;
+$brand-red-600: #f34141;
+$brand-red-700: #cd3636;
+$brand-red-800: #a32e2e;
+$brand-red-900: #7c2323;
+$brand-red-1000: #601b1b;
+
+// Gray Scale
+$gray-50: #fafafa;
+$gray-100: #f6f7f9;
+$gray-200: #e5e7ea;
+$gray-300: #ced2d6;
+$gray-400: #9ea5ad;
+$gray-500: #676e76;
+$gray-600: #596066;
+$gray-700: #454c52;
+$gray-800: #383f45;
+$gray-900: #24292e;
+$gray-1000: #1a1d1f;
+
+// Semantic Colors (using brand colors)
+$primary-color: $brand-red-400;
+$secondary-color: $gray-500;
+$success-color: #28a745;
+$danger-color: $brand-red-600;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: $gray-50;
+$dark-color: $gray-1000;
+
+// Typography
+$font-family-base: "Arial", sans-serif;
+$font-family-heading: "Georgia", serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Spacing Scale
+$spacing-0: 0px;
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 8px;
+$spacing-4: 12px;
+$spacing-5: 16px;
+$spacing-6: 20px;
+$spacing-7: 24px;
+$spacing-8: 32px;
+$spacing-9: 36px;
+$spacing-10: 40px;
+$spacing-11: 48px;
+$spacing-12: 56px;
+$spacing-13: 64px;
+$spacing-14: 80px;
+$spacing-15: 100px;
+$spacing-16: 120px;
+$spacing-17: 160px;
+$spacing-18: 200px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Border thickness
+$border-0: 0;
+$border: 1px;
+$border-md: 2px;
+$border-lg: 3px;
+$border-xl: 4px;
+
+// Border radius
+$rounded-none: 0px;
+$rounded-2xs: 6px;
+$rounded-xs: 12px;
+$rounded-sm: 16px;
+$rounded: 20px;
+$rounded-md: 24px;
+$rounded-lg: 32px;
+$rounded-xl: 40px;
+$rounded-full: 999px;
+
+// Shadows
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
