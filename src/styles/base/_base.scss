@@ -8,11 +8,11 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 $spacing-md;
+  padding: 0 $spacing-5;
 
   @include mobile {
-    padding: 0 $spacing-sm;
+    padding: 0 $spacing-3;
   }
 }

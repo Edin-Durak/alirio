@@ -1,0 +1,30 @@
+---
+import "../styles/main.scss";
+import { Image } from "astro:assets";
+import logoImage from "../assets/images/alirio-logo.png";
+
+---
+
+<header class="header">
+  <div class="header__container">
+    <a href="/" class="header__logo-link">
+    <Image src={logoImage} alt="Logo image" width={100} height={100} class="header__logo-image" />
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link">Services</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link">Pricing</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link">About us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
