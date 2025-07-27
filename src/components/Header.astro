@@ -2,13 +2,17 @@
 import "../styles/main.scss";
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
+import hamburgerIcon from "../assets/images/hamburger-icon.svg";
+import LanguageDropdown from "./LanguageDropdown.astro";
 
 ---
 
 <header class="header">
   <div class="header__container">
     <a href="/" class="header__logo-link">
-    <Image src={logoImage} alt="Logo image" width={100} height={100} class="header__logo-image" />
+      <Image src={logoImage} alt="Logo image" width={100} height={100} class="header__logo-image" />
+    </a>
+    
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item">
@@ -25,6 +29,104 @@ import logoImage from "../assets/images/alirio-logo.png";
         </li>
       </ul>
     </nav>
+    
+    <div class="header__actions">
+      <div class="header__languages">
+        <LanguageDropdown />
+      </div>
+      <button class="header__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} />
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Overlay -->
+  <div class="header__mobile-nav" aria-hidden="true">
+    <div class="header__mobile-nav-content">
+      <div class="header__mobile-nav-header">
+        <button class="header__mobile-close" aria-label="Close mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <nav class="header__mobile-nav-menu">
+        <ul class="header__mobile-nav-list">
+          <li class="header__mobile-nav-item">
+            <a href="/" class="header__mobile-nav-link">Home</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="/" class="header__mobile-nav-link">Services</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="/" class="header__mobile-nav-link">Pricing</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="/" class="header__mobile-nav-link">About us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
+
+<script>
+  class MobileNavigation {
+    constructor() {
+      this.header = document.querySelector('.header');
+      this.toggle = this.header?.querySelector('.header__mobile-toggle');
+      this.closeBtn = this.header?.querySelector('.header__mobile-close');
+      this.mobileNav = this.header?.querySelector('.header__mobile-nav');
+      
+      this.init();
+    }
+    
+    init() {
+      if (!this.toggle || !this.closeBtn || !this.mobileNav) return;
+      
+      this.toggle.addEventListener('click', () => this.open());
+      this.closeBtn.addEventListener('click', () => this.close());
+      
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.close();
+        }
+      });
+      
+      // Close on overlay click
+      this.mobileNav.addEventListener('click', (e) => {
+        if (e.target === this.mobileNav) {
+          this.close();
+        }
+      });
+      
+      // Close on link click
+      const mobileLinks = this.mobileNav?.querySelectorAll('.header__mobile-nav-link');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => this.close());
+      });
+    }
+    
+    open() {
+      this.toggle.setAttribute('aria-expanded', 'true');
+      this.mobileNav.setAttribute('aria-hidden', 'false');
+      this.mobileNav.classList.add('header__mobile-nav--open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    close() {
+      this.toggle.setAttribute('aria-expanded', 'false');
+      this.mobileNav.setAttribute('aria-hidden', 'true');
+      this.mobileNav.classList.remove('header__mobile-nav--open');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Initialize mobile navigation
+  document.addEventListener('DOMContentLoaded', () => {
+    new MobileNavigation();
+  });
+</script>
 

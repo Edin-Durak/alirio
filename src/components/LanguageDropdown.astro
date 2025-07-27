@@ -1,0 +1,137 @@
+---
+import { Image } from "astro:assets";
+import languagesIcon from "../assets/images/languages-icon.svg";
+
+const languages = [
+  { code: 'en', name: 'English', native: 'English' },
+  { code: 'sv', name: 'Sweden', native: 'Sweden' },
+  { code: 'bs', name: 'Bosanski', native: 'Bosanski' },
+  { code: 'ar', name: 'العربية', native: 'العربية' },
+  { code: 'ku', name: 'کوردی', native: 'کوردی' },
+  { code: 'sy', name: 'ܣܘܪܝܝܐ', native: 'ܣܘܪܝܝܐ' }
+];
+
+const currentLanguage = 'en';
+---
+
+<div class="language-dropdown">
+  <button class="language-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+    <Image src={languagesIcon} alt="Languages icon" width={20} height={20} />
+    <span class="language-dropdown__current">EN</span>
+    <svg class="language-dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+      <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  
+  <ul class="language-dropdown__menu" role="menu">
+    {languages.map((language) => (
+      <li class="language-dropdown__item" role="none">
+        <button 
+          class={`language-dropdown__option ${language.code === currentLanguage ? 'language-dropdown__option--active' : ''}`}
+          data-lang={language.code}
+          role="menuitem"
+        >
+          <span class="language-dropdown__code">{language.code.toUpperCase()}</span>
+          <span class="language-dropdown__name">{language.native}</span>
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  class LanguageDropdown {
+    constructor(element) {
+      this.dropdown = element;
+      this.trigger = element.querySelector('.language-dropdown__trigger');
+      this.menu = element.querySelector('.language-dropdown__menu');
+      this.options = element.querySelectorAll('.language-dropdown__option');
+      
+      this.init();
+    }
+    
+    init() {
+      this.trigger.addEventListener('click', () => this.toggle());
+      this.options.forEach(option => {
+        option.addEventListener('click', (e) => this.selectLanguage(e));
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!this.dropdown.contains(e.target)) {
+          this.close();
+        }
+      });
+      
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.close();
+        }
+      });
+    }
+    
+    toggle() {
+      const isExpanded = this.trigger.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+    
+    open() {
+      this.trigger.setAttribute('aria-expanded', 'true');
+      this.menu.classList.add('language-dropdown__menu--open');
+      this.trigger.classList.add('language-dropdown__trigger--open');
+    }
+    
+    close() {
+      this.trigger.setAttribute('aria-expanded', 'false');
+      this.menu.classList.remove('language-dropdown__menu--open');
+      this.trigger.classList.remove('language-dropdown__trigger--open');
+    }
+    
+    selectLanguage(event) {
+      const option = event.currentTarget;
+      const langCode = option.dataset.lang;
+      const langName = option.querySelector('.language-dropdown__name').textContent;
+      
+      // Update current language display
+      this.trigger.querySelector('.language-dropdown__current').textContent = langCode.toUpperCase();
+      
+      // Update active state
+      this.options.forEach(opt => opt.classList.remove('language-dropdown__option--active'));
+      option.classList.add('language-dropdown__option--active');
+      
+      // Store selection in localStorage
+      localStorage.setItem('selectedLanguage', langCode);
+      
+      // Close dropdown
+      this.close();
+      
+      // Emit custom event for language change
+      this.dropdown.dispatchEvent(new CustomEvent('languageChange', {
+        detail: { code: langCode, name: langName }
+      }));
+    }
+  }
+  
+  // Initialize all language dropdowns
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.language-dropdown');
+    dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
+    
+    // Restore saved language preference
+    const savedLang = localStorage.getItem('selectedLanguage');
+    if (savedLang) {
+      const dropdown = document.querySelector('.language-dropdown');
+      if (dropdown) {
+        const option = dropdown.querySelector(`[data-lang="${savedLang}"]`);
+        if (option) {
+          option.click();
+        }
+      }
+    }
+  });
+</script> 
