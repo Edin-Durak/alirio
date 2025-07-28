@@ -40,7 +40,35 @@ const currentLanguage = 'en';
 </div>
 
 <script>
+  /**
+   * @typedef {Object} LanguageDropdown
+   * @property {HTMLElement} dropdown
+   * @property {HTMLButtonElement} trigger
+   * @property {HTMLElement} menu
+   * @property {NodeList} options
+   */
+  
   class LanguageDropdown {
+    /**
+     * @type {HTMLElement}
+     */
+    dropdown;
+    
+    /**
+     * @type {HTMLButtonElement}
+     */
+    trigger;
+    
+    /**
+     * @type {HTMLElement}
+     */
+    menu;
+    
+    /**
+     * @type {NodeList}
+     */
+    options;
+    
     constructor(element) {
       this.dropdown = element;
       this.trigger = element.querySelector('.language-dropdown__trigger');
@@ -128,7 +156,7 @@ const currentLanguage = 'en';
       const dropdown = document.querySelector('.language-dropdown');
       if (dropdown) {
         const option = dropdown.querySelector(`[data-lang="${savedLang}"]`);
-        if (option) {
+        if (option && option instanceof HTMLElement) {
           option.click();
         }
       }

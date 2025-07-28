@@ -72,7 +72,35 @@ import LanguageDropdown from "./LanguageDropdown.astro";
 </header>
 
 <script>
+  /**
+   * @typedef {Object} MobileNavigation
+   * @property {HTMLElement} header
+   * @property {HTMLButtonElement} toggle
+   * @property {HTMLButtonElement} closeBtn
+   * @property {HTMLElement} mobileNav
+   */
+  
   class MobileNavigation {
+    /**
+     * @type {HTMLElement}
+     */
+    header;
+    
+    /**
+     * @type {HTMLButtonElement}
+     */
+    toggle;
+    
+    /**
+     * @type {HTMLButtonElement}
+     */
+    closeBtn;
+    
+    /**
+     * @type {HTMLElement}
+     */
+    mobileNav;
+    
     constructor() {
       this.header = document.querySelector('.header');
       this.toggle = this.header?.querySelector('.header__mobile-toggle');
