@@ -131,39 +131,7 @@
   }
 }
 
-// Contact Form
-.footer__contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-3;
-
-  @include mobile {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
-.footer__email-input {
-  padding: $spacing-3 $spacing-4;
-  border: 1px solid $gray-200;
-  border-radius: $rounded-sm;
-  font-size: 14px;
-  background-color: $white;
-  color: $gray-700;
-  transition: border-color 0.2s ease;
-
-  &::placeholder {
-    color: $gray-400;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $brand-red-300;
-    box-shadow: 0 0 0 3px rgba($brand-red-400, 0.1);
-  }
-}
-
-.footer__submit-btn {
+.footer__contact-link {
   padding: $spacing-3 $spacing-4;
   background-color: $brand-red-400;
   color: $white;
@@ -173,7 +141,10 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 300px;
   &:hover {
     background-color: $brand-red-500;
   }
