@@ -2,12 +2,80 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import heroImagePlaceholder from '../assets/images/hero-img.webp';
+import heroImage from '../assets/images/hero-img.png';
+import heroLineIcon from '../assets/images/hero-line-icon.svg';
+
+
+import '../styles/main.scss';
 ---
 
 <Layout>
 	<Header />
-	<main>
+	<main class="main-home-page">
+		<section class="hero-section">
+			<div class="hero-section__inner container">
+				<div class="hero-section__content">
+					<h1 class="hero-section__title">
+						We provide more than care for you 
+					</h1>
+					<p class="hero-section__description">
+						We offer love, dignity, and a true sense of belonging. Because to us, caring means creating a home where hearts are safe, lives are valued, and no one ever feels alone.
+					</p>
+					<div class="hero-statistics">
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								150+
+							</span>
+							<span class="hero-statistics__text">
+								Satisfied <br> Residents
+							</span>
+						</div>
+						<Image src={heroLineIcon} alt="Line icon" width={20} height={40} class="hero-statistics__line-icon" />
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								154
+							</span>
+							<span class="hero-statistics__text">
+								Hearts feel <br> loved
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="hero-section__image">
+					<Image 
+						id="hero-image" 
+						src={heroImagePlaceholder} 
+						alt="Old man and young woman" 
+						loading={'eager'} 
+						width={597} 
+						height={647} 
+						data-actual-src={heroImage.src}
+					/>
+				</div>
+		</section>
 		<!-- Your main content will go here -->
 	</main>
 	<Footer />
 </Layout>
+
+<script>
+	// Hero image swap for faster loading
+	document.addEventListener('DOMContentLoaded', () => {
+		const heroImageElement = document.getElementById('hero-image');
+		if (heroImageElement) {
+			const actualSrc = heroImageElement.getAttribute('data-actual-src');
+			if (actualSrc) {
+				// Preload the actual hero image
+				const actualImage = new Image();
+				actualImage.onload = () => {
+									// Swap the src when the actual image is loaded
+				(heroImageElement as HTMLImageElement).src = actualImage.src;
+				};
+				actualImage.src = actualSrc;
+			}
+		}
+	});
+</script>
