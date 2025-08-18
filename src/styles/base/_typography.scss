@@ -34,18 +34,34 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3.75rem;
+  line-height: 48px;
+  font-weight: 500;
+
+  @include laptop {
+    font-size: 3rem;
+    line-height: 32px;
+  }
 
   @include mobile {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    line-height: 24px;
   }
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+  line-height: 24px;
+  font-weight: 500;
+
+  @include laptop {
+    font-size: 1.25rem;
+    line-height: 24px;
+  }
 
   @include mobile {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 16px;
   }
 }
 

@@ -6,6 +6,12 @@ import { Image } from "astro:assets";
 import heroImagePlaceholder from '../assets/images/hero-img.webp';
 import heroImage from '../assets/images/hero-img.png';
 import heroLineIcon from '../assets/images/hero-line-icon.svg';
+import folderIcon from '../assets/images/folder-icon.svg';
+import boardIcon from '../assets/images/board-icon.svg';
+import chartIconOne from '../assets/images/chart-one-icon.svg';
+import chartIconTwo from '../assets/images/chart-two-icon.svg';
+import archiveIcon from '../assets/images/archive-icon.svg';
+import peopleIcon from '../assets/images/people-icon.svg';
 
 
 import '../styles/main.scss';
@@ -14,10 +20,10 @@ import '../styles/main.scss';
 <Layout>
 	<Header />
 	<main class="main-home-page">
-		<section class="hero-section">
+		<section class="hero-section" aria-labelledby="hero-title">
 			<div class="hero-section__inner container">
 				<div class="hero-section__content">
-					<h1 class="hero-section__title">
+					<h1 class="hero-section__title" id="hero-title ">
 						We provide more than care for you 
 					</h1>
 					<p class="hero-section__description">
@@ -55,6 +61,98 @@ import '../styles/main.scss';
 						data-actual-src={heroImage.src}
 					/>
 				</div>
+		</section>
+
+		<section class="our-benefits-section" aria-labelledby="our-benefits-title">
+			<div class="our-benefits-section__inner container">
+				<h2 class="our-benefits-section__title" id="our-benefits-title">
+					What makes us different
+				</h2>
+				<h3 class="our-benefits-section__subtitle">
+					From the bottom of our hearts, to you.				
+				</h3>
+
+				<div class="our-benefits-section__content">
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={peopleIcon} alt="people icon" width={51} height={45} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Rehabilitative home care
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We help you become stronger and more independent, ovdje treba dodati još malo teksta
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconOne} alt="chart icon" width={44} height={44} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Genuine closeness
+							</h3>
+							<p class="our-benefits-section__item-description">
+								The same friendly faces who truly care about you, ovdje treba dodati još malo teksta
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={boardIcon} alt="board icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Multilingual staff
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English, malo samo proširiti za 2-3 riječi
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={archiveIcon} alt="archive icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Support from the start
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We will also help you with the aid application if you need it, također fali teksta još malkice ovdje
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={folderIcon} alt="folder icon" width={44} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Believe in your abilities
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We see what you can do and support you to do more yourself, add a litle bit more of text here
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconTwo} alt="chart icon" width={42} height={42} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								No stress
+							</h3>
+							<p class="our-benefits-section__item-description">
+								Hesitant? We're happy to have a coffee first with no obligations, also a bit of text wouldn’t hurt
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<!-- Your main content will go here -->
 	</main>

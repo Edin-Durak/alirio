@@ -56,4 +56,222 @@
       }
     }
   }
+
+  .our-benefits-section {
+    padding: $spacing-10 0;
+
+    h2,
+    h3 {
+      text-align: center;
+    }
+
+    h2 {
+      color: $text-color-black;
+      margin-bottom: $spacing-6;
+    }
+
+    h3 {
+      color: $text-color-gray-600;
+    }
+
+    &__content {
+      margin-top: $spacing-10;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+
+      @include laptop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0 $spacing-6;
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0 $spacing-6;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: $text-color-dark-black;
+        margin: $spacing-6 0;
+      }
+
+      p {
+        color: $text-color-gray-600;
+        line-height: 26px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid $border-color-red;
+      padding: $spacing-6;
+      transition: all 0.3s ease;
+
+      @include tablet {
+        background-color: $brand-red;
+        border-color: $brand-red;
+
+        h3,
+        p {
+          color: $white;
+        }
+      }
+
+      @include mobile {
+        background-color: $brand-red;
+        border-color: $brand-red;
+
+        h3,
+        p {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        background-color: $brand-red;
+        border-color: $brand-red;
+
+        h3,
+        p {
+          color: $white;
+        }
+      }
+    }
+
+    &__item:nth-child(1) {
+      border: none;
+
+      @include laptop {
+        border-bottom: none;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+      }
+    }
+
+    &__item:nth-child(2) {
+      border-top: none;
+      border-bottom: none;
+
+      @include laptop {
+        border-right: none;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+        border-top: none;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+        border-top: none;
+      }
+    }
+
+    &__item:nth-child(3) {
+      border: none;
+
+      @include laptop {
+        border-right: none;
+        border-top: 1px solid $border-color-red;
+        border-bottom: none;
+        border-left: none;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+        border-top: none;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+        border-top: none;
+      }
+    }
+
+    &__item:nth-child(4) {
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+
+      @include laptop {
+        border-right: none;
+        border-left: 1px solid $border-color-red;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+        border-top: none;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+        border-top: none;
+      }
+    }
+
+    &__item:nth-child(5) {
+      border-bottom: none;
+
+      @include laptop {
+        border-bottom: 1px solid $border-color-red;
+        border-left: none;
+        border-right: none;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+        border-top: none;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+        border-top: none;
+      }
+    }
+
+    &__item:nth-child(6) {
+      border-right: none;
+      border-bottom: none;
+      border-left: none;
+
+      @include laptop {
+        border-bottom: 1px solid $border-color-red;
+        border-left: 1px solid $border-color-red;
+      }
+
+      @include tablet {
+        border: 1px solid $white;
+        border-top: none;
+      }
+
+      @include mobile {
+        border: 1px solid $white;
+        border-top: none;
+      }
+    }
+
+    &__item-icon {
+      margin-bottom: $spacing-6;
+    }
+  }
 }
