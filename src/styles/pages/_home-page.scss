@@ -9,6 +9,14 @@
       align-items: center;
       justify-content: center;
       gap: $spacing-6;
+
+      @media (max-width: $breakpoint-2xl) {
+        margin: $spacing-7 $spacing-6;
+      }
+
+      @media (max-width: $breakpoint-lg) {
+        flex-direction: column;
+      }
     }
 
     &__content {
@@ -28,6 +36,10 @@
       justify-content: space-between;
       align-items: center;
       max-width: 569px;
+
+      @include mobile {
+        flex-direction: column;
+      }
 
       &__item {
         display: flex;
