@@ -315,6 +315,10 @@
 
       @include mobile {
         margin-bottom: $spacing-17;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -546,6 +550,18 @@
           color: $white;
         }
       }
+
+      @include mobile {
+        background: linear-gradient(180deg, #ffffff 0%, #e06464 81.64%);
+
+        .our-services-section__card-title {
+          color: $white;
+        }
+
+        .our-services-section__card-description {
+          color: $white;
+        }
+      }
     }
 
     &__card-content {
@@ -582,6 +598,18 @@
 
       .arrow-up-hover-icon {
         display: none;
+
+        @include mobile {
+          display: block;
+        }
+      }
+
+      .arrow-up-icon {
+        display: block;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
   }
