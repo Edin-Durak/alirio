@@ -355,14 +355,38 @@
 
     .image-one {
       transform: rotate(5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
 
     .image-two {
       transform: rotate(-5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
 
     .image-three {
       transform: rotate(5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
 
     &__card-content {
@@ -416,14 +440,38 @@
 
     .content-one {
       transform: rotate(-5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
 
     .content-two {
       transform: rotate(5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
 
     .content-three {
       transform: rotate(-5deg);
+
+      @include tablet {
+        transform: rotate(0deg);
+      }
+
+      @include mobile {
+        transform: rotate(0deg);
+      }
     }
   }
 }
