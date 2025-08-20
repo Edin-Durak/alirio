@@ -296,10 +296,26 @@
       align-items: center;
       max-width: 800px;
       margin: $spacing-17 auto 0;
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
     }
 
     &__card {
       position: relative;
+
+      @include tablet {
+        margin-bottom: $spacing-17;
+      }
+
+      @include mobile {
+        margin-bottom: $spacing-17;
+      }
     }
 
     &__card-image {
