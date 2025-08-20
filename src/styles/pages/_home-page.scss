@@ -317,6 +317,26 @@
       }
     }
 
+    &__card {
+      &:hover {
+        .meet-the-team-section__card-content {
+          opacity: 1;
+          transform: rotate(0deg) translateY(-10px);
+          z-index: 10;
+        }
+      }
+    }
+
+    // When hovering over any card, fade out the others
+    &:hover {
+      .meet-the-team-section__card:not(:hover) {
+        .meet-the-team-section__card-content {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+      }
+    }
+
     .image-one {
       transform: rotate(5deg);
     }
@@ -340,6 +360,8 @@
       justify-content: center;
       align-items: center;
       gap: 0;
+      opacity: 1;
+      transition: all 0.3s ease;
 
       h3 {
         color: $text-color-dark-black;
