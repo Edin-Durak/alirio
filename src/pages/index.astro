@@ -15,6 +15,9 @@ import peopleIcon from '../assets/images/people-icon.svg';
 import mirzaImage from '../assets/images/mirza-img.webp';
 import ulfImage from '../assets/images/ulf-img.webp';
 import kaniImage from '../assets/images/kani-img.jpg';
+import serviceCardImage from '../assets/images/service-card-img.webp';
+import arrowUpIcon from '../assets/images/arrow-up-right-icon.svg';
+import arrowUpHoverIcon from '../assets/images/arrow-up-right-hover-icon.svg';
 
 
 import '../styles/main.scss';
@@ -206,6 +209,64 @@ import '../styles/main.scss';
 							</p>
 						</div>
 					</div>										
+				</div>
+			</div>
+		</section>
+
+		<section class="our-services-section" aria-labelledby="our-services-title">
+			<div class="our-services-section__inner container">
+				<h2 class="our-services-section__title" id="our-services-title">
+					Services
+				</h2>
+				<h3 class="our-services-section__subtitle">
+					Alirio Omsorg's mission is to provide you with care with consideration
+				</h3>
+				<div class="our-services-section__content">
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service one
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service two
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service three
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
