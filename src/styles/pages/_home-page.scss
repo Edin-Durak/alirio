@@ -514,6 +514,28 @@
       max-width: 350px;
       padding: $spacing-6;
       background-color: $white;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #e06464 81.64%);
+        transform: translateY(-10px);
+
+        .arrow-up-icon {
+          display: none;
+        }
+
+        .arrow-up-hover-icon {
+          display: block;
+        }
+
+        .our-services-section__card-title {
+          color: $white;
+        }
+
+        .our-services-section__card-description {
+          color: $white;
+        }
+      }
     }
 
     &__card-content {
@@ -527,6 +549,7 @@
         font-size: 16px;
         line-height: 24px;
         letter-spacing: 0px;
+        transition: all 0.3s ease;
       }
     }
 
@@ -541,9 +564,10 @@
       line-height: 32px;
       letter-spacing: 0px;
       margin-bottom: $spacing-6;
-
+      transition: all 0.3s ease;
       img {
         margin-left: auto;
+        transition: all 0.3s ease;
       }
 
       .arrow-up-hover-icon {
