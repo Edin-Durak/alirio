@@ -498,14 +498,24 @@
       grid-row-gap: 0px;
       place-items: center;
 
-      @include tablet-landscape {
+      @include laptop {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        place-items: center;
+        row-gap: $spacing-8;
+      }
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        place-items: center;
+        gap: $spacing-8;
       }
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
         place-items: center;
+        gap: $spacing-8;
       }
     }
 
