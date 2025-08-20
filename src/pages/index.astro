@@ -12,6 +12,9 @@ import chartIconOne from '../assets/images/chart-one-icon.svg';
 import chartIconTwo from '../assets/images/chart-two-icon.svg';
 import archiveIcon from '../assets/images/archive-icon.svg';
 import peopleIcon from '../assets/images/people-icon.svg';
+import mirzaImage from '../assets/images/mirza-img.webp';
+import ulfImage from '../assets/images/ulf-img.webp';
+import kaniImage from '../assets/images/kani-img.jpg';
 
 
 import '../styles/main.scss';
@@ -151,6 +154,58 @@ import '../styles/main.scss';
 							</p>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="meet-the-team-section" aria-labelledby="meet-our-team-title">
+			<div class="meet-the-team-section__inner container">
+				<h2 class="meet-the-team-section__title" id="meet-our-team-title">
+					Meet our team
+				</h2>
+				<h3 class="meet-the-team-section__subtitle">
+					Meet our team of highly qualified experts. 
+				</h3>
+				<div class="meet-the-team-section__content">
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirzaImage} alt="Kani - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-one">
+							<h3 class="meet-the-team-section__card-title">
+								Kani
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirzaImage} alt="Mirza - team member" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-two">
+							<h3 class="meet-the-team-section__card-title">
+								Mirza
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={ulfImage} alt="Ulf - team member" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								Ulf
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder 2
+							</p>
+						</div>
+					</div>										
 				</div>
 			</div>
 		</section>
