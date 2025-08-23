@@ -2,7 +2,7 @@
   .hero-section {
     &__inner {
       background-color: $brand-red;
-      margin: $spacing-7 auto;
+      margin: $spacing-13 auto;
       border-radius: $rounded-xs;
       padding: $spacing-8;
       display: flex;
@@ -58,7 +58,13 @@
   }
 
   .our-benefits-section {
-    padding: $spacing-10 0;
+    padding: $spacing-13 0;
+    @include tablet {
+      padding: $spacing-10 0;
+    }
+    @include mobile {
+      padding: $spacing-10 0;
+    }
 
     h2,
     h3 {
@@ -276,7 +282,14 @@
   }
 
   .meet-the-team-section {
-    padding: $spacing-10 0;
+    padding: $spacing-13 0;
+
+    @include tablet {
+      padding: $spacing-10 0;
+    }
+    @include mobile {
+      padding: $spacing-10 0;
+    }
 
     &__title {
       text-align: center;
@@ -480,7 +493,13 @@
   }
 
   .our-services-section {
-    padding: $spacing-10 0;
+    padding: $spacing-13 0;
+    @include tablet {
+      padding: $spacing-10 0;
+    }
+    @include mobile {
+      padding: $spacing-10 0;
+    }
 
     &__title {
       text-align: center;
@@ -617,6 +636,12 @@
   .customer-testimonial-section {
     padding: $spacing-15 0;
     background-color: $brand-red-400;
+    @include tablet {
+      padding: $spacing-10 0;
+    }
+    @include mobile {
+      padding: $spacing-10 0;
+    }
 
     &__content {
       display: flex;
