@@ -70,6 +70,8 @@ const faqData = [
 
 <script>
   class FAQAccordion {
+    private faqItems: NodeListOf<Element>;
+
     constructor() {
       this.faqItems = document.querySelectorAll('.faq-item');
       this.init();
@@ -77,9 +79,11 @@ const faqData = [
 
     init() {
       this.faqItems.forEach(item => {
-        const trigger = item.querySelector('.faq-item__trigger');
-        const answer = item.querySelector('.faq-item__answer');
-        const iconContainer = item.querySelector('.faq-item__icon');
+        const trigger = item.querySelector('.faq-item__trigger') as HTMLButtonElement;
+        const answer = item.querySelector('.faq-item__answer') as HTMLElement;
+        const iconContainer = item.querySelector('.faq-item__icon') as HTMLElement;
+        
+        if (!trigger || !answer || !iconContainer) return;
         
         trigger.addEventListener('click', () => {
           const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
@@ -102,9 +106,11 @@ const faqData = [
     }
 
          openItem(item) {
-       const trigger = item.querySelector('.faq-item__trigger');
-       const answer = item.querySelector('.faq-item__answer');
-       const iconContainer = item.querySelector('.faq-item__icon');
+       const trigger = item.querySelector('.faq-item__trigger') as HTMLButtonElement;
+       const answer = item.querySelector('.faq-item__answer') as HTMLElement;
+       const iconContainer = item.querySelector('.faq-item__icon') as HTMLElement;
+       
+       if (!trigger || !answer || !iconContainer) return;
        
        // Set initial height to 0
        answer.style.height = '0px';
@@ -135,9 +141,11 @@ const faqData = [
      }
 
      closeItem(item) {
-       const trigger = item.querySelector('.faq-item__trigger');
-       const answer = item.querySelector('.faq-item__answer');
-       const iconContainer = item.querySelector('.faq-item__icon');
+       const trigger = item.querySelector('.faq-item__trigger') as HTMLButtonElement;
+       const answer = item.querySelector('.faq-item__answer') as HTMLElement;
+       const iconContainer = item.querySelector('.faq-item__icon') as HTMLElement;
+       
+       if (!trigger || !answer || !iconContainer) return;
        
        // Set height to current height
        answer.style.height = answer.scrollHeight + 'px';
