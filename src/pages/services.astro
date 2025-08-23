@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
 import arrowRightIcon from '../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../assets/images/service-hero-img.jpg';
-import linesImage from '../assets/images/lines-img.webp';
+import linesImage from '../assets/images/lines-img.jpg';
 import '../styles/main.scss';
 ---
 
@@ -100,13 +100,29 @@ import '../styles/main.scss';
           <div class="why-choose-us-section__content">
             <div class="why-choose-us-section__statistics">
                 <div class="why-choose-us-section__statistics-item">
-                    <span class="why-choose-us-section__statistics-item-number">100%</span>
-                    <h3 class="why-choose-us-section__statistics-item-title">of our customers are satisfied with our services</h3>
-                    <p class="why-choose-us-section__statistics-item-description">of our customers are satisfied with our services</p>
+                    <span class="why-choose-us-section__statistics-item-number">400+</span>
+                    <h3 class="why-choose-us-section__statistics-item-title">Global customers</h3>
+                    <p class="why-choose-us-section__statistics-item-description">We’ve helped over 4,000 amazing global companies.</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">101%</span>
+                    <h3 class="why-choose-us-section__statistics-item-title">Return on investment</h3>
+                    <p class="why-choose-us-section__statistics-item-description">All our customers are satisfied, see reviews.</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">35</span>
+                    <h3 class="why-choose-us-section__statistics-item-title">Global customers</h3>
+                    <p class="why-choose-us-section__statistics-item-description">Our app has been downloaded over 10k times.</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">95+</span>
+                    <h3 class="why-choose-us-section__statistics-item-title">5-star reviews</h3>
+                    <p class="why-choose-us-section__statistics-item-description">We’re proud of our 5-star rating with over 200 reviews.</p>
                 </div>
             </div>
-
-
+            <div class="why-choose-us-section__image">
+                <Image src={linesImage} alt="Lines" width={560} height={560} loading="lazy" class="why-choose-us-section__image-img" />
+            </div>
           </div>
         </div>
       </div>
