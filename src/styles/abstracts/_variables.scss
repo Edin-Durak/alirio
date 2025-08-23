@@ -3,6 +3,9 @@ $white: #ffffff;
 $black: #000000;
 $brand-red: #e06464;
 
+$brand-bg-red: #e0646440;
+$brand-bg-red-80: #e0646480;
+
 // Brand Red Variations
 $brand-red-50: #fafafa;
 $brand-red-100: #fef2f2;
@@ -29,6 +32,17 @@ $gray-800: #383f45;
 $gray-900: #24292e;
 $gray-1000: #1a1d1f;
 
+// Text Colors
+$text-color-black: #333333;
+$text-color-dark-black: #18181b;
+$text-color-gray-400: #a1a1aa;
+$text-color-gray-500: #676e76;
+$text-color-gray-600: #52525b;
+$text-color-white: #ffffff;
+
+// Border Colors
+$border-color-red: #e05464;
+
 // Semantic Colors (using brand colors)
 $primary-color: $brand-red-400;
 $secondary-color: $gray-500;
@@ -40,8 +54,8 @@ $light-color: $gray-50;
 $dark-color: $gray-1000;
 
 // Typography
-$font-family-base: "Arial", sans-serif;
-$font-family-heading: "Georgia", serif;
+$font-family-base: "Poppins", "Georgia", serif;
+$font-family-heading: "Noto Sans", "Arial", sans-serif;
 $font-size-base: 16px;
 $line-height-base: 1.5;
 
@@ -71,6 +85,8 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+$breakpoint-2xl: 1350px;
+$breakpoint-3xl: 1440px;
 
 // Border thickness
 $border-0: 0;

@@ -11,8 +11,20 @@
   }
 }
 
+@mixin tablet-landscape {
+  @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-xl - 1px}) {
+    @content;
+  }
+}
+
 @mixin desktop {
-  @media (min-width: #{$breakpoint-md}) {
+  @media (min-width: #{$breakpoint-xl}) and (max-width: #{$breakpoint-2xl - 1px}) {
     @content;
   }
 }

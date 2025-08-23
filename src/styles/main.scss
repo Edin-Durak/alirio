@@ -9,8 +9,10 @@
 // Layout
 
 // Components
-@import "./components/header";
+@import "./components/index";
 
 // Pages
+@import "./pages/home-page";
+@import "./pages/services-page";
 
 // Themes

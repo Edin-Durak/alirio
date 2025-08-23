@@ -1,0 +1,191 @@
+.footer {
+  background-color: $white;
+  padding: $spacing-8 0 $spacing-0;
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 $spacing-5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-5;
+
+  @include tablet {
+    gap: $spacing-3;
+  }
+
+  @include mobile {
+    gap: $spacing-3;
+  }
+}
+
+// Brand Section
+.footer__brand {
+  flex: 1.5;
+  min-width: 300px;
+
+  @include tablet {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  @include mobile {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  margin-bottom: $spacing-4;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.footer__logo-image {
+  width: 86px;
+  height: 101px;
+  object-fit: contain;
+}
+
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: $gray-800;
+  line-height: 1;
+}
+
+.footer__logo-subtitle {
+  font-size: 14px;
+  color: $brand-red-400;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.footer__description {
+  color: $gray-600;
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 300px;
+
+  @include mobile {
+    max-width: none;
+    text-align: center;
+  }
+}
+
+// Footer Sections
+.footer__section {
+  flex: 1;
+  min-width: 200px;
+
+  @media (max-width: 768px) {
+    flex: 1 1 30%;
+    min-width: auto;
+  }
+}
+
+.footer__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray-500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: $spacing-4;
+}
+
+.footer__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__nav-item {
+  margin-bottom: $spacing-2;
+}
+
+.footer__nav-link {
+  color: $gray-700;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $brand-red-400;
+  }
+
+  &--active {
+    color: $brand-red-400;
+    font-weight: 600;
+  }
+}
+
+.footer__contact-link {
+  padding: $spacing-3 $spacing-4;
+  background-color: $brand-red-400;
+  color: $white;
+  border: none;
+  border-radius: $rounded-sm;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  &:hover {
+    background-color: $brand-red-500;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($brand-red-400, 0.3);
+  }
+
+  &:active {
+    background-color: $brand-red-600;
+  }
+}
+
+// Copyright
+.footer__copyright {
+  max-width: 1300px;
+  margin: $spacing-8 auto 0;
+  padding: $spacing-4 $spacing-5;
+  border-top: 1px solid $gray-200;
+  text-align: center;
+}
+
+.footer__copyright-text {
+  color: $gray-600;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer__copyright-link {
+  color: $brand-red-400;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $brand-red-500;
+  }
+
+  &:focus {
+    outline: none;
+    color: $brand-red-500;
+  }
+}

@@ -1,11 +1,351 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import heroImagePlaceholder from '../assets/images/hero-img.webp';
+import heroImage from '../assets/images/hero-img.png';
+import heroLineIcon from '../assets/images/icons/hero-line-icon.svg';
+import folderIcon from '../assets/images/icons/folder-icon.svg';
+import boardIcon from '../assets/images/icons/board-icon.svg';
+import chartIconOne from '../assets/images/icons/chart-one-icon.svg';
+import chartIconTwo from '../assets/images/icons/chart-two-icon.svg';
+import archiveIcon from '../assets/images/icons/archive-icon.svg';
+import peopleIcon from '../assets/images/icons/people-icon.svg';
+import mirzaImage from '../assets/images/mirza-img.webp';
+import ulfImage from '../assets/images/ulf-img.webp';
+import kaniImage from '../assets/images/kani-img.jpg';
+import serviceCardImage from '../assets/images/service-card-img.webp';
+import arrowUpIcon from '../assets/images/icons/arrow-up-right-icon.svg';
+import arrowUpHoverIcon from '../assets/images/icons/arrow-up-right-hover-icon.svg';
+import customerTestimonialImage from '../assets/images/customer-testimonial-img.webp';
+import quoteIcon from '../assets/images/icons/quote-icon.svg';
+import FAQ from '../components/FAQ.astro';
+import mirzaAvatarImage from '../assets/images/mirza-avatar-img.webp';
+import ulfAvatarImage from '../assets/images/ulf-avatar-img.webp';
+import kaniAvatarImage from '../assets/images/kani-avatar-img.webp';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/main.scss';
 ---
 
 <Layout>
 	<Header />
+	<main class="main-home-page">
+		<section class="hero-section" aria-labelledby="hero-title">
+			<div class="hero-section__inner container">
+				<div class="hero-section__content">
+					<h1 class="hero-section__title" id="hero-title ">
+						We provide more than care for you 
+					</h1>
+					<p class="hero-section__description">
+						We offer love, dignity, and a true sense of belonging. Because to us, caring means creating a home where hearts are safe, lives are valued, and no one ever feels alone.
+					</p>
+					<div class="hero-statistics">
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								150+
+							</span>
+							<span class="hero-statistics__text">
+								Satisfied <br> Residents
+							</span>
+						</div>
+						<Image src={heroLineIcon} alt="Line icon" width={20} height={40} class="hero-statistics__line-icon" />
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								154
+							</span>
+							<span class="hero-statistics__text">
+								Hearts feel <br> loved
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="hero-section__image">
+					<Image 
+						id="hero-image" 
+						src={heroImagePlaceholder} 
+						alt="Old man and young woman" 
+						loading={'eager'} 
+						width={597} 
+						height={647} 
+						data-actual-src={heroImage.src}
+					/>
+				</div>
+		</section>
+
+		<section class="our-benefits-section" aria-labelledby="our-benefits-title">
+			<div class="our-benefits-section__inner container">
+				<h2 class="our-benefits-section__title" id="our-benefits-title">
+					What makes us different
+				</h2>
+				<h3 class="our-benefits-section__subtitle">
+					From the bottom of our hearts, to you.				
+				</h3>
+
+				<div class="our-benefits-section__content">
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={peopleIcon} alt="people icon" width={51} height={45} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Rehabilitative home care
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We help you become stronger and more independent, ovdje treba dodati još malo teksta
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconOne} alt="chart icon" width={44} height={44} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Genuine closeness
+							</h3>
+							<p class="our-benefits-section__item-description">
+								The same friendly faces who truly care about you, ovdje treba dodati još malo teksta
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={boardIcon} alt="board icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Multilingual staff
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English, malo samo proširiti za 2-3 riječi
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={archiveIcon} alt="archive icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Support from the start
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We will also help you with the aid application if you need it, također fali teksta još malkice ovdje
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={folderIcon} alt="folder icon" width={44} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								Believe in your abilities
+							</h3>
+							<p class="our-benefits-section__item-description">
+								We see what you can do and support you to do more yourself, add a litle bit more of text here
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconTwo} alt="chart icon" width={42} height={42} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								No stress
+							</h3>
+							<p class="our-benefits-section__item-description">
+								Hesitant? We're happy to have a coffee first with no obligations, also a bit of text wouldn’t hurt
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="meet-the-team-section" aria-labelledby="meet-our-team-title">
+			<div class="meet-the-team-section__inner container">
+				<h2 class="meet-the-team-section__title" id="meet-our-team-title">
+					Meet our team
+				</h2>
+				<h3 class="meet-the-team-section__subtitle">
+					Meet our team of highly qualified experts. 
+				</h3>
+				<div class="meet-the-team-section__content">
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirzaImage} alt="Kani - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-one">
+							<h3 class="meet-the-team-section__card-title">
+								Kani
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirzaImage} alt="Mirza - team member" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-two">
+							<h3 class="meet-the-team-section__card-title">
+								Mirza
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={ulfImage} alt="Ulf - team member" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								Ulf
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								CEO & Founder 2
+							</p>
+						</div>
+					</div>										
+				</div>
+			</div>
+		</section>
+
+		<section class="our-services-section" aria-labelledby="our-services-title">
+			<div class="our-services-section__inner container">
+				<h2 class="our-services-section__title" id="our-services-title">
+					Services
+				</h2>
+				<h3 class="our-services-section__subtitle">
+					Alirio Omsorg's mission is to provide you with care with consideration
+				</h3>
+				<div class="our-services-section__content">
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service one
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service two
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								Service three
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="customer-testimonial-section" aria-labelledby="customer-testimonial-title">
+			<div class="customer-testimonial-section__inner container">
+				<h2  id="customer-testimonial-title" hidden>
+					Customer Testimonials
+				</h2>
+				<div class="customer-testimonial-section__content">
+					<div class="customer-testimonial-section__review">
+						<Image src={quoteIcon} alt="Quote icon" width={42.28} height={34.3} loading={'lazy'} />
+
+						<h2 class="customer-testimonial-section__review-title">Thank you, Alirio, for making a difference  every single day.”</h2>
+						<p class="customer-testimonial-section__review-text">“Alirio has been a blessing for our family. The level of care, compassion, and professionalism they provide is something truly special. From the very beginning, the staff made us feel welcome and supported”</p>
+					</div>
+					<div class="customer-testimonial-section__image">
+						<Image src={customerTestimonialImage} alt="Customer testimonial image" class="customer-testimonial-section__image-img" width={598} height={399} loading={'lazy'} />
+
+						<div class="customer-testimonial-section__customer-info">
+
+							<h3 class="customer-testimonial-section__customer-info-name">
+								John Doe
+							</h3>
+							<p class="customer-testimonial-section__customer-info-title">
+								CEO & Founder
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<FAQ />
+
+		<section class="still-have-questions-section" aria-labelledby="still-have-questions-title">
+			<div class="still-have-questions-section__inner container">
+				<div class="still-have-questions-section__content">
+					<div class="still-have-questions-section__images">
+						<Image src={ulfAvatarImage} alt="Ulf avatar" width={48} height={48} loading={'lazy'} class:list={['image-one']} />
+						<Image src={mirzaAvatarImage} alt="Mirza avatar" width={48} height={48} loading={'lazy'} class:list={['image-two']} />
+						<Image src={kaniAvatarImage} alt="Kani avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
+					</div>
+				
+				<h2 class="still-have-questions-section__title" id="still-have-questions-title">
+					Still have questions?
+				</h2>
+				<p class="still-have-questions-section__description">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
+				<a href="#" class="still-have-questions-section__button">
+					Talk to us
+				</a>
+				</div>
+			</div>
+		</section>
+		<!-- Your main content will go here -->
+	</main>
+	<Footer />
 </Layout>
+
+<script>
+	// Hero image swap for faster loading
+	document.addEventListener('DOMContentLoaded', () => {
+		const heroImageElement = document.getElementById('hero-image');
+		if (heroImageElement) {
+			const actualSrc = heroImageElement.getAttribute('data-actual-src');
+			if (actualSrc) {
+				// Preload the actual hero image
+				const actualImage = new Image();
+				actualImage.onload = () => {
+									// Swap the src when the actual image is loaded
+				(heroImageElement as HTMLImageElement).src = actualImage.src;
+				};
+				actualImage.src = actualSrc;
+			}
+		}
+	});
+</script>
