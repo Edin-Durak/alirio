@@ -21,6 +21,9 @@ import arrowUpHoverIcon from '../assets/images/icons/arrow-up-right-hover-icon.s
 import customerTestimonialImage from '../assets/images/customer-testimonial-img.webp';
 import quoteIcon from '../assets/images/icons/quote-icon.svg';
 import FAQ from '../components/FAQ.astro';
+import mirzaAvatarImage from '../assets/images/mirza-avatar-img.webp';
+import ulfAvatarImage from '../assets/images/ulf-avatar-img.webp';
+import kaniAvatarImage from '../assets/images/kani-avatar-img.webp';
 
 import '../styles/main.scss';
 ---
@@ -303,6 +306,26 @@ import '../styles/main.scss';
 		</section>
 		
 		<FAQ />
+
+		<section class="still-have-questions-section" aria-labelledby="still-have-questions-title">
+			<div class="still-have-questions-section__inner container">
+				<div class="still-have-questions-section__content">
+					<div class="still-have-questions-section__images">
+						<Image src={ulfAvatarImage} alt="Ulf avatar" width={48} height={48} loading={'lazy'} class:list={['image-one']} />
+						<Image src={mirzaAvatarImage} alt="Mirza avatar" width={48} height={48} loading={'lazy'} class:list={['image-two']} />
+						<Image src={kaniAvatarImage} alt="Kani avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
+					</div>
+				
+				<h2 class="still-have-questions-section__title" id="still-have-questions-title">
+					Still have questions?
+				</h2>
+				<p class="still-have-questions-section__description">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
+				<a href="#" class="still-have-questions-section__button">
+					Talk to us
+				</a>
+				</div>
+			</div>
+		</section>
 		<!-- Your main content will go here -->
 	</main>
 	<Footer />
