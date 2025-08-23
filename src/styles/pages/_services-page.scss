@@ -1,5 +1,5 @@
 .services-page {
-  .services-hero-section {
+  .hero-section {
     padding: $spacing-15 0;
     background-color: $brand-bg-red;
     text-align: center;
@@ -106,8 +106,9 @@
     }
   }
 
-  .services-content-section {
+  .services-section {
     padding: $spacing-15 0;
+    text-align: center;
 
     @include tablet {
       padding: $spacing-10 0;
@@ -116,110 +117,127 @@
     @include mobile {
       padding: $spacing-8 0;
     }
-  }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-8;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    @include laptop {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-6;
-    }
-
-    @include mobile {
-      grid-template-columns: 1fr;
-      gap: $spacing-6;
-    }
-  }
-
-  .service-card {
-    background-color: $white;
-    border-radius: $rounded-sm;
-    padding: $spacing-8;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(224, 100, 100, 0.1);
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(224, 100, 100, 0.15);
-      border-color: $brand-red-400;
-    }
-
-    @include mobile {
-      padding: $spacing-6;
-    }
-
-    &__icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto $spacing-6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $brand-bg-red;
-      border-radius: 50%;
-
-      img {
-        width: 32px;
-        height: 32px;
-        filter: brightness(0) saturate(100%) invert(27%) sepia(51%)
-          saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-      }
-
-      @include mobile {
-        width: 56px;
-        height: 56px;
-        margin-bottom: $spacing-4;
-
-        img {
-          width: 28px;
-          height: 28px;
-        }
-      }
+    &__pre-title {
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      color: $text-color-black;
+      margin-bottom: $spacing-6;
     }
 
     &__title {
       color: $text-color-dark-black;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 32px;
-      margin-bottom: $spacing-4;
+      max-width: 700px;
+      margin: $spacing-6 auto;
+      line-height: 65px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-8;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      @include laptop {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       @include tablet {
-        font-size: 20px;
-        line-height: 28px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-6;
       }
 
       @include mobile {
-        font-size: 18px;
-        line-height: 26px;
+        grid-template-columns: 1fr;
+        gap: $spacing-6;
       }
     }
 
-    &__description {
-      color: $text-color-gray-600;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
+    .service-card {
+      background-color: $white;
+      border-radius: $rounded-sm;
+      padding: $spacing-8;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(224, 100, 100, 0.1);
 
-      @include tablet {
-        font-size: 14px;
-        line-height: 22px;
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(224, 100, 100, 0.15);
+        border-color: $brand-red-400;
       }
 
       @include mobile {
-        font-size: 14px;
-        line-height: 22px;
+        padding: $spacing-6;
+      }
+
+      &__icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto $spacing-6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $brand-bg-red;
+        border-radius: 50%;
+
+        img {
+          width: 32px;
+          height: 32px;
+          filter: brightness(0) saturate(100%) invert(27%) sepia(51%)
+            saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+        }
+
+        @include mobile {
+          width: 56px;
+          height: 56px;
+          margin-bottom: $spacing-4;
+
+          img {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+
+      &__title {
+        color: $text-color-dark-black;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: $spacing-4;
+
+        @include tablet {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        @include mobile {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+
+      &__description {
+        color: $text-color-gray-600;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include tablet {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
     }
   }
