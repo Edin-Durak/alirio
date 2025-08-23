@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from "astro:assets";
+import arrowRightIcon from '../assets/images/icons/arrow-right-icon.svg';
+import serviceHeroImage from '../assets/images/service-hero-img.jpg';
 import '../styles/main.scss';
 ---
 
@@ -9,13 +12,18 @@ import '../styles/main.scss';
   <Header />
   
   <main>
-    <section class="services-hero-section">
+    <section class="services-hero-section" aria-labelledby="services-hero-title">
       <div class="container">
         <div class="services-hero-section__inner">
-          <h1 class="services-hero-section__title">Our Services</h1>
-          <p class="services-hero-section__description">
-            Discover our comprehensive range of home care services designed to provide comfort, support, and independence for you and your loved ones.
-          </p>
+          <h1 class="services-hero-section__title" id="services-hero-title">Home care at Alirio Omsorg</h1>
+          <a href="/" class="services-hero-section__button">
+            Call Alirio Omsorg
+            <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" class="services-hero-section__button-icon" />
+          </a>
+
+          <div class="services-hero-section__image">
+            <Image src={serviceHeroImage} alt="Home care" width={500} height={500} loading="eager" class="services-hero-section__image-img" />
+          </div>
         </div>
       </div>
     </section>
