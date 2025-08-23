@@ -21,7 +21,7 @@ const currentPath = Astro.url.pathname;
           <a href="/alirio/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' ? 'header__nav-link--active' : ''}`}>Home</a>
         </li>
         <li class="header__nav-item">
-          <a href="/alirio/services" class={`header__nav-link ${currentPath === '/alirio/services' ? 'header__nav-link--active' : ''}`}>Services</a>
+          <a href="/alirio/services" class={`header__nav-link ${currentPath === '/alirio/services' || currentPath === '/services' ? 'header__nav-link--active' : ''}`}>Services</a>
         </li>
         <li class="header__nav-item">
           <a href="/alirio/pricing" class="header__nav-link">Pricing</a>
@@ -59,7 +59,7 @@ const currentPath = Astro.url.pathname;
             <a href="/alirio/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
           </li>
           <li class="header__mobile-nav-item">
-            <a href="/alirio/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
+            <a href="/alirio/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' || currentPath === '/services' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
           </li>
           <li class="header__mobile-nav-item">
             <a href="/alirio/pricing" class="header__mobile-nav-link">Pricing</a>
