@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
 import arrowRightIcon from '../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../assets/images/service-hero-img.jpg';
+import linesImage from '../assets/images/lines-img.webp';
 import '../styles/main.scss';
 ---
 
@@ -22,7 +23,7 @@ import '../styles/main.scss';
           </a>
 
           <div class="hero-section__image">
-            <Image src={serviceHeroImage} alt="Home care" width={500} height={500} loading="eager" class="hero-section__image-img" />
+            <Image src={serviceHeroImage} alt="Young woman huges older woman" width={500} height={500} loading="eager" class="hero-section__image-img" />
           </div>
         </div>
       </div>
@@ -91,14 +92,22 @@ import '../styles/main.scss';
       </div>
     </section>
 
-    <section class="services-cta-section">
+    <section class="why-choose-us-section" aria-labelledby="why-choose-us-title">
       <div class="container">
-        <div class="services-cta-section__inner">
-          <h2 class="services-cta-section__title">Ready to Get Started?</h2>
-          <p class="services-cta-section__description">
-            Contact us today to discuss your care needs and learn how we can help you or your loved ones.
-          </p>
-          <a href="/contact" class="services-cta-section__button">Contact Us</a>
+        <div class="why-choose-us-section__inner">
+          <h2 class="why-choose-us-section__title">Why choose Alirio Care?</h2>
+          <p class="why-choose-us-section__description">Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.</p>
+          <div class="why-choose-us-section__content">
+            <div class="why-choose-us-section__statistics">
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">100%</span>
+                    <h3 class="why-choose-us-section__statistics-item-title">of our customers are satisfied with our services</h3>
+                    <p class="why-choose-us-section__statistics-item-description">of our customers are satisfied with our services</p>
+                </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
     </section>
