@@ -131,8 +131,31 @@
     &__title {
       color: $text-color-dark-black;
       max-width: 700px;
-      margin: $spacing-6 auto;
+      margin: $spacing-6 auto $spacing-10;
       line-height: 65px;
+
+      @include tablet {
+        line-height: 45px;
+      }
+
+      @include mobile {
+        line-height: 35px;
+      }
+    }
+
+    &__description {
+      color: $text-color-gray-500;
+      max-width: 700px;
+      margin: 0 auto $spacing-10;
+      line-height: 24px;
+
+      @include tablet {
+        line-height: 22px;
+      }
+
+      @include mobile {
+        line-height: 20px;
+      }
     }
 
     .services-grid {
@@ -158,85 +181,73 @@
     }
 
     .service-card {
-      background-color: $white;
+      background-color: transparent;
       border-radius: $rounded-sm;
       padding: $spacing-8;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
-      border: 1px solid rgba(224, 100, 100, 0.1);
+      border: 1px solid $border-color-red;
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(224, 100, 100, 0.15);
+        border-color: $brand-red-400;
+        background-color: $brand-red-400;
+
+        .service-card__title {
+          color: $text-color-white;
+        }
+
+        .service-card__description {
+          color: $text-color-white;
+        }
+      }
+
+      @include tablet {
+        background-color: $brand-red-400;
         border-color: $brand-red-400;
       }
 
       @include mobile {
         padding: $spacing-6;
-      }
-
-      &__icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto $spacing-6;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $brand-bg-red;
-        border-radius: 50%;
-
-        img {
-          width: 32px;
-          height: 32px;
-          filter: brightness(0) saturate(100%) invert(27%) sepia(51%)
-            saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-        }
-
-        @include mobile {
-          width: 56px;
-          height: 56px;
-          margin-bottom: $spacing-4;
-
-          img {
-            width: 28px;
-            height: 28px;
-          }
-        }
+        background-color: $brand-red-400;
+        border-color: $brand-red-400;
       }
 
       &__title {
         color: $text-color-dark-black;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 32px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
         margin-bottom: $spacing-4;
+        transition: all 0.3s ease;
 
         @include tablet {
-          font-size: 20px;
-          line-height: 28px;
+          color: $text-color-white;
         }
 
         @include mobile {
           font-size: 18px;
           line-height: 26px;
+          color: $text-color-white;
+          color: $text-color-white;
         }
       }
 
       &__description {
-        color: $text-color-gray-600;
+        color: $text-color-gray-500;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
+        transition: all 0.3s ease;
 
         @include tablet {
-          font-size: 14px;
-          line-height: 22px;
+          color: $text-color-white;
         }
 
         @include mobile {
           font-size: 14px;
           line-height: 22px;
+          color: $text-color-white;
         }
       }
     }
