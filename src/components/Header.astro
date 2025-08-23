@@ -5,6 +5,8 @@ import logoImage from "../assets/images/alirio-logo.png";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
 
+// Get current page path
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
@@ -16,10 +18,10 @@ import LanguageDropdown from "./LanguageDropdown.astro";
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a href="/" class="header__nav-link">Home</a>
+          <a href="/" class={`header__nav-link ${currentPath === '/' ? 'header__nav-link--active' : ''}`}>Home</a>
         </li>
         <li class="header__nav-item">
-          <a href="/" class="header__nav-link">Services</a>
+          <a href="/services" class={`header__nav-link ${currentPath === '/services' ? 'header__nav-link--active' : ''}`}>Services</a>
         </li>
         <li class="header__nav-item">
           <a href="/" class="header__nav-link">Pricing</a>
@@ -54,10 +56,10 @@ import LanguageDropdown from "./LanguageDropdown.astro";
       <nav class="header__mobile-nav-menu">
         <ul class="header__mobile-nav-list">
           <li class="header__mobile-nav-item">
-            <a href="/" class="header__mobile-nav-link">Home</a>
+            <a href="/" class={`header__mobile-nav-link ${currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
           </li>
           <li class="header__mobile-nav-item">
-            <a href="/" class="header__mobile-nav-link">Services</a>
+            <a href="/services" class={`header__mobile-nav-link ${currentPath === '/services' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
           </li>
           <li class="header__mobile-nav-item">
             <a href="/" class="header__mobile-nav-link">Pricing</a>

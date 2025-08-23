@@ -28,10 +28,17 @@
       padding: $spacing-2 $spacing-4;
       border-bottom: 2px solid transparent;
       transition: color 0.3s ease;
+
       &:hover {
         color: $brand-red-400;
         border-bottom: 2px solid $brand-red-400;
         text-decoration: none;
+      }
+
+      &.header__nav-link--active {
+        color: $brand-red-400;
+        border-bottom: 2px solid $brand-red-400;
+        font-weight: 600;
       }
     }
   }

@@ -104,6 +104,13 @@
     background-color: $gray-50;
     color: $brand-red-400;
   }
+
+  &.header__mobile-nav-link--active {
+    background-color: $brand-bg-red;
+    color: $brand-red-400;
+    font-weight: 600;
+    border-left: 3px solid $brand-red-400;
+  }
 }
 
 // Mobile toggle button styles (only for mobile)

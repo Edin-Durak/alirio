@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/main.scss';
+---
+
+<Layout title="Services - Alirio">
+  <Header />
+  
+  <main>
+    <section class="services-hero-section">
+      <div class="container">
+        <div class="services-hero-section__inner">
+          <h1 class="services-hero-section__title">Our Services</h1>
+          <p class="services-hero-section__description">
+            Discover our comprehensive range of home care services designed to provide comfort, support, and independence for you and your loved ones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-content-section">
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/people-icon.svg" alt="Personal Care" />
+            </div>
+            <h3 class="service-card__title">Personal Care</h3>
+            <p class="service-card__description">
+              Professional assistance with daily activities including bathing, dressing, grooming, and mobility support.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/chart-one-icon.svg" alt="Health Monitoring" />
+            </div>
+            <h3 class="service-card__title">Health Monitoring</h3>
+            <p class="service-card__description">
+              Regular health checks, medication reminders, and coordination with healthcare providers.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/board-icon.svg" alt="Companionship" />
+            </div>
+            <h3 class="service-card__title">Companionship</h3>
+            <p class="service-card__description">
+              Friendly companionship, conversation, and social activities to enhance quality of life.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/folder-icon.svg" alt="Household Support" />
+            </div>
+            <h3 class="service-card__title">Household Support</h3>
+            <p class="service-card__description">
+              Light housekeeping, meal preparation, laundry, and maintaining a safe living environment.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/chart-two-icon.svg" alt="Specialized Care" />
+            </div>
+            <h3 class="service-card__title">Specialized Care</h3>
+            <p class="service-card__description">
+              Specialized care for conditions like dementia, Alzheimer's, and post-surgery recovery.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <img src="/src/assets/images/icons/archive-icon.svg" alt="Respite Care" />
+            </div>
+            <h3 class="service-card__title">Respite Care</h3>
+            <p class="service-card__description">
+              Temporary relief for family caregivers, providing peace of mind and support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-cta-section">
+      <div class="container">
+        <div class="services-cta-section__inner">
+          <h2 class="services-cta-section__title">Ready to Get Started?</h2>
+          <p class="services-cta-section__description">
+            Contact us today to discuss your care needs and learn how we can help you or your loved ones.
+          </p>
+          <a href="/contact" class="services-cta-section__button">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
