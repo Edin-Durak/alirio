@@ -11,14 +11,14 @@ const currentPath = Astro.url.pathname;
 
 <header class="header">
   <div class="header__container">
-    <a href="/" class="header__logo-link">
+    <a href="/alirio/" class="header__logo-link">
       <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" />
     </a>
     
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a href="/" class={`header__nav-link ${currentPath === '/' ? 'header__nav-link--active' : ''}`}>Home</a>
+          <a href="/alirio/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' ? 'header__nav-link--active' : ''}`}>Home</a>
         </li>
         <li class="header__nav-item">
           <a href="/alirio/services" class={`header__nav-link ${currentPath === '/services' ? 'header__nav-link--active' : ''}`}>Services</a>
@@ -56,7 +56,7 @@ const currentPath = Astro.url.pathname;
       <nav class="header__mobile-nav-menu">
         <ul class="header__mobile-nav-list">
           <li class="header__mobile-nav-item">
-            <a href="/" class={`header__mobile-nav-link ${currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
+            <a href="/alirio/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
           </li>
           <li class="header__mobile-nav-item">
             <a href="/alirio/services" class={`header__mobile-nav-link ${currentPath === '/services' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
