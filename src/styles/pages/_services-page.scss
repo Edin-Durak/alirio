@@ -5,11 +5,11 @@
     text-align: center;
 
     @include tablet {
-      padding: $spacing-10 0;
+      padding: $spacing-13 0;
     }
 
     @include mobile {
-      padding: $spacing-8 0;
+      padding: $spacing-13 0;
     }
 
     &__inner {
