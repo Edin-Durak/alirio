@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import minusCircleIcon from "../assets/images/icons/minus-circle-icon.svg";
+import plusCircleIcon from "../assets/images/icons/plus-circle-icon.svg";
+
+const faqData = [
+  {
+    id: 1,
+    question: "Question number 1",
+    answer: "This is sample text that contains answer to the first question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  },
+  {
+    id: 2,
+    question: "Question number 2",
+    answer: "This is sample text that contains answer to the second question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  },
+  {
+    id: 3,
+    question: "Question number 3",
+    answer: "This is sample text that contains answer to the third question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  },
+  {
+    id: 4,
+    question: "Question number 4",
+    answer: "This is sample text that contains answer to the fourth question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  },
+  {
+    id: 5,
+    question: "Question number 5",
+    answer: "This is sample text that contains answer to the fifth question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  },
+  {
+    id: 6,
+    question: "Question number 6",
+    answer: "This is sample text that contains answer to the sixth question in this row, Mirza please provide copy for entire website (currently homepage only)"
+  }
+];
+---
+
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="faq-section__inner container">
+    <h2 class="faq-section__title" id="faq-title">
+      Frequently asked questions
+    </h2>
+    <h3 class="faq-section__subtitle">
+      Everything you need to know about Alirio care services
+    </h3>
+    
+    <div class="faq-section__content">
+      {faqData.map((item, index) => (
+                 <div class={`faq-item ${index === 0 ? 'faq-item--expanded' : ''}`} data-faq-id={item.id}>
+           <button class="faq-item__trigger" aria-expanded={index === 0 ? "true" : "false"} aria-controls={`faq-answer-${item.id}`}>
+             <span class="faq-item__question">{item.question}</span>
+             <div class="faq-item__icon">
+               {index === 0 ? (
+                 <Image src={minusCircleIcon} alt="Collapse answer" width={24} height={24} class="faq-item__icon-minus" />
+               ) : (
+                 <Image src={plusCircleIcon} alt="Expand answer" width={24} height={24} class="faq-item__icon-plus" />
+               )}
+             </div>
+           </button>
+           <div class="faq-item__answer" id={`faq-answer-${item.id}`} aria-hidden={index === 0 ? "false" : "true"}>
+             <p>{item.answer}</p>
+           </div>
+         </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  class FAQAccordion {
+    constructor() {
+      this.faqItems = document.querySelectorAll('.faq-item');
+      this.init();
+    }
+
+    init() {
+      this.faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-item__trigger');
+        const answer = item.querySelector('.faq-item__answer');
+        const iconContainer = item.querySelector('.faq-item__icon');
+        
+        trigger.addEventListener('click', () => {
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other items
+          this.faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              this.closeItem(otherItem);
+            }
+          });
+          
+          // Toggle current item
+          if (isExpanded) {
+            this.closeItem(item);
+          } else {
+            this.openItem(item);
+          }
+        });
+      });
+    }
+
+         openItem(item) {
+       const trigger = item.querySelector('.faq-item__trigger');
+       const answer = item.querySelector('.faq-item__answer');
+       const iconContainer = item.querySelector('.faq-item__icon');
+       
+       // Set initial height to 0
+       answer.style.height = '0px';
+       
+       // Force reflow
+       answer.offsetHeight;
+       
+       // Add expanded class
+       item.classList.add('faq-item--expanded');
+       
+       // Set final height
+       const contentHeight = answer.scrollHeight;
+       answer.style.height = contentHeight + 'px';
+       
+       // Update ARIA attributes
+       trigger.setAttribute('aria-expanded', 'true');
+       answer.setAttribute('aria-hidden', 'false');
+       
+       // Update icon
+       iconContainer.innerHTML = `
+         <img src="/src/assets/images/icons/minus-circle-icon.svg" alt="Collapse answer" width="24" height="24" class="faq-item__icon-minus" />
+       `;
+       
+       // Clean up after animation
+       setTimeout(() => {
+         answer.style.height = 'auto';
+       }, 300);
+     }
+
+     closeItem(item) {
+       const trigger = item.querySelector('.faq-item__trigger');
+       const answer = item.querySelector('.faq-item__answer');
+       const iconContainer = item.querySelector('.faq-item__icon');
+       
+       // Set height to current height
+       answer.style.height = answer.scrollHeight + 'px';
+       
+       // Force reflow
+       answer.offsetHeight;
+       
+       // Animate to 0
+       answer.style.height = '0px';
+       
+       // Remove expanded class
+       item.classList.remove('faq-item--expanded');
+       
+       // Update ARIA attributes
+       trigger.setAttribute('aria-expanded', 'false');
+       answer.setAttribute('aria-hidden', 'true');
+       
+       // Update icon
+       iconContainer.innerHTML = `
+         <img src="/src/assets/images/icons/plus-circle-icon.svg" alt="Expand answer" width="24" height="24" class="faq-item__icon-plus" />
+       `;
+     }
+  }
+
+  // Initialize FAQ accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    new FAQAccordion();
+  });
+</script>
