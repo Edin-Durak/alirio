@@ -18,6 +18,8 @@ import kaniImage from '../assets/images/kani-img.jpg';
 import serviceCardImage from '../assets/images/service-card-img.webp';
 import arrowUpIcon from '../assets/images/arrow-up-right-icon.svg';
 import arrowUpHoverIcon from '../assets/images/arrow-up-right-hover-icon.svg';
+import customerTestimonialImage from '../assets/images/customer-testimonial-img.webp';
+import quoteIcon from '../assets/images/quote-icon.svg';
 
 
 import '../styles/main.scss';
@@ -264,6 +266,35 @@ import '../styles/main.scss';
 							</h3>
 							<p class="our-services-section__card-description">
 								How do you create compelling presentations that wow your colleagues and impress your managers?
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="customer-testimonial-section" aria-labelledby="customer-testimonial-title">
+			<div class="customer-testimonial-section__inner container">
+				<h2  id="customer-testimonial-title" hidden>
+					Customer Testimonials
+				</h2>
+				<div class="customer-testimonial-section__content">
+					<div class="customer-testimonial-section__review">
+						<Image src={quoteIcon} alt="Quote icon" width={42.28} height={34.3} loading={'lazy'} />
+
+						<h2 class="customer-testimonial-section__review-title">Thank you, Alirio, for making a difference  every single day.”</h2>
+						<p class="customer-testimonial-section__review-text">“Alirio has been a blessing for our family. The level of care, compassion, and professionalism they provide is something truly special. From the very beginning, the staff made us feel welcome and supported”</p>
+					</div>
+					<div class="customer-testimonial-section__image">
+						<Image src={customerTestimonialImage} alt="Customer testimonial image" class="customer-testimonial-section__image-img" width={598} height={399} loading={'lazy'} />
+
+						<div class="customer-testimonial-section__customer-info">
+
+							<h3 class="customer-testimonial-section__customer-info-name">
+								John Doe
+							</h3>
+							<p class="customer-testimonial-section__customer-info-title">
+								CEO & Founder
 							</p>
 						</div>
 					</div>
