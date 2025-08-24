@@ -1,3 +1,7 @@
+// Import content translations
+import { en } from "./en";
+import { bs } from "./bs";
+
 export const languages = {
   en: "English",
   sv: "Svenska",
@@ -32,6 +36,12 @@ export const ui = {
   },
 } as const;
 
+// Content translations object
+export const contentTranslations = {
+  en,
+  bs,
+} as const;
+
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split("/");
   if (lang in ui) return lang as keyof typeof ui;
@@ -41,5 +51,13 @@ export function getLangFromUrl(url: URL) {
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
+  };
+}
+
+// Create unified translation function
+export function getTranslations(lang: string) {
+  return {
+    ui: ui[lang] || ui.en,
+    content: contentTranslations[lang] || contentTranslations.en,
   };
 }
