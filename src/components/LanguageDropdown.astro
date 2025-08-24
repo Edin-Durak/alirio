@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import languagesIcon from "../assets/images/icons/languages-icon.svg";
-import { getLangFromUrl } from '../i18n/ui';
+import { getLangFromUrl, getTranslations } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
+const { content } = getTranslations(lang);
 
 const languages = [
   { code: 'en', name: 'English', native: 'English' },
@@ -13,6 +14,16 @@ const languages = [
   { code: 'ku', name: 'کوردی', native: 'کوردی' },
   { code: 'sy', name: 'ܣܘܪܝܝܐ', native: 'ܣܘܪܝܝܐ' }
 ];
+
+// Route mapping for all languages
+const routeMappings = {
+  en: { home: '', services: 'services', pricing: 'pricing', about: 'about' },
+  bs: { home: '', services: 'usluge', pricing: 'cijene', about: 'o-nama' },
+  sv: { home: '', services: 'tjanster', pricing: 'priser', about: 'om-oss' },
+  ar: { home: '', services: 'خدمات', pricing: 'الأسعار', about: 'حول' },
+  ku: { home: '', services: 'خزمەتگوزارییەکان', pricing: 'نرخەکان', about: 'دەربارە' },
+  sy: { home: '', services: 'ܬܫܡܫܬܐ', pricing: 'ܐܣܟܡܐ', about: 'ܥܠ' }
+};
 ---
 
 <div class="language-dropdown">
@@ -40,7 +51,7 @@ const languages = [
   </ul>
 </div>
 
-<script>
+<script define:vars={{ routeMappings }}>
   /**
    * @typedef {Object} LanguageDropdown
    * @property {HTMLElement} dropdown
@@ -128,12 +139,81 @@ const languages = [
       // Close dropdown
       this.close();
       
-      // Navigate to the selected language
-      if (langCode === 'en') {
-        window.location.href = '/';
+      // Get current path
+      const currentPath = window.location.pathname;
+      const pathSegments = currentPath.split('/').filter(segment => segment);
+      
+      let targetPath = '';
+      
+      // Check if current path has a language prefix
+      const supportedLanguages = ['en', 'sv', 'bs', 'ar', 'ku', 'sy'];
+      const hasLanguagePrefix = pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0]);
+      
+      if (hasLanguagePrefix) {
+        // Current path has language prefix (e.g., /bs/usluge)
+        const currentLang = pathSegments[0];
+        const currentRoute = pathSegments.slice(1).join('/');
+        
+        // Find the page type by matching current route
+        const currentLangRoutes = routeMappings[currentLang];
+        let pageType = 'home';
+        
+        for (const [type, route] of Object.entries(currentLangRoutes)) {
+          if (currentRoute === route || (route === '' && currentRoute === '')) {
+            pageType = type;
+            break;
+          }
+        }
+        
+        // Get translated route for target language
+        const targetLangRoutes = routeMappings[langCode];
+        const targetRoute = targetLangRoutes[pageType];
+        
+        // Build target URL
+        if (langCode === 'en') {
+          targetPath = '/' + targetRoute;
+        } else {
+          targetPath = `/${langCode}/${targetRoute}`;
+        }
+        
+        // Handle root path for English
+        if (langCode === 'en' && targetRoute === '') {
+          targetPath = '/';
+        }
       } else {
-        window.location.href = `/${langCode}/`;
+        // Current path has no language prefix (e.g., /services)
+        const currentRoute = pathSegments.join('/');
+        
+        // Find the page type by matching current route
+        const currentLangRoutes = routeMappings['en'];
+        let pageType = 'home';
+        
+        for (const [type, route] of Object.entries(currentLangRoutes)) {
+          if (currentRoute === route || (route === '' && currentRoute === '')) {
+            pageType = type;
+            break;
+          }
+        }
+        
+        // Get translated route for target language
+        const targetLangRoutes = routeMappings[langCode];
+        const targetRoute = targetLangRoutes[pageType];
+        
+        // Build target URL
+        if (langCode === 'en') {
+          targetPath = '/' + targetRoute + "/";
+        } else {
+          targetPath = `/${langCode}/${targetRoute}/`;
+        }
+        
+        // Handle root path for English
+        if (langCode === 'en' && targetRoute === '') {
+          targetPath = '/';
+        }
       }
+      
+      // Navigate to the target page
+      window.location.href = targetPath;
     }
   }
   
