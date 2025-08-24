@@ -1,22 +1,41 @@
 ---
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+
 export interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string;
 	ogImage?: string;
+	lang?: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const { ui } = getTranslations(lang);
+
+const metaContent = {
+	en: {
+		title: "Alirio Omsorg - Compassionate Home Care Services",
+		description: "Alirio Omsorg provides compassionate home care services with multilingual staff. We offer rehabilitative care, genuine closeness, and support from the start. 150+ satisfied residents.",
+		keywords: "home care, Alirio Omsorg, rehabilitative care, multilingual staff, Swedish home care, elderly care, home nursing, compassionate care"
+	},
+	bs: {
+		title: "Alirio Omsorg - Suosjećajne usluge kućne njege",
+		description: "Alirio Omsorg pruža suosjećajne usluge kućne njege s višejezičnim osobljem. Nudimo rehabilitacijsku njegu, istinsku bliskost i podršku od početka. 150+ zadovoljnih stanovnika.",
+		keywords: "kućna njega, Alirio Omsorg, rehabilitacijska njega, višejezično osoblje, švedska kućna njega, njega starijih, kućno medicinsko zbrinjavanje, suosjećajna njega"
+	}
+};
+
 const { 
-	title = "Alirio Omsorg - Compassionate Home Care Services",
-	description = "Alirio Omsorg provides compassionate home care services with multilingual staff. We offer rehabilitative care, genuine closeness, and support from the start. 150+ satisfied residents.",
-	keywords = "home care, Alirio Omsorg, rehabilitative care, multilingual staff, Swedish home care, elderly care, home nursing, compassionate care",
+	title = metaContent[lang]?.title || metaContent.en.title,
+	description = metaContent[lang]?.description || metaContent.en.description,
+	keywords = metaContent[lang]?.keywords || metaContent.en.keywords,
 	ogImage = "https://edin-durak.github.io/alirio/hero-img.webp"
 } = Astro.props;
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
