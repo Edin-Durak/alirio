@@ -45,7 +45,7 @@ export const en = {
         description:
           "We see what you can do and support you to do more yourself, add a litle bit more of text here",
       },
-      noStress: {
+      youDecide: {
         title: "No stress",
         description:
           "Hesitant? We're happy to have a coffee first with no obligations, also a bit of text wouldn’t hurt",

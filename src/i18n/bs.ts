@@ -8,57 +8,56 @@ export const bs = {
   home: {
     // Hero Section
     hero: {
-      title: "Mi pružamo više od njege za vas",
+      title: "Individua u centru - blizu vas svaki dan za jači život",
       description:
-        "Nudimo ljubav, dostojanstvo i istinski osjećaj pripadnosti. Jer za nas, briga znači stvaranje doma gdje su srca sigurna, životi cijenjeni i gdje se nikad ne osjećate usamljeno.",
+        "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
       stats: {
-        residents: "Zadovoljnih <br> Stanovnika",
-        hearts: "Srca se osjećaju <br> voljenima",
+        residents: "zadovoljnih <br> korisnika",
+        hearts: "pružene <br> usluge",
       },
     },
     // Benefits Section
     benefits: {
-      title: "Što nas čini drugačijima",
-      subtitle: "Iz dna naših srca, za vas.",
+      title: "Što nas čini različitima?",
+      subtitle:
+        "Pozovite nas čak i ako se samo pitate - ne pritisnemo, slušamo.",
       rehabilitative: {
-        title: "Rehabilitacijska kućna njega",
+        title: "Potrebe individue u centru",
         description:
-          "Pomažemo vam da postanete jači i samostalniji, dodajemo još malo teksta ovdje",
+          "baš kao Općina Örebro, radimo na osnovu da vaše potrebe i ciljevi određuju kakvu podršku dobijate",
       },
       closeness: {
-        title: "Istinska bliskost",
-        description:
-          "Ista prijateljska lica koja se stvarno brinu o vama, ovdje treba dodati još malo teksta",
+        title: "Pristna bliskost",
+        description: "ista prijateljska lica koja se istinski brinu za vas",
       },
       multilingual: {
         title: "Višejezično osoblje",
         description:
-          "Govorimo švedski, bosanski, hrvatski, srpski, arapski, njemački i engleski, malo samo proširiti za 2-3 riječi",
+          "govorimo švedski, bosanski, hrvatski, srpski, arapski, njemački i engleski",
       },
       support: {
         title: "Podrška od početka",
         description:
-          "Također ćemo vam pomoći s prijavom za pomoć ako vam treba, također fali teksta još malkice ovdje",
+          "također vam pomažemo s prijavama za socijalnu pomoć ako trebate",
       },
       abilities: {
         title: "Vjerujemo u vaše sposobnosti",
         description:
           "Vidimo što možete učiniti i podržavamo vas da više toga učinite sami, dodajte malo više teksta ovdje",
       },
-      noStress: {
-        title: "Bez stresa",
-        description:
-          "Oklijevate? Rado ćemo prvo popiti kafu bez obaveza, također malo teksta ne bi škodilo",
+      youDecide: {
+        title: "Vaše pravo da odlučujete",
+        description: "slušamo vas i poštujemo vaše pravo da sami odlučujete",
       },
     },
     // Team Section
     team: {
-      title: "Upoznajte naš tim",
-      subtitle: "Upoznajte naš tim visokokvalificiranih stručnjaka.",
+      title: "Naše Osoblje",
+      subtitle: "Upoznajte naš tim visoko kvalifikovanih stručnjaka ",
       members: {
         mirza: {
           name: "Mirza",
-          role: "Direktor i osnivač",
+          role: "Osnivač",
         },
         kani: {
           name: "Kani",
@@ -72,22 +71,23 @@ export const bs = {
     },
     // Services Section
     services: {
-      title: "Usluge",
-      subtitle: "Misija Alirio Omsorg-a je da vam pruži brigu s obzirom",
+      title: "Naše Usluge",
+      subtitle:
+        "Nudimo profesionalnu kućnu njegu koja je potpuno prilagođena vašim individualnim potrebama i ciljevima.",
       service1: {
-        title: "Usluga jedan",
+        title: "Lična njega",
         description:
-          "Kako stvarate uvjerljive prezentacije koje oduševljavaju vaše kolege i impresioniraju vaše menadžere?",
+          "Pomoć s ličnom higijenom i tušem, Podrška pri oblačenju i svlačenju, Pomoć s obrucima i podsjećanjem na lijekove",
       },
       service2: {
-        title: "Usluga dva",
+        title: "Uslužne aktivnosti",
         description:
-          "Kako stvarate uvjerljive prezentacije koje oduševljavaju vaše kolege i impresioniraju vaše menadžere?",
+          "Čišćenje i kućni poslovi, Pranje i njega odjeće, Kupovanje hrane i namirnic.",
       },
       service3: {
-        title: "Usluga tri",
+        title: "Socijalna skrb",
         description:
-          "Kako stvarate uvjerljive prezentacije koje oduševljavaju vaše kolege i impresioniraju vaše menadžere?",
+          "Društvo i razgovor, Praćenje do liječničkih posjeta, Pomoć s kontaktima s vlastima",
       },
     },
     // Testimonials Section
@@ -100,26 +100,27 @@ export const bs = {
     // FAQ Section
     faq: {
       title: "Često postavljena pitanja",
-      subtitle: "Pronađite odgovore na najčešća pitanja o našim uslugama.",
+      subtitle:
+        "Poziv vas ni na što ne obavezuje, ali može biti početak nečeg dobrog.",
       question1: {
-        question: "Koje vrste kućne njege pružate?",
+        question: "Iza Alirio - naša priča",
         answer:
-          "Pružamo širok spektar usluga kućne njege, uključujući ličnu njegu, pomoć u domaćinstvu, pripremu obroka, pratnju do ljekara, i 24/7 podršku za osobe kojima je potrebna stalna njega.",
+          "Alirio Omsorg su osnovali otac i sin, Mirza i Haris. Mirza je došao u Švedsku 1990-ih godina iz Bosne i od tada naziva Örebro svojim domom.",
       },
       question2: {
-        question: "Kako odabirete i provjeravate svoje njegovatelje?",
+        question: "Koje usluge nudimo?",
         answer:
-          "Svi naši njegovatelji prolaze temeljitu provjeru biografije, profesionalnih referenci i krivične evidencije. Također moraju imati relevantne kvalifikacije i redovno pohađati dodatne obuke.",
+          "Nudimo profesionalnu kućnu njegu koja je potpuno prilagođena vašim individualnim potrebama i ciljevima. Radimo na osnovu IBIC (Potrebe individue u centru) - nacionalni način rada koji je Nacionalni odbor za zdravstvo i socijalnu skrb razvio za jačanje vaše participacije i koji koristi Općina Örebro.",
       },
       question3: {
-        question: "Koliko često mogu mijenjati raspored njege?",
+        question: "Kako funkcioniše?",
         answer:
-          "Vrlo smo fleksibilni i možete prilagoditi raspored prema vašim potrebama. Molimo vas da nas obavijestite 24 sata unaprijed za promjene u rasporedu kada je to moguće.",
+          "Kontaktirajte nas, Besplatna posjeta, Prijava za socijalnu pomoć, Izbor osoblja, Meki početak. Veoma jednostavan proces koji vodi do vašeg zadovoljstva.",
       },
       question4: {
-        question: "Da li su vaše usluge pokrivene zdravstvenim osiguranjem?",
+        question: "Radno vrijeme i dostupnost",
         answer:
-          "Da, naše usluge su često pokrivene različitim vrstama zdravstvenog osiguranja. Možemo vam pomoći da provjerite pokrivenost vašeg osiguranja i objasnimo sve opcije plaćanja.",
+          "Ponedjeljak-nedjelja 07:00-22:00, Hitni telefon dostupan za hitna pitanja",
       },
       question5: {
         question: "Šta ako nisam zadovoljan/na sa njegovateljem?",
@@ -134,10 +135,9 @@ export const bs = {
     },
     // Contact Section
     contact: {
-      title: "Još uvijek imate pitanja?",
-      description:
-        "Ne možete pronaći odgovor koji tražite? Molimo vas da razgovarate s našim prijateljskim timom.",
-      button: "Razgovarajte s nama",
+      title: "Imate još pitanja?",
+      description: "Javite se našem ljubaznom timu.",
+      button: "Pozovite",
     },
     // Footer
     footer: {
@@ -148,6 +148,77 @@ export const bs = {
       terms: "Uslovi korištenja",
       description:
         "Alirio vam pruža prvoklasnu podršku u životu kakav ste sanjali, sa našim specijaliziranim timom slobodno nam prepustite brigu o svakodnevnoj radosti koja vam je potrebna.",
+    },
+  },
+
+  services: {
+    hero: {
+      title: "Kućna njega u Alirio Omsorg",
+      heroCTA: "Pozovi Alirio Omsorg",
+      heroImgAlt: "Starija žena u naručju mlade žene",
+    },
+    services: {
+      preTitle: "Usluge",
+      title: "Kućna njega – potpuno prilagođena vama",
+      description:
+        "Radimo na osnovu IBIC modela (Potrebe individue u centru), razvijenog od strane Nacionalnog odbora za zdravstvo i socijalnu skrb.",
+      service1: {
+        title: "Lična njega",
+        description:
+          "Pomoć s ličnom higijenom i tušem <br> Podrška pri oblačenju i svlačenju <br> Pomoć s obrocima i lijekovima <br> Odlasci na toalet i pomoć pri inkontinenciji",
+      },
+      service2: {
+        title: "Uslužne aktivnosti",
+        description:
+          "Čišćenje i kućni poslovi <br> Pranje i njega odjeće <br> Kupovina hrane i namirnica <br> Čišćenje prozora i jednostavni poslov.",
+      },
+      service3: {
+        title: "Socijalna skrb",
+        description:
+          "Društvo i razgovor <br> Praćenje do liječničkih posjeta <br> Pomoć s kontaktima s vlastima <br> Aktivnosti i šetnje",
+      },
+      service4: {
+        title: "Pomažemo vam i prije nego počnete:",
+        description:
+          "Besplatno savjetovanje kod vas kući <br>Pomoć s prijavama za socijalnu pomoć <br>Postupno uvođenje u vašem ritmu <br> Porodični razgovori",
+      },
+      service5: {
+        title: "Kako funkcioniše:",
+        description:
+          "Kontaktirajte nas (telefon ili email) <br>Besplatna posjeta kod kuće <br>Pomoć s prijavom za socijalnu pomoć <br>Izbor osoblja <br>Meki početak",
+      },
+      service6: {
+        title: "Radno vrijeme i dostupnost",
+        description:
+          "Uslužne aktivnosti: pon–ned 07:00–22:00 <br>Aktivnosti njege: prema odluci o socijalnoj pomoći <br>Hitni telefon: uvijek dostupan <br>Planiranje: fleksibilno prema vašim željama",
+      },
+      service7: {
+        title: "Troškovi i plaćanje",
+        description:
+          "Kućnu njegu finansira Općina Örebro <br> Maksimalna cijena: 2.642 SEK/mjesečno (2025.) <br> Cijena je ista bez obzira da li birate općinsku ili privatnu njegu <br> Dodatno: kućne usluge uz RUT odbitak",
+      },
+      service8: {
+        title: "Kvaliteta i sigurnost",
+        description:
+          "Odobreni od Općine Örebro <br> Osoblje s identifikacijskim karticama <br> Povjerljivost i zaštita integriteta <br> Potpuno osiguranje <br> Redovno praćenje kvalitete",
+      },
+    },
+    whyAlirio: {
+      title: "Zašto izabrati Alirio Care?",
+      description:
+        "Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.",
+      statistics: {
+        description: "Usluga pruženih usluga godišnje",
+      },
+      statistics2: {
+        description: "Posvećenost korisnicima",
+      },
+      statistics3: {
+        description: "Godina iskustva",
+      },
+      statistics4: {
+        description: "Zadovoljnih korisnika",
+      },
     },
   },
 } as const;

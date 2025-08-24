@@ -25,7 +25,7 @@ export const ui = {
     "common.success": "Success",
     "footer.description":
       "Alirio gives you best in class support in living like what you dreamed of, with our specialized team feel free to let us deal with everyday joy you need to have.",
-    "footer.company": "Company",
+    "footer.company": "Alirio",
     "footer.help": "Help",
     "footer.contact": "Contact Us",
     "footer.privacy": "Privacy Policy",
@@ -40,8 +40,8 @@ export const ui = {
     "common.error": "Greška",
     "common.success": "Uspjeh",
     "footer.description":
-      "Alirio vam pruža najbolju podršku u životu kakav ste sanjali, s našim specijaliziranim timom slobodno nam prepustite svakodnevnu radost koju trebate imati.",
-    "footer.company": "Kompanija",
+      "Sanjamo da jednog dana možemo ponuditi još više - možda dom za starije gdje se različite kulture mogu susresti, gdje su okusi domovine na meniju i gdje se svi osjećaju kao kod kuće. Ali počinje ovdje, s vama, u vašem domu, s njegom koju trebate.",
+    "footer.company": "Alirio",
     "footer.help": "Pomoć",
     "footer.contact": "Kontaktirajte nas",
     "footer.privacy": "Politika privatnosti",
