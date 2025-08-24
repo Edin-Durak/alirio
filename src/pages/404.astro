@@ -7,8 +7,28 @@ import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
 import '../styles/main.scss';
 
-const lang = getLangFromUrl(Astro.url);
+// Enhanced language detection for 404 pages
+const pathSegments = Astro.url.pathname.split("/").filter(segment => segment);
+console.log('404 Page - Path segments:', pathSegments);
+
+// Remove base path if present
+const segments = pathSegments[0] === 'alirio' ? pathSegments.slice(1) : pathSegments;
+console.log('404 Page - Segments after base removal:', segments);
+
+// Check if first segment is a language code
+let detectedLang = 'en';
+if (segments.length > 0 && ['en', 'bs', 'sv', 'ar', 'ku', 'sy'].includes(segments[0])) {
+  detectedLang = segments[0];
+}
+
+console.log('404 Page - Final detected language:', detectedLang);
+
+const lang = detectedLang;
 const { ui, content } = getTranslations(lang);
+
+// Debug: Log the detected language and URL for troubleshooting
+console.log('404 Page - Current URL:', Astro.url.pathname);
+console.log('404 Page - Detected language:', lang);
 
 // 404 page content translations
 const errorContent = {
