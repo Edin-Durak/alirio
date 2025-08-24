@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import languagesIcon from "../assets/images/icons/languages-icon.svg";
+import { getLangFromUrl } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
 
 const languages = [
   { code: 'en', name: 'English', native: 'English' },
@@ -10,14 +13,12 @@ const languages = [
   { code: 'ku', name: 'کوردی', native: 'کوردی' },
   { code: 'sy', name: 'ܣܘܪܝܝܐ', native: 'ܣܘܪܝܝܐ' }
 ];
-
-const currentLanguage = 'en';
 ---
 
 <div class="language-dropdown">
   <button class="language-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
     <Image src={languagesIcon} alt="Languages icon" width={20} height={20} />
-    <span class="language-dropdown__current">EN</span>
+    <span class="language-dropdown__current">{lang.toUpperCase()}</span>
     <svg class="language-dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
       <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -27,7 +28,7 @@ const currentLanguage = 'en';
     {languages.map((language) => (
       <li class="language-dropdown__item" role="none">
         <button 
-          class={`language-dropdown__option ${language.code === currentLanguage ? 'language-dropdown__option--active' : ''}`}
+          class={`language-dropdown__option ${language.code === lang ? 'language-dropdown__option--active' : ''}`}
           data-lang={language.code}
           role="menuitem"
         >
@@ -123,25 +124,16 @@ const currentLanguage = 'en';
     selectLanguage(event) {
       const option = event.currentTarget;
       const langCode = option.dataset.lang;
-      const langName = option.querySelector('.language-dropdown__name').textContent;
-      
-      // Update current language display
-      this.trigger.querySelector('.language-dropdown__current').textContent = langCode.toUpperCase();
-      
-      // Update active state
-      this.options.forEach(opt => opt.classList.remove('language-dropdown__option--active'));
-      option.classList.add('language-dropdown__option--active');
-      
-      // Store selection in localStorage
-      localStorage.setItem('selectedLanguage', langCode);
       
       // Close dropdown
       this.close();
       
-      // Emit custom event for language change
-      this.dropdown.dispatchEvent(new CustomEvent('languageChange', {
-        detail: { code: langCode, name: langName }
-      }));
+      // Navigate to the selected language
+      if (langCode === 'en') {
+        window.location.href = '/';
+      } else {
+        window.location.href = `/${langCode}/`;
+      }
     }
   }
   
@@ -149,17 +141,5 @@ const currentLanguage = 'en';
   document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.language-dropdown');
     dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
-    
-    // Restore saved language preference
-    const savedLang = localStorage.getItem('selectedLanguage');
-    if (savedLang) {
-      const dropdown = document.querySelector('.language-dropdown');
-      if (dropdown) {
-        const option = dropdown.querySelector(`[data-lang="${savedLang}"]`);
-        if (option && option instanceof HTMLElement) {
-          option.click();
-        }
-      }
-    }
   });
 </script> 
