@@ -1,20 +1,36 @@
 ---
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
-const { ui } = getTranslations(lang);
+const { ui, content } = getTranslations(lang);
 
-// Get current page path
-const currentPath = Astro.url.pathname;
+// Define footer navigation structure
+const footerNavItems = [
+  { key: 'nav.home', routeKey: 'home' },
+  { key: 'nav.services', routeKey: 'services' },
+  { key: 'nav.about', routeKey: 'about' },
+  { key: 'nav.pricing', routeKey: 'pricing' }
+];
+
+// Generate URLs for current language
+const footerNavLinks = footerNavItems.map(item => ({
+  ...item,
+  href: getRelativeLocaleUrl(lang, content.routes[item.routeKey]),
+  text: ui[item.key]
+}));
+
+// Logo link
+const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
 ---
 
 <footer class="footer">
   <div class="footer__container">
     <!-- Brand Section -->
     <div class="footer__brand">
-      <a href="/alirio/" class="footer__logo" aria-label="Alirio logo">
+      <a href={logoHref} class="footer__logo" aria-label="Alirio logo">
         <Image src={logoImage} alt="Alirio logo" width={86} height={101} class="footer__logo-image" />
 
       </a>
@@ -27,18 +43,13 @@ const currentPath = Astro.url.pathname;
     <div class="footer__section">
       <h3 class="footer__section-title">{ui['footer.company']}</h3>
       <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <a href="/" class={`footer__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'footer__nav-link--active' : ''}`}>{ui['nav.home']}</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/services" class={`footer__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'footer__nav-link--active' : ''}`}>{ui['nav.services']}</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/about" class="footer__nav-link">{ui['nav.about']}</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/pricing" class="footer__nav-link">{ui['nav.pricing']}</a>
-        </li>
+        {footerNavLinks.map(link => (
+          <li class="footer__nav-item">
+            <a href={link.href} class={`footer__nav-link ${Astro.url.pathname === link.href ? 'footer__nav-link--active' : ''}`}>
+              {link.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
 
