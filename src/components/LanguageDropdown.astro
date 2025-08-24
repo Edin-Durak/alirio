@@ -169,17 +169,17 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-        // Build target URL
-        if (langCode === 'en') {
-          targetPath = '/' + targetRoute;
-        } else {
-          targetPath = `/${langCode}/${targetRoute}`;
-        }
-        
-        // Handle root path for English
-        if (langCode === 'en' && targetRoute === '') {
-          targetPath = '/';
-        }
+                 // Build target URL
+         if (langCode === 'en') {
+           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+         } else {
+           targetPath = `/${langCode}/${targetRoute}/`;
+         }
+         
+         // Handle root path for English
+         if (langCode === 'en' && targetRoute === '') {
+           targetPath = '/';
+         }
       } else {
         // Current path has no language prefix (e.g., /services)
         const currentRoute = pathSegments.join('/');
@@ -199,17 +199,17 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-        // Build target URL
-        if (langCode === 'en') {
-          targetPath = '/' + targetRoute + "/";
-        } else {
-          targetPath = `/${langCode}/${targetRoute}/`;
-        }
-        
-        // Handle root path for English
-        if (langCode === 'en' && targetRoute === '') {
-          targetPath = '/';
-        }
+                 // Build target URL
+         if (langCode === 'en') {
+           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+         } else {
+           targetPath = `/${langCode}/${targetRoute}/`;
+         }
+         
+         // Handle root path for English
+         if (langCode === 'en' && targetRoute === '') {
+           targetPath = '/';
+         }
       }
       
       // Navigate to the target page
