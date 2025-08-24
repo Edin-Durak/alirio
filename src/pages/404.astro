@@ -62,7 +62,11 @@ const errorContent = {
   }
 };
 
-const currentContent = errorContent[detectedLang] || errorContent.en;
+console.log('404 Page - Available errorContent keys:', Object.keys(errorContent));
+console.log('404 Page - Trying to access errorContent[', detectedLang, ']');
+console.log('404 Page - errorContent[detectedLang] result:', errorContent[detectedLang as keyof typeof errorContent]);
+
+const currentContent = errorContent[detectedLang as keyof typeof errorContent] || errorContent.en;
 console.log('404 Page - Selected content for language:', detectedLang);
 console.log('404 Page - Content title:', currentContent.title);
 ---
