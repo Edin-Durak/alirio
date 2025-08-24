@@ -1,6 +1,7 @@
 // Import content translations
 import { en } from "./en";
 import { bs } from "./bs";
+import { sv } from "./sv";
 
 export const languages = {
   en: "English",
@@ -46,12 +47,29 @@ export const ui = {
     "footer.contact": "Kontaktirajte nas",
     "footer.privacy": "Politika privatnosti",
   },
+  sv: {
+    "nav.home": "Start",
+    "nav.services": "Tjänster",
+    "nav.pricing": "Priser",
+    "nav.about": "Om Alirio",
+    "nav.contact": "Kontakta oss",
+    "common.loading": "Laddar...",
+    "common.error": "Fel",
+    "common.success": "Lyckat",
+    "footer.description":
+      "Vi drömmer om att vi en dag kan erbjuda ännu mer – kanske ett äldreboende där olika kulturer kan mötas, där hemlandets smaker står på menyn och där alla känner sig hemma. Men det börjar här, hos dig, i ditt hem, med den omsorg du behöver.",
+    "footer.company": "Alirio",
+    "footer.help": "Hjälp",
+    "footer.contact": "Kontakta oss",
+    "footer.privacy": "Integritetspolicy",
+  },
 } as const;
 
 // Content translations object
 export const contentTranslations = {
   en,
   bs,
+  sv,
 } as const;
 
 export function getLangFromUrl(url: URL) {
