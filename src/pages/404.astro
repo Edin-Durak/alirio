@@ -1,0 +1,78 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+
+import '../styles/main.scss';
+
+const lang = getLangFromUrl(Astro.url);
+const { ui, content } = getTranslations(lang);
+
+// 404 page content translations
+const errorContent = {
+  en: {
+    title: "Page Not Found",
+    subtitle: "Oops! The page you're looking for doesn't exist.",
+    description: "The page you're looking for might have been moved, deleted, or you entered the wrong URL.",
+    backHome: "Back to Home",
+    backHomeUrl: "/",
+    errorCode: "404"
+  },
+  bs: {
+    title: "Stranica nije pronađena",
+    subtitle: "Ups! Stranica koju tražite ne postoji.",
+    description: "Stranica koju tražite možda je premještena, obrisana ili ste unijeli pogrešan URL.",
+    backHome: "Povratak na početnu",
+    backHomeUrl: "/bs/",
+    errorCode: "404"
+  },
+  sv: {
+    title: "Sidan hittades inte",
+    subtitle: "Oj! Sidan du letar efter finns inte.",
+    description: "Sidan du letar efter kan ha flyttats, tagits bort eller du angav fel URL.",
+    backHome: "Tillbaka till startsidan",
+    backHomeUrl: "/sv/",
+    errorCode: "404"
+  }
+};
+
+const currentContent = errorContent[lang] || errorContent.en;
+---
+
+<Layout title={currentContent.title} description={currentContent.description}>
+  <Header />
+  
+  <main class="error-page">
+    <div class="error-page__container container">
+      <div class="error-page__content">
+        <div class="error-page__error-code">
+          {currentContent.errorCode}
+        </div>
+        
+        <h1 class="error-page__title">
+          {currentContent.title}
+        </h1>
+        
+        <p class="error-page__subtitle">
+          {currentContent.subtitle}
+        </p>
+        
+        <p class="error-page__description">
+          {currentContent.description}
+        </p>
+        
+        <div class="error-page__actions">
+          <a href={currentContent.backHomeUrl} class="error-page__button">
+            {currentContent.backHome}
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+
