@@ -17,11 +17,43 @@ console.log('404 Page - Segments after base removal:', segments);
 
 // Check if first segment is a language code
 let detectedLang = 'en';
-if (segments.length > 0 && ['en', 'bs', 'sv', 'ar', 'ku', 'sy'].includes(segments[0])) {
-  detectedLang = segments[0];
+const supportedLanguages = ['en', 'bs', 'sv', 'ar', 'ku', 'sy'];
+
+// Look for language code in the path segments
+for (let i = 0; i < segments.length; i++) {
+  console.log(`Checking segment ${i}: "${segments[i]}" - is language: ${supportedLanguages.includes(segments[i])}`);
+  if (supportedLanguages.includes(segments[i])) {
+    detectedLang = segments[i];
+    console.log(`Found language: ${detectedLang}`);
+    break;
+  }
 }
 
 console.log('404 Page - Final detected language:', detectedLang);
+
+// Fallback: If no language detected, try to extract from URL directly
+if (detectedLang === 'en') {
+  const urlPath = Astro.url.pathname;
+  console.log('404 Page - Full URL path:', urlPath);
+  
+  // Check for language patterns in the URL
+  if (urlPath.includes('/sv/')) {
+    detectedLang = 'sv';
+    console.log('404 Page - Fallback detected Swedish from URL');
+  } else if (urlPath.includes('/bs/')) {
+    detectedLang = 'bs';
+    console.log('404 Page - Fallback detected Bosnian from URL');
+  } else if (urlPath.includes('/ar/')) {
+    detectedLang = 'ar';
+    console.log('404 Page - Fallback detected Arabic from URL');
+  } else if (urlPath.includes('/ku/')) {
+    detectedLang = 'ku';
+    console.log('404 Page - Fallback detected Kurdish from URL');
+  } else if (urlPath.includes('/sy/')) {
+    detectedLang = 'sy';
+    console.log('404 Page - Fallback detected Syriac from URL');
+  }
+}
 
 const lang = detectedLang;
 const { ui, content } = getTranslations(lang);
