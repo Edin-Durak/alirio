@@ -50,8 +50,8 @@ const { content } = getTranslations(lang);
 							<span class="hero-statistics__number">
 								150+
 							</span>
-							<span class="hero-statistics__text">
-								{content.home.hero.stats.residents}
+							<span class="hero-statistics__text" set:html={content.home.hero.stats.residents}>
+								
 							</span>
 						</div>
 						<Image src={heroLineIcon} alt="Line icon" width={20} height={40} class="hero-statistics__line-icon" />
@@ -59,8 +59,8 @@ const { content } = getTranslations(lang);
 							<span class="hero-statistics__number">
 								154
 							</span>
-							<span class="hero-statistics__text">
-								{content.home.hero.stats.hearts}
+							<span class="hero-statistics__text" set:html={content.home.hero.stats.hearts}>
+								
 							</span>
 						</div>
 					</div>
