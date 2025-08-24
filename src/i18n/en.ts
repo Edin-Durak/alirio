@@ -140,16 +140,6 @@ export const en = {
         "Can’t find the answer you’re looking for? Please chat to our friendly team.",
       button: "Talk to us",
     },
-    // Footer
-    footer: {
-      companyTitleLinks: "Company",
-      helpTitleLinks: "Help",
-      copyright: "© 2024 Alirio Omsorg. All rights reserved.",
-      privacy: "Privacy",
-      terms: "Terms of use",
-      description:
-        "Alirio provides you with the support you've always dreamed of, with our specialized team, feel free to leave the daily joy to us.",
-    },
   },
   services: {
     hero: {

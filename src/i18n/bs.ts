@@ -139,16 +139,6 @@ export const bs = {
       description: "Javite se našem ljubaznom timu.",
       button: "Pozovite",
     },
-    // Footer
-    footer: {
-      companyTitleLinks: "Kompanija",
-      helpTitleLinks: "Pomoć",
-      copyright: "© 2024 Alirio Omsorg. Sva prava zadržana.",
-      privacy: "Privatnost",
-      terms: "Uslovi korištenja",
-      description:
-        "Alirio vam pruža prvoklasnu podršku u životu kakav ste sanjali, sa našim specijaliziranim timom slobodno nam prepustite brigu o svakodnevnoj radosti koja vam je potrebna.",
-    },
   },
 
   services: {
