@@ -73,8 +73,17 @@ export const contentTranslations = {
 } as const;
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split("/");
-  if (lang in ui) return lang as keyof typeof ui;
+  const pathSegments = url.pathname.split("/").filter((segment) => segment);
+
+  // Remove base path if present
+  const segments =
+    pathSegments[0] === "alirio" ? pathSegments.slice(1) : pathSegments;
+
+  // Check if first segment is a language code
+  if (segments.length > 0 && segments[0] in ui) {
+    return segments[0] as keyof typeof ui;
+  }
+
   return defaultLang;
 }
 

@@ -7,6 +7,10 @@ import { getTranslations, getLangFromUrl } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const { ui, content } = getTranslations(lang);
 
+// Debug: Log the detected language and URL
+console.log('Footer - Current URL:', Astro.url.pathname);
+console.log('Footer - Detected language:', lang);
+
 // Define footer navigation structure
 const footerNavItems = [
   { key: 'nav.home', routeKey: 'home' },
@@ -57,10 +61,10 @@ const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
       <h3 class="footer__section-title">{ui['footer.help']}</h3>
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <a href="/contact" class="footer__nav-link">{ui['footer.contact']}</a>
+          <a href={getRelativeLocaleUrl(lang, 'contact')} class="footer__nav-link">{ui['footer.contact']}</a>
         </li>
         <li class="footer__nav-item">
-          <a href="/privacy" class="footer__nav-link">{ui['footer.privacy']}</a>
+          <a href={getRelativeLocaleUrl(lang, 'privacy')} class="footer__nav-link">{ui['footer.privacy']}</a>
         </li>
       </ul>
     </div>

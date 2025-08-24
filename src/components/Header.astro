@@ -12,20 +12,20 @@ const { ui, content } = getTranslations(lang);
 
 // Define navigation structure
 const navItems = [
-  { key: 'nav.home', route: content.routes.home },
-  { key: 'nav.services', route: content.routes.services },
-  { key: 'nav.about', route: content.routes.about }
+  { key: 'nav.home', routeKey: 'home' },
+  { key: 'nav.services', routeKey: 'services' },
+  { key: 'nav.about', routeKey: 'about' }
 ];
 
 // Generate URLs for current language
 const navLinks = navItems.map(item => ({
   ...item,
-  href: getRelativeLocaleUrl(lang, item.route),
+  href: getRelativeLocaleUrl(lang, content.routes[item.routeKey]),
   text: ui[item.key]
 }));
 
 // Logo link
-const logoHref = getRelativeLocaleUrl(lang, '');
+const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
 ---
 
 <header class="header">

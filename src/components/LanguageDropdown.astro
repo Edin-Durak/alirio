@@ -6,6 +6,10 @@ import { getLangFromUrl, getTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const { content } = getTranslations(lang);
 
+// Debug: Log the detected language and URL
+console.log('Current URL:', Astro.url.pathname);
+console.log('Detected language:', lang);
+
 const languages = [
   { code: 'en', name: 'English', native: 'English' },
   { code: 'sv', name: 'Sweden', native: 'Sweden' },
@@ -139,9 +143,11 @@ const routeMappings = {
       // Close dropdown
       this.close();
       
-      // Get current path
+      // Get current path and remove base path
       const currentPath = window.location.pathname;
-      const pathSegments = currentPath.split('/').filter(segment => segment);
+      const basePath = '/alirio';
+      const pathWithoutBase = currentPath.replace(basePath, '');
+      const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
       
       let targetPath = '';
       
@@ -169,17 +175,17 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-                 // Build target URL
-         if (langCode === 'en') {
-           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-         } else {
-           targetPath = `/${langCode}/${targetRoute}/`;
-         }
-         
-         // Handle root path for English
-         if (langCode === 'en' && targetRoute === '') {
-           targetPath = '/';
-         }
+        // Build target URL with base path
+        if (langCode === 'en') {
+          targetPath = basePath + '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+        } else {
+          targetPath = basePath + `/${langCode}/${targetRoute}/`;
+        }
+        
+        // Handle root path for English
+        if (langCode === 'en' && targetRoute === '') {
+          targetPath = basePath + '/';
+        }
       } else {
         // Current path has no language prefix (e.g., /services)
         const currentRoute = pathSegments.join('/');
@@ -199,17 +205,17 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-                 // Build target URL
-         if (langCode === 'en') {
-           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-         } else {
-           targetPath = `/${langCode}/${targetRoute}/`;
-         }
-         
-         // Handle root path for English
-         if (langCode === 'en' && targetRoute === '') {
-           targetPath = '/';
-         }
+        // Build target URL with base path
+        if (langCode === 'en') {
+          targetPath = basePath + '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+        } else {
+          targetPath = basePath + `/${langCode}/${targetRoute}/`;
+        }
+        
+        // Handle root path for English
+        if (langCode === 'en' && targetRoute === '') {
+          targetPath = basePath + '/';
+        }
       }
       
       // Navigate to the target page
