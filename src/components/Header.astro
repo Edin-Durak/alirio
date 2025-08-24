@@ -4,6 +4,10 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const { ui } = getTranslations(lang);
 
 // Get current page path
 const currentPath = Astro.url.pathname;
@@ -18,16 +22,16 @@ const currentPath = Astro.url.pathname;
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a href="/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__nav-link--active' : ''}`}>Home</a>
+          <a href="/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__nav-link--active' : ''}`}>{ui['nav.home']}</a>
         </li>
         <li class="header__nav-item">
-          <a href="/services" class={`header__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__nav-link--active' : ''}`}>Services</a>
+          <a href="/services" class={`header__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__nav-link--active' : ''}`}>{ui['nav.services']}</a>
         </li>
         <li class="header__nav-item">
-          <a href="/pricing" class="header__nav-link">Pricing</a>
+          <a href="/pricing" class="header__nav-link">{ui['nav.pricing']}</a>
         </li>
         <li class="header__nav-item">
-          <a href="/about" class="header__nav-link">About us</a>
+          <a href="/about" class="header__nav-link">{ui['nav.about']}</a>
         </li>
       </ul>
     </nav>
@@ -56,16 +60,16 @@ const currentPath = Astro.url.pathname;
       <nav class="header__mobile-nav-menu">
         <ul class="header__mobile-nav-list">
           <li class="header__mobile-nav-item">
-            <a href="/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
+            <a href="/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>{ui['nav.home']}</a>
           </li>
           <li class="header__mobile-nav-item">
-            <a href="/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
+            <a href="/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__mobile-nav-link--active' : ''}`}>{ui['nav.services']}</a>
           </li>
           <li class="header__mobile-nav-item">
-            <a href="/pricing" class="header__mobile-nav-link">Pricing</a>
+            <a href="/pricing" class="header__mobile-nav-link">{ui['nav.pricing']}</a>
           </li>
           <li class="header__mobile-nav-item">
-            <a href="/about" class="header__mobile-nav-link">About us</a>
+            <a href="/about" class="header__mobile-nav-link">{ui['nav.about']}</a>
           </li>
         </ul>
       </nav>

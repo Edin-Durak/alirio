@@ -23,6 +23,12 @@ export const ui = {
     "common.loading": "Loading...",
     "common.error": "Error",
     "common.success": "Success",
+    "footer.description":
+      "Alirio gives you best in class support in living like what you dreamed of, with our specialized team feel free to let us deal with everyday joy you need to have.",
+    "footer.company": "Company",
+    "footer.help": "Help",
+    "footer.contact": "Contact Us",
+    "footer.privacy": "Privacy Policy",
   },
   bs: {
     "nav.home": "Početna",
@@ -33,6 +39,12 @@ export const ui = {
     "common.loading": "Učitavanje...",
     "common.error": "Greška",
     "common.success": "Uspjeh",
+    "footer.description":
+      "Alirio vam pruža najbolju podršku u životu kakav ste sanjali, s našim specijaliziranim timom slobodno nam prepustite svakodnevnu radost koju trebate imati.",
+    "footer.company": "Kompanija",
+    "footer.help": "Pomoć",
+    "footer.contact": "Kontaktirajte nas",
+    "footer.privacy": "Politika privatnosti",
   },
 } as const;
 
