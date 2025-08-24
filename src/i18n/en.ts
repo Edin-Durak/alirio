@@ -151,4 +151,74 @@ export const en = {
         "Alirio provides you with the support you've always dreamed of, with our specialized team, feel free to leave the daily joy to us.",
     },
   },
+  services: {
+    hero: {
+      title: "Kućna njega u Alirio Omsorg",
+      heroCTA: "Pozovi Alirio Omsorg",
+      heroImgAlt: "Starija žena u naručju mlade žene",
+    },
+    services: {
+      preTitle: "Usluge",
+      title: "Kućna njega – potpuno prilagođena vama",
+      description:
+        "Radimo na osnovu IBIC modela (Potrebe individue u centru), razvijenog od strane Nacionalnog odbora za zdravstvo i socijalnu skrb.",
+      service1: {
+        title: "Lična njega",
+        description:
+          "Pomoć s ličnom higijenom i tušem <br> Podrška pri oblačenju i svlačenju <br> Pomoć s obrocima i lijekovima <br> Odlasci na toalet i pomoć pri inkontinenciji",
+      },
+      service2: {
+        title: "Uslužne aktivnosti",
+        description:
+          "Čišćenje i kućni poslovi <br> Pranje i njega odjeće <br> Kupovina hrane i namirnica <br> Čišćenje prozora i jednostavni poslov.",
+      },
+      service3: {
+        title: "Socijalna skrb",
+        description:
+          "Društvo i razgovor <br> Praćenje do liječničkih posjeta <br> Pomoć s kontaktima s vlastima <br> Aktivnosti i šetnje",
+      },
+      service4: {
+        title: "Pomažemo vam i prije nego počnete:",
+        description:
+          "Besplatno savjetovanje kod vas kući <br>Pomoć s prijavama za socijalnu pomoć <br>Postupno uvođenje u vašem ritmu <br> Porodični razgovori",
+      },
+      service5: {
+        title: "Kako funkcioniše:",
+        description:
+          "Kontaktirajte nas (telefon ili email) <br>Besplatna posjeta kod kuće <br>Pomoć s prijavom za socijalnu pomoć <br>Izbor osoblja <br>Meki početak",
+      },
+      service6: {
+        title: "Radno vrijeme i dostupnost",
+        description:
+          "Uslužne aktivnosti: pon–ned 07:00–22:00 <br>Aktivnosti njege: prema odluci o socijalnoj pomoći <br>Hitni telefon: uvijek dostupan <br>Planiranje: fleksibilno prema vašim željama",
+      },
+      service7: {
+        title: "Troškovi i plaćanje",
+        description:
+          "Kućnu njegu finansira Općina Örebro <br> Maksimalna cijena: 2.642 SEK/mjesečno (2025.) <br> Cijena je ista bez obzira da li birate općinsku ili privatnu njegu <br> Dodatno: kućne usluge uz RUT odbitak",
+      },
+      service8: {
+        title: "Kvaliteta i sigurnost",
+        description:
+          "Odobreni od Općine Örebro <br> Osoblje s identifikacijskim karticama <br> Povjerljivost i zaštita integriteta <br> Potpuno osiguranje <br> Redovno praćenje kvalitete",
+      },
+    },
+    whyAlirio: {
+      title: "Zašto izabrati Alirio Care?",
+      description:
+        "Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.",
+      statistics: {
+        description: "Usluga pruženih usluga godišnje",
+      },
+      statistics2: {
+        description: "Posvećenost korisnicima",
+      },
+      statistics3: {
+        description: "Godina iskustva",
+      },
+      statistics4: {
+        description: "Zadovoljnih korisnika",
+      },
+    },
+  },
 } as const;
