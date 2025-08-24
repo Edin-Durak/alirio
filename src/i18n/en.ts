@@ -153,71 +153,71 @@ export const en = {
   },
   services: {
     hero: {
-      title: "Kućna njega u Alirio Omsorg",
-      heroCTA: "Pozovi Alirio Omsorg",
-      heroImgAlt: "Starija žena u naručju mlade žene",
+      title: "We provide more than care for you ",
+      heroCTA: "Call Alirio Omsorg",
+      heroImgAlt: "A woman in her 80s being helped by a younger woman",
     },
     services: {
-      preTitle: "Usluge",
-      title: "Kućna njega – potpuno prilagođena vama",
+      preTitle: "Services",
+      title: "How do you apply for home care?",
       description:
-        "Radimo na osnovu IBIC modela (Potrebe individue u centru), razvijenog od strane Nacionalnog odbora za zdravstvo i socijalnu skrb.",
+        "We help you so that you can stay at home and feel safe in your everyday life.",
       service1: {
-        title: "Lična njega",
+        title: "How do you apply for home care?",
         description:
-          "Pomoć s ličnom higijenom i tušem <br> Podrška pri oblačenju i svlačenju <br> Pomoć s obrocima i lijekovima <br> Odlasci na toalet i pomoć pri inkontinenciji",
+          "Everyone who considers themselves in need of service, support and care has the right to seek assistance according to the Social Services Act. <br>To find out if you are entitled to home care, you must apply to your municipality's social services.",
       },
       service2: {
-        title: "Uslužne aktivnosti",
+        title: "Who can receive home care?",
         description:
-          "Čišćenje i kućni poslovi <br> Pranje i njega odjeće <br> Kupovina hrane i namirnica <br> Čišćenje prozora i jednostavni poslov.",
+          "It can be said that anyone who, due to illness, age or disability, is unable to perform their daily tasks themselves has the right to home care.",
       },
       service3: {
-        title: "Socijalna skrb",
+        title: "How many hours of home care can you get?",
         description:
-          "Društvo i razgovor <br> Praćenje do liječničkih posjeta <br> Pomoć s kontaktima s vlastima <br> Aktivnosti i šetnje",
+          "There is usually a maximum limit of 120 hours of home care per month. If more hours are needed than that, it may be time to move to a nursing home that can better meet your needs.",
       },
       service4: {
-        title: "Pomažemo vam i prije nego počnete:",
+        title: "What is aid assessment?",
         description:
-          "Besplatno savjetovanje kod vas kući <br>Pomoć s prijavama za socijalnu pomoć <br>Postupno uvođenje u vašem ritmu <br> Porodični razgovori",
+          "To receive home care, you need an assistance decision from a social assistance officer at your municipality. <br>The assistance officer will meet with you for a meeting where you will go over your daily life and any difficulties you are experiencing. After the meeting, the assistance officer will review your application and then make a decision.",
       },
       service5: {
-        title: "Kako funkcioniše:",
+        title: "How do I choose Alirio Care?",
         description:
-          "Kontaktirajte nas (telefon ili email) <br>Besplatna posjeta kod kuće <br>Pomoć s prijavom za socijalnu pomoć <br>Izbor osoblja <br>Meki početak",
+          "Send a request for an information meeting with us at Alirio Omsorg about home care. We will help you with changing providers and other questions.",
       },
       service6: {
-        title: "Radno vrijeme i dostupnost",
+        title: "Can I get a contact person?",
         description:
-          "Uslužne aktivnosti: pon–ned 07:00–22:00 <br>Aktivnosti njege: prema odluci o socijalnoj pomoći <br>Hitni telefon: uvijek dostupan <br>Planiranje: fleksibilno prema vašim željama",
+          " You will have your own contact person who will coordinate that your efforts are carried out according to your needs and wishes. The contact person will also be in contact with your relatives. The contact person is the link to other employees and will monitor if your needs change.",
       },
       service7: {
-        title: "Troškovi i plaćanje",
+        title: "Costs and payment",
         description:
-          "Kućnu njegu finansira Općina Örebro <br> Maksimalna cijena: 2.642 SEK/mjesečno (2025.) <br> Cijena je ista bez obzira da li birate općinsku ili privatnu njegu <br> Dodatno: kućne usluge uz RUT odbitak",
+          "The municipality of Örebro finances home care <br> Maximum price: 2,642 SEK/month (2025.) <br> The price is the same whether you choose municipal or private home care <br> Additional: home care with RUT deduction",
       },
       service8: {
-        title: "Kvaliteta i sigurnost",
+        title: "Quality and safety",
         description:
-          "Odobreni od Općine Örebro <br> Osoblje s identifikacijskim karticama <br> Povjerljivost i zaštita integriteta <br> Potpuno osiguranje <br> Redovno praćenje kvalitete",
+          "Approved by the municipality of Örebro <br> Staff with identification cards <br> Confidentiality and protection of integrity <br> Complete insurance <br> Regular quality monitoring",
       },
     },
     whyAlirio: {
-      title: "Zašto izabrati Alirio Care?",
+      title: "Why choose Alirio Care?",
       description:
-        "Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.",
+        "Here write some text that closely describes why users should definitely choose the Alirio home care service, without too much text. Clear and decisive.",
       statistics: {
-        description: "Usluga pruženih usluga godišnje",
+        description: "Annual service provided",
       },
       statistics2: {
-        description: "Posvećenost korisnicima",
+        description: "Customer satisfaction",
       },
       statistics3: {
-        description: "Godina iskustva",
+        description: "Years of experience",
       },
       statistics4: {
-        description: "Zadovoljnih korisnika",
+        description: "Satisfied customers",
       },
     },
   },

@@ -7,6 +7,11 @@ import arrowRightIcon from '../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../assets/images/service-hero-img.jpg';
 import linesImage from '../assets/images/lines-img.jpg';
 import '../styles/main.scss';
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+
+// Get current language and translations
+const lang = 'en';
+const { content } = getTranslations(lang);
 ---
 
 <Layout 
@@ -21,9 +26,9 @@ import '../styles/main.scss';
     <section class="hero-section" aria-labelledby="services-hero-title">
       <div class="container">
         <div class="-hero-section__inner">
-          <h1 class="hero-section__title" id="services-hero-title">Home care at Alirio Omsorg</h1>
+          <h1 class="hero-section__title" id="services-hero-title">{content.services.hero.title}</h1>
           <a href="/alirio/" class="hero-section__button">
-            Call Alirio Omsorg
+            {content.services.hero.heroCTA}
             <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" class="hero-section__button-icon" />
           </a>
 
@@ -36,75 +41,69 @@ import '../styles/main.scss';
 
     <section class="services-section" aria-labelledby="services-title">
       <div class="services-section__inner container">
-        <span class="services-section__pre-title">Services</span>
+        <span class="services-section__pre-title">{content.services.services.preTitle}</span>
         <h2 class="services-section__title" id="services-title">
-            How do you apply for home care?
+            {content.services.services.title}
         </h2>
-        <p class="services-section__description">We help you so that you can stay at home and feel safe in your everyday life.</p>
+        <p class="services-section__description">{content.services.services.description}</p>
         <div class="services-grid">
           <div class="service-card">
 
-            <h3 class="service-card__title">How do you apply for home care?</h3>
-            <p class="service-card__description">
-                Everyone who considers themselves in need of service, support and care has the right to seek assistance according to the Social Services Act. 
+            <h3 class="service-card__title">{content.services.services.service1.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service1.description}>               
             </p>
-            <p class="service-card__description">To find out if you are entitled to home care, you must apply to your municipality's social services.</p>
+
           </div>
 
           <div class="service-card">
 
-            <h3 class="service-card__title">Who can receive home care?</h3>
-            <p class="service-card__description">
-                It can be said that anyone who, due to illness, age or disability, is unable to perform their daily tasks themselves has the right to home care.
-            </p>
-          </div>
-
-          <div class="service-card">
-
-            <h3 class="service-card__title">How many hours of home care can you get?</h3>
-            <p class="service-card__description">
-                There is usually a maximum limit of 120 hours of home care per month. If more hours are needed than that, it may be time to move to a nursing home that can better meet your needs.
+            <h3 class="service-card__title">{content.services.services.service2.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service2.description}>
+                
             </p>
           </div>
 
           <div class="service-card">
 
-            <h3 class="service-card__title">What is aid assessment?</h3>
-            <p class="service-card__description">
-                To receive home care, you need an assistance decision from a social assistance officer at your municipality.
-            </p>
-            <p class="service-card__description">
-                The assistance officer will meet with you for a meeting where you will go over your daily life and any difficulties you are experiencing. After the meeting, the assistance officer will review your application and then make a decision.
+            <h3 class="service-card__title">{content.services.services.service3.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service3.description}>
+                
             </p>
           </div>
 
           <div class="service-card">
 
-            <h3 class="service-card__title">How do I choose Alirio Care?</h3>
-            <p class="service-card__description">
-                Send a request for an information meeting with us at Alirio Omsorg about home care. We will help you with changing providers and other questions.
+            <h3 class="service-card__title">{content.services.services.service4.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service4.description}>
+                
+            </p>
+            
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service5.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service5.description}>
+                
             </p>
           </div>
 
           <div class="service-card">
 
-            <h3 class="service-card__title">Can I get a contact person?</h3>
-            <p class="service-card__description">
-            You will have your own contact person who will coordinate that your efforts are carried out according to your needs and wishes. The contact person will also be in contact with your relatives. The contact person is the link to other employees and will monitor if your needs change.
+            <h3 class="service-card__title">{content.services.services.service6.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service6.description}>                
             </p>
           </div>
-          <div class="service-card">
+		  <div class="service-card">
 
-            <h3 class="service-card__title">Can I get a contact person?</h3>
-            <p class="service-card__description">
-            You will have your own contact person who will coordinate that your efforts are carried out according to your needs and wishes. The contact person will also be in contact with your relatives. The contact person is the link to other employees and will monitor if your needs change.
+            <h3 class="service-card__title">{content.services.services.service7.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service7.description}>                
             </p>
           </div>
-          <div class="service-card">
+		  <div class="service-card">
 
-            <h3 class="service-card__title">Can I get a contact person?</h3>
-            <p class="service-card__description">
-            You will have your own contact person who will coordinate that your efforts are carried out according to your needs and wishes. The contact person will also be in contact with your relatives. The contact person is the link to other employees and will monitor if your needs change.
+            <h3 class="service-card__title">{content.services.services.service8.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service8.description}>                
             </p>
           </div>
         </div>
@@ -114,29 +113,28 @@ import '../styles/main.scss';
     <section class="why-choose-us-section" aria-labelledby="why-choose-us-title">
       <div class="container">
         <div class="why-choose-us-section__inner">
-          <h2 class="why-choose-us-section__title">Why choose Alirio Care?</h2>
-          <p class="why-choose-us-section__description">Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.</p>
+          <h2 class="why-choose-us-section__title">{content.services.whyAlirio.title}</h2>
+          <p class="why-choose-us-section__description">{content.services.whyAlirio.description}</p>
           <div class="why-choose-us-section__content">
             <div class="why-choose-us-section__statistics">
                 <div class="why-choose-us-section__statistics-item">
                     <span class="why-choose-us-section__statistics-item-number">400+</span>
-                    <h3 class="why-choose-us-section__statistics-item-title">Global customers</h3>
-                    <p class="why-choose-us-section__statistics-item-description">We’ve helped over 4,000 amazing global companies.</p>
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics.description}</p>
                 </div>
                 <div class="why-choose-us-section__statistics-item">
                     <span class="why-choose-us-section__statistics-item-number">101%</span>
-                    <h3 class="why-choose-us-section__statistics-item-title">Return on investment</h3>
-                    <p class="why-choose-us-section__statistics-item-description">All our customers are satisfied, see reviews.</p>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics2.description}</p>
                 </div>
                 <div class="why-choose-us-section__statistics-item">
                     <span class="why-choose-us-section__statistics-item-number">35</span>
-                    <h3 class="why-choose-us-section__statistics-item-title">Global customers</h3>
-                    <p class="why-choose-us-section__statistics-item-description">Our app has been downloaded over 10k times.</p>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics3.description}</p>
                 </div>
                 <div class="why-choose-us-section__statistics-item">
                     <span class="why-choose-us-section__statistics-item-number">95+</span>
-                    <h3 class="why-choose-us-section__statistics-item-title">5-star reviews</h3>
-                    <p class="why-choose-us-section__statistics-item-description">We’re proud of our 5-star rating with over 200 reviews.</p>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics4.description}</p>
                 </div>
             </div>
             <div class="why-choose-us-section__image">
