@@ -6,48 +6,32 @@ import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
 import '../styles/main.scss';
 
-// Simple and direct language detection for 404 pages
+// Simple language detection: check what comes after /alirio/
 const urlPath = Astro.url.pathname;
 console.log('404 Page - Full URL path:', urlPath);
 
-// Direct URL pattern matching - most reliable method
+// Extract the segment after /alirio/
+const segments = urlPath.split('/').filter(segment => segment);
+console.log('404 Page - URL segments:', segments);
+
 let detectedLang = 'en';
 
-if (urlPath.includes('/sv/')) {
-  detectedLang = 'sv';
-  console.log('404 Page - Detected Swedish from URL pattern');
-} else if (urlPath.includes('/bs/')) {
-  detectedLang = 'bs';
-  console.log('404 Page - Detected Bosnian from URL pattern');
-} else if (urlPath.includes('/ar/')) {
-  detectedLang = 'ar';
-  console.log('404 Page - Detected Arabic from URL pattern');
-} else if (urlPath.includes('/ku/')) {
-  detectedLang = 'ku';
-  console.log('404 Page - Detected Kurdish from URL pattern');
-} else if (urlPath.includes('/sy/')) {
-  detectedLang = 'sy';
-  console.log('404 Page - Detected Syriac from URL pattern');
+// Check if first segment is 'alirio' and second segment is a language code
+if (segments[0] === 'alirio' && segments.length > 1) {
+  const languageSegment = segments[1];
+  console.log('404 Page - Language segment after alirio:', languageSegment);
+  
+  if (languageSegment === 'sv' || languageSegment === 'bs' || 
+      languageSegment === 'ar' || languageSegment === 'ku' || languageSegment === 'sy') {
+    detectedLang = languageSegment;
+    console.log('404 Page - Detected language:', detectedLang);
+  } else {
+    console.log('404 Page - No valid language code found, using English');
+  }
 } else {
-  console.log('404 Page - No language pattern found, defaulting to English');
+  console.log('404 Page - No alirio base path or no language segment, using English');
 }
 
-console.log('404 Page - Final detected language:', detectedLang);
-
-const lang = detectedLang;
-console.log('404 Page - Before getTranslations, lang:', lang);
-
-try {
-  const { ui, content } = getTranslations(lang);
-  console.log('404 Page - getTranslations successful, ui keys:', Object.keys(ui));
-} catch (error) {
-  console.error('404 Page - getTranslations failed:', error);
-  // Fallback to English if getTranslations fails
-  detectedLang = 'en';
-}
-
-// Debug: Log the detected language and URL for troubleshooting
-console.log('404 Page - Current URL:', Astro.url.pathname);
 console.log('404 Page - Final detected language:', detectedLang);
 
 // 404 page content translations
