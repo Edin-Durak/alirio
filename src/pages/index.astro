@@ -158,10 +158,10 @@ const { content } = getTranslations(lang);
 						</div>
 						<div class="our-benefits-section__item-content">
 							<h3 class="our-benefits-section__item-title">
-								No stress
+								{content.home.benefits.noStress.title}
 							</h3>
 							<p class="our-benefits-section__item-description">
-								Hesitant? We're happy to have a coffee first with no obligations, also a bit of text wouldn’t hurt
+								{content.home.benefits.noStress.description}
 							</p>
 						</div>
 					</div>
@@ -288,8 +288,8 @@ const { content } = getTranslations(lang);
 					<div class="customer-testimonial-section__review">
 						<Image src={quoteIcon} alt="Quote icon" width={42.28} height={34.3} loading={'lazy'} />
 
-						<h2 class="customer-testimonial-section__review-title">Thank you, Alirio, for making a difference  every single day.”</h2>
-						<p class="customer-testimonial-section__review-text">“Alirio has been a blessing for our family. The level of care, compassion, and professionalism they provide is something truly special. From the very beginning, the staff made us feel welcome and supported”</p>
+						<h2 class="customer-testimonial-section__review-title">{content.home.testimonials.quote}"</h2>
+						<p class="customer-testimonial-section__review-text">{content.home.testimonials.text}</p>
 					</div>
 					<div class="customer-testimonial-section__image">
 						<Image src={customerTestimonialImage} alt="Customer testimonial image" class="customer-testimonial-section__image-img" width={598} height={399} loading={'lazy'} />
@@ -297,10 +297,10 @@ const { content } = getTranslations(lang);
 						<div class="customer-testimonial-section__customer-info">
 
 							<h3 class="customer-testimonial-section__customer-info-name">
-								John Doe
+								{content.home.testimonials.author}
 							</h3>
 							<p class="customer-testimonial-section__customer-info-title">
-								CEO & Founder
+								{content.home.testimonials.jobTitle}
 							</p>
 						</div>
 					</div>
@@ -320,11 +320,13 @@ const { content } = getTranslations(lang);
 					</div>
 				
 				<h2 class="still-have-questions-section__title" id="still-have-questions-title">
-					Still have questions?
+					{content.home.questions.title}
 				</h2>
-				<p class="still-have-questions-section__description">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
+				<p class="still-have-questions-section__description">
+					{content.home.questions.description}
+				</p>
 				<a href="#" class="still-have-questions-section__button">
-					Talk to us
+					{content.home.questions.button}
 				</a>
 				</div>
 			</div>
