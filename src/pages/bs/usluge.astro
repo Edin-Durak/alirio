@@ -1,0 +1,362 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import heroImagePlaceholder from '../../assets/images/hero-img.webp';
+import heroImage from '../../assets/images/hero-img.png';
+import heroLineIcon from '../../assets/images/icons/hero-line-icon.svg';
+import folderIcon from '../../assets/images/icons/folder-icon.svg';
+import boardIcon from '../../assets/images/icons/board-icon.svg';
+import chartIconOne from '../../assets/images/icons/chart-one-icon.svg';
+import chartIconTwo from '../../assets/images/icons/chart-two-icon.svg';
+import archiveIcon from '../../assets/images/icons/archive-icon.svg';
+import peopleIcon from '../../assets/images/icons/people-icon.svg';
+import mirzaImage from '../../assets/images/mirza-img.webp';
+import ulfImage from '../../assets/images/ulf-img.webp';
+import kaniImage from '../../assets/images/kani-img.jpg';
+import serviceCardImage from '../../assets/images/service-card-img.webp';
+import arrowUpIcon from '../../assets/images/icons/arrow-up-right-icon.svg';
+import arrowUpHoverIcon from '../../assets/images/icons/arrow-up-right-hover-icon.svg';
+import customerTestimonialImage from '../../assets/images/customer-testimonial-img.webp';
+import quoteIcon from '../../assets/images/icons/quote-icon.svg';
+import FAQ from '../../components/FAQ.astro';
+import mirzaAvatarImage from '../../assets/images/mirza-avatar-img.webp';
+import ulfAvatarImage from '../../assets/images/ulf-avatar-img.webp';
+import kaniAvatarImage from '../../assets/images/kani-avatar-img.webp';
+import { getTranslations, getLangFromUrl } from '../../i18n/ui';
+
+import '../../styles/main.scss';
+
+// Get current language and translations
+const lang = 'bs';
+const { content } = getTranslations(lang);
+---
+
+<Layout>
+	<Header />
+	<main class="main-home-page">
+		<section class="hero-section" aria-labelledby="hero-title">
+			<div class="hero-section__inner container">
+				<div class="hero-section__content">
+					<h1 class="hero-section__title" id="hero-title ">
+						{content.home.hero.title}
+					</h1>
+					<p class="hero-section__description">
+						{content.home.hero.description}
+					</p>
+					<div class="hero-statistics">
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								150+
+							</span>
+							<span class="hero-statistics__text" set:html={content.home.hero.stats.residents}>
+								
+							</span>
+						</div>
+						<Image src={heroLineIcon} alt="Line icon" width={20} height={40} class="hero-statistics__line-icon" />
+						<div class="hero-statistics__item">
+							<span class="hero-statistics__number">
+								154
+							</span>
+							<span class="hero-statistics__text" set:html={content.home.hero.stats.hearts}>
+								
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="hero-section__image">
+					<Image 
+						id="hero-image" 
+						src={heroImagePlaceholder} 
+						alt="Old man and young woman" 
+						loading={'eager'} 
+						width={597} 
+						height={647} 
+						data-actual-src={heroImage.src}
+					/>
+				</div>
+		</section>
+
+		<section class="our-benefits-section" aria-labelledby="our-benefits-title">
+			<div class="our-benefits-section__inner container">
+				<h2 class="our-benefits-section__title" id="our-benefits-title">
+					{content.home.benefits.title}
+				</h2>
+				<h3 class="our-benefits-section__subtitle">
+					{content.home.benefits.subtitle}				
+				</h3>
+
+				<div class="our-benefits-section__content">
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={peopleIcon} alt="people icon" width={51} height={45} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.rehabilitative.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.rehabilitative.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconOne} alt="chart icon" width={44} height={44} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.closeness.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.closeness.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={boardIcon} alt="board icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.multilingual.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.multilingual.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={archiveIcon} alt="archive icon" width={40} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.support.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.support.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={folderIcon} alt="folder icon" width={44} height={40} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.abilities.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.abilities.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-benefits-section__item">
+						<div class="our-benefits-section__item-icon">
+							<Image src={chartIconTwo} alt="chart icon" width={42} height={42} loading={'lazy'} />
+						</div>
+						<div class="our-benefits-section__item-content">
+							<h3 class="our-benefits-section__item-title">
+								{content.home.benefits.noStress.title}
+							</h3>
+							<p class="our-benefits-section__item-description">
+								{content.home.benefits.noStress.description}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="meet-the-team-section" aria-labelledby="meet-our-team-title">
+			<div class="meet-the-team-section__inner container">
+				<h2 class="meet-the-team-section__title" id="meet-our-team-title">
+					{content.home.team.title}
+				</h2>
+				<h3 class="meet-the-team-section__subtitle">
+					{content.home.team.subtitle}
+				</h3>
+				<div class="meet-the-team-section__content">
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={kaniImage} alt="Kani - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-one">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.kani.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.kani.role}
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirzaImage} alt="Mirza - team member" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-two">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.mirza.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.mirza.role}
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card">
+						<div class="meet-the-team-section__card-image">
+							<Image src={ulfImage} alt="Ulf - team member" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.ulf.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.ulf.role}
+							</p>
+						</div>
+					</div>										
+				</div>
+			</div>
+		</section>
+
+		<section class="our-services-section" aria-labelledby="our-services-title">
+			<div class="our-services-section__inner container">
+				<h2 class="our-services-section__title" id="our-services-title">
+					{content.home.services.title}
+				</h2>
+				<h3 class="our-services-section__subtitle">
+					{content.home.services.subtitle}
+				</h3>
+				<div class="our-services-section__content">
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								{content.home.services.service1.title}
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								{content.home.services.service1.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								{content.home.services.service2.title}
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								{content.home.services.service2.description}
+							</p>
+						</div>
+					</div>
+					<div class="our-services-section__card">
+						<div class="our-services-section__card-image">
+							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+						</div>
+						<div class="our-services-section__card-content">
+							<h3 class="our-services-section__card-title">
+								{content.home.services.service3.title}
+								<Image src={arrowUpIcon} alt="Arrow up icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-icon']} />
+								<Image src={arrowUpHoverIcon} alt="Arrow up hover icon" width={24} height={24} loading={'lazy'} class:list={['arrow-up-hover-icon']} />
+							</h3>
+							<p class="our-services-section__card-description">
+								{content.home.services.service3.description}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="customer-testimonial-section" aria-labelledby="customer-testimonial-title">
+			<div class="customer-testimonial-section__inner container">
+				<h2  id="customer-testimonial-title" hidden>
+					{content.home.testimonials.title}
+				</h2>
+				<div class="customer-testimonial-section__content">
+					<div class="customer-testimonial-section__review">
+						<Image src={quoteIcon} alt="Quote icon" width={42.28} height={34.3} loading={'lazy'} />
+
+						<h2 class="customer-testimonial-section__review-title">
+							{content.home.testimonials.quote}
+						</h2>
+						<p class="customer-testimonial-section__review-text">
+							{content.home.testimonials.text}
+						</p>
+					</div>
+					<div class="customer-testimonial-section__image">
+						<Image src={customerTestimonialImage} alt="Customer testimonial image" class="customer-testimonial-section__image-img" width={598} height={399} loading={'lazy'} />
+
+						<div class="customer-testimonial-section__customer-info">
+
+							<h3 class="customer-testimonial-section__customer-info-name">
+								{content.home.testimonials.author}
+							</h3>
+							<p class="customer-testimonial-section__customer-info-title">
+								{content.home.testimonials.jobTitle}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<FAQ />
+
+		<section class="still-have-questions-section" aria-labelledby="still-have-questions-title">
+			<div class="still-have-questions-section__inner container">
+				<div class="still-have-questions-section__content">
+					<div class="still-have-questions-section__images">
+						<Image src={ulfAvatarImage} alt="Ulf avatar" width={48} height={48} loading={'lazy'} class:list={['image-one']} />
+						<Image src={mirzaAvatarImage} alt="Mirza avatar" width={48} height={48} loading={'lazy'} class:list={['image-two']} />
+						<Image src={kaniAvatarImage} alt="Kani avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
+					</div>
+				
+				<h2 class="still-have-questions-section__title" id="still-have-questions-title">
+					{content.home.contact.title}
+				</h2>
+				<p class="still-have-questions-section__description">
+					{content.home.contact.description}
+				</p>
+				<a href="#" class="still-have-questions-section__button">
+					{content.home.contact.button}
+				</a>
+				</div>
+			</div>
+		</section>
+		<!-- Your main content will go here -->
+	</main>
+	<Footer />
+</Layout>
+
+<script>
+	// Hero image swap for faster loading
+	document.addEventListener('DOMContentLoaded', () => {
+		const heroImageElement = document.getElementById('hero-image');
+		if (heroImageElement) {
+			const actualSrc = heroImageElement.getAttribute('data-actual-src');
+			if (actualSrc) {
+				// Preload the actual hero image
+				const actualImage = new Image();
+				actualImage.onload = () => {
+									// Swap the src when the actual image is loaded
+				(heroImageElement as HTMLImageElement).src = actualImage.src;
+				};
+				actualImage.src = actualSrc;
+			}
+		}
+	});
+</script>
