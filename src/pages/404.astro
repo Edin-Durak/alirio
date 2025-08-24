@@ -2,7 +2,6 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import { Image } from "astro:assets";
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
 import '../styles/main.scss';
@@ -36,11 +35,20 @@ if (urlPath.includes('/sv/')) {
 console.log('404 Page - Final detected language:', detectedLang);
 
 const lang = detectedLang;
-const { ui, content } = getTranslations(lang);
+console.log('404 Page - Before getTranslations, lang:', lang);
+
+try {
+  const { ui, content } = getTranslations(lang);
+  console.log('404 Page - getTranslations successful, ui keys:', Object.keys(ui));
+} catch (error) {
+  console.error('404 Page - getTranslations failed:', error);
+  // Fallback to English if getTranslations fails
+  detectedLang = 'en';
+}
 
 // Debug: Log the detected language and URL for troubleshooting
 console.log('404 Page - Current URL:', Astro.url.pathname);
-console.log('404 Page - Detected language:', lang);
+console.log('404 Page - Final detected language:', detectedLang);
 
 // 404 page content translations
 const errorContent = {
@@ -70,7 +78,9 @@ const errorContent = {
   }
 };
 
-const currentContent = errorContent[lang] || errorContent.en;
+const currentContent = errorContent[detectedLang] || errorContent.en;
+console.log('404 Page - Selected content for language:', detectedLang);
+console.log('404 Page - Content title:', currentContent.title);
 ---
 
 <Layout title={currentContent.title} description={currentContent.description}>
