@@ -4,35 +4,46 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
-const { ui } = getTranslations(lang);
+const { ui, content } = getTranslations(lang);
 
-// Get current page path
-const currentPath = Astro.url.pathname;
+// Define navigation structure
+const navItems = [
+  { key: 'nav.home', route: content.routes.home },
+  { key: 'nav.services', route: content.routes.services },
+  { key: 'nav.pricing', route: content.routes.pricing },
+  { key: 'nav.about', route: content.routes.about }
+];
+
+// Generate URLs for current language
+const navLinks = navItems.map(item => ({
+  ...item,
+  href: getRelativeLocaleUrl(lang, item.route),
+  text: ui[item.key]
+}));
+
+// Logo link
+const logoHref = getRelativeLocaleUrl(lang, 'index');
 ---
 
 <header class="header">
   <div class="header__container">
-    <a href="/" class="header__logo-link">
+    <a href={logoHref} class="header__logo-link">
       <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" />
     </a>
     
     <nav class="header__nav">
       <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__nav-link--active' : ''}`}>{ui['nav.home']}</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/services" class={`header__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__nav-link--active' : ''}`}>{ui['nav.services']}</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/pricing" class="header__nav-link">{ui['nav.pricing']}</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/about" class="header__nav-link">{ui['nav.about']}</a>
-        </li>
+        {navLinks.map(link => (
+          <li class="header__nav-item">
+            <a href={link.href} class={`header__nav-link ${Astro.url.pathname === link.href ? 'header__nav-link--active' : ''}`}>
+              {link.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
     
@@ -59,18 +70,13 @@ const currentPath = Astro.url.pathname;
       
       <nav class="header__mobile-nav-menu">
         <ul class="header__mobile-nav-list">
-          <li class="header__mobile-nav-item">
-            <a href="/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>{ui['nav.home']}</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__mobile-nav-link--active' : ''}`}>{ui['nav.services']}</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/pricing" class="header__mobile-nav-link">{ui['nav.pricing']}</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/about" class="header__mobile-nav-link">{ui['nav.about']}</a>
-          </li>
+          {navLinks.map(link => (
+            <li class="header__mobile-nav-item">
+              <a href={link.href} class={`header__mobile-nav-link ${Astro.url.pathname === link.href ? 'header__mobile-nav-link--active' : ''}`}>
+                {link.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

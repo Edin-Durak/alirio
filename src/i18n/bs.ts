@@ -1,4 +1,10 @@
 export const bs = {
+  routes: {
+    home: "",
+    services: "usluge",
+    pricing: "cijene",
+    about: "o-nama",
+  },
   home: {
     // Hero Section
     hero: {

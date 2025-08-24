@@ -1,4 +1,10 @@
 export const en = {
+  routes: {
+    home: "",
+    services: "services",
+    pricing: "pricing",
+    about: "about",
+  },
   home: {
     // Hero Section
     hero: {
