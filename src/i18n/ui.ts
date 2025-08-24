@@ -48,7 +48,7 @@ export const ui = {
     "footer.privacy": "Politika privatnosti",
   },
   sv: {
-    "nav.home": "Start",
+    "nav.home": "Hem",
     "nav.services": "Tjänster",
     "nav.pricing": "Priser",
     "nav.about": "Om Alirio",

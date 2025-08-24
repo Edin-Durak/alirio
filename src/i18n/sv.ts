@@ -144,71 +144,71 @@ export const sv = {
   },
   services: {
     hero: {
-      title: "We provide more than care for you ",
-      heroCTA: "Call Alirio Omsorg",
-      heroImgAlt: "A woman in her 80s being helped by a younger woman",
+      title: "Hemsjukvård på Alirio Omsorg",
+      heroCTA: "Kontakta Alirio Omsorg",
+      heroImgAlt: "En kvinna i 80-årsåldern som hjälps av en yngre kvinna",
     },
     services: {
-      preTitle: "Services",
-      title: "How do you apply for home care?",
+      preTitle: "Tjänster",
+      title: "Hemvård – helt anpassad efter dig",
       description:
-        "We help you so that you can stay at home and feel safe in your everyday life.",
+        "Vi arbetar utifrån IBIC-modellen (Individual Needs Centered), utvecklad av Socialstyrelsen.",
       service1: {
-        title: "How do you apply for home care?",
+        title: "Personlig vård",
         description:
-          "Everyone who considers themselves in need of service, support and care has the right to seek assistance according to the Social Services Act. <br>To find out if you are entitled to home care, you must apply to your municipality's social services.",
+          "Hjälp med personlig hygien och <br> duschning, Stöd med på- och <br> avklädning, Hjälp med måltider och <br> medicinering, Toalettbesök och <br> inkontinenshjälp.",
       },
       service2: {
-        title: "Who can receive home care?",
+        title: "Serviceverksamhet",
         description:
-          "It can be said that anyone who, due to illness, age or disability, is unable to perform their daily tasks themselves has the right to home care.",
+          "Städning och hushållsarbete <br> Tvättning och vård av kläder <br> Inköp av mat och dagligvaror <br> Fönsterputsning och enklare sysslor",
       },
       service3: {
-        title: "How many hours of home care can you get?",
+        title: "Social omsorg",
         description:
-          "There is usually a maximum limit of 120 hours of home care per month. If more hours are needed than that, it may be time to move to a nursing home that can better meet your needs.",
+          "Samhälle och samtal <br> Uppföljning av läkarbesök <br> Hjälp med myndighetskontakter <br> Aktiviteter och promenader",
       },
       service4: {
-        title: "What is aid assessment?",
+        title: "Vi hjälper dig redan innan du börjar:",
         description:
-          "To receive home care, you need an assistance decision from a social assistance officer at your municipality. <br>The assistance officer will meet with you for a meeting where you will go over your daily life and any difficulties you are experiencing. After the meeting, the assistance officer will review your application and then make a decision.",
+          "Gratis konsultation hemma hos dig <br> Hjälp med ansökningar om socialbidrag <br> Gradvis introduktion i din egen takt <br> Familjesamtal",
       },
       service5: {
-        title: "How do I choose Alirio Care?",
+        title: "Hur det fungerar:",
         description:
-          "Send a request for an information meeting with us at Alirio Omsorg about home care. We will help you with changing providers and other questions.",
+          "Kontakta oss (telefon eller e-post) <br> Kostnadsfritt hembesök <br> Hjälp med att ansöka om socialbidrag <br> Personalval <br> Mjukstart",
       },
       service6: {
-        title: "Can I get a contact person?",
+        title: "Öppettider och tillgänglighet",
         description:
-          " You will have your own contact person who will coordinate that your efforts are carried out according to your needs and wishes. The contact person will also be in contact with your relatives. The contact person is the link to other employees and will monitor if your needs change.",
+          " Serviceverksamhet: mån–sön 07:00–22:00 <br> Vårdverksamhet: enligt beslut om socialbidrag <br> Nödtelefon: alltid tillgänglig <br> Planering: flexibel enligt dina önskemål",
       },
       service7: {
-        title: "Costs and payment",
+        title: "Kostnader och betalning",
         description:
-          "The municipality of Örebro finances home care <br> Maximum price: 2,642 SEK/month (2025.) <br> The price is the same whether you choose municipal or private home care <br> Additional: home care with RUT deduction",
+          "Hemtjänst finansieras av Örebro kommun <br> Maximalt pris: 2 642 kr/månad (2025) <br> Priset är detsamma oavsett om du väljer kommunal eller privat vård <br> Dessutom: hemtjänst med RUT-avdrag",
       },
       service8: {
-        title: "Quality and safety",
+        title: "Kvalitet och säkerhet",
         description:
-          "Approved by the municipality of Örebro <br> Staff with identification cards <br> Confidentiality and protection of integrity <br> Complete insurance <br> Regular quality monitoring",
+          "Godkänd av Örebro kommun <br> Personal med legitimation <br> Sekretess- och integritetsskydd <br> Fullständig försäkring <br> Regelbunden kvalitetsövervakning",
       },
     },
     whyAlirio: {
-      title: "Why choose Alirio Care?",
+      title: "Varför välja Alirio Care?",
       description:
-        "Here write some text that closely describes why users should definitely choose the Alirio home care service, without too much text. Clear and decisive.",
+        "Skriv lite text här som noggrant beskriver varför användare bör välja Alirios hemtjänst, utan för mycket text. Tydlig och beslutsam.",
       statistics: {
-        description: "Annual service provided",
+        description: "Tjänstgöring tillhandahålls årligen",
       },
       statistics2: {
-        description: "Customer satisfaction",
+        description: "engagemang gentemot användare",
       },
       statistics3: {
-        description: "Years of experience",
+        description: "Ett års erfarenhet inom vård och omsorg",
       },
       statistics4: {
-        description: "Satisfied customers",
+        description: "nöjda användare",
       },
     },
   },
