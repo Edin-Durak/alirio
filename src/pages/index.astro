@@ -178,9 +178,9 @@ const { content } = getTranslations(lang);
 					{content.home.team.subtitle}
 				</h3>
 				<div class="meet-the-team-section__content">
-					<a href="/om-oss#team-mirva" class="meet-the-team-section__card meet-the-team-section__card--link">
+					<a href="/om-oss" data-team="mirva" class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
-							<Image src={mirvaImage} alt="Kani - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+							<Image src={mirvaImage} alt="Mirva - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
 						</div>
 						<div class="meet-the-team-section__card-content content-one">
 							<h3 class="meet-the-team-section__card-title">
@@ -191,7 +191,7 @@ const { content } = getTranslations(lang);
 							</p>
 						</div>
 					</a>
-					<a href="/om-oss#team-mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
+					<a href="/om-oss" data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
 							<Image src={mirzaImage} alt="Mirza - team member" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
 						</div>
@@ -204,7 +204,7 @@ const { content } = getTranslations(lang);
 							</p>
 						</div>
 					</a>
-					<a href="/om-oss#team-ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
+					<a href="/om-oss" data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
 							<Image src={ulfImage} alt="Ulf - team member" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
 						</div>
@@ -351,5 +351,28 @@ const { content } = getTranslations(lang);
 				actualImage.src = actualSrc;
 			}
 		}
+
+		// Handle team card navigation
+		const teamCards = document.querySelectorAll('.meet-the-team-section__card--link');
+		teamCards.forEach(card => {
+			card.addEventListener('click', (e) => {
+				e.preventDefault();
+				const teamMember = card.getAttribute('data-team');
+				const isMobile = window.innerWidth < 992;
+				
+				if (teamMember) {
+					if (isMobile) {
+						// For mobile/tablet: navigate with hash for scroll positioning
+						window.location.href = `/om-oss#team-${teamMember}`;
+					} else {
+						// For desktop: navigate without hash to avoid layout shift
+						window.location.href = `/om-oss`;
+						
+						// Store the team member in sessionStorage for desktop tab switching
+						sessionStorage.setItem('selectedTeamMember', teamMember);
+					}
+				}
+			});
+		});
 	});
 </script>

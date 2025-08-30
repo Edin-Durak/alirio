@@ -299,6 +299,9 @@ const { content } = getTranslations(lang);
       
       // Handle URL hash navigation
       this.handleHashNavigation();
+      
+      // Handle desktop navigation from home page
+      this.handleDesktopNavigation();
     }
 
     switchTab(selectedTab) {
@@ -322,10 +325,7 @@ const { content } = getTranslations(lang);
         activePanel.classList.add('about-team__panel--active');
       }
 
-      // Update URL hash for desktop
-      if (window.innerWidth >= 992) {
-        window.location.hash = `team-${targetPanel}`;
-      }
+      // Don't update URL hash on desktop to avoid layout shift
     }
 
     handleHashNavigation() {
@@ -334,19 +334,42 @@ const { content } = getTranslations(lang);
         const memberId = hash.replace('#', '');
         const memberName = memberId.replace('team-', '');
         
-        // For desktop: switch to the correct tab
+        // For desktop: switch to the correct tab without URL hash
         if (window.innerWidth >= 992) {
           const targetTab = document.querySelector(`[data-tab="${memberName}"]`);
           if (targetTab) {
             this.switchTab(targetTab);
           }
         } else {
-          // For mobile/tablet: scroll to the member
+          // For mobile/tablet: scroll to the member with header offset
           const targetMember = document.getElementById(memberId + '-mobile');
           if (targetMember) {
-            targetMember.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Get header height for offset
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 110;
+            
+            // Calculate scroll position with header offset
+            const elementTop = targetMember.offsetTop - headerHeight - 20; // 20px extra padding
+            
+            window.scrollTo({
+              top: elementTop,
+              behavior: 'smooth'
+            });
           }
         }
+      }
+    }
+
+    handleDesktopNavigation() {
+      // Check if we have a stored team member from home page navigation
+      const storedTeamMember = sessionStorage.getItem('selectedTeamMember');
+      if (storedTeamMember && window.innerWidth >= 992) {
+        const targetTab = document.querySelector(`[data-tab="${storedTeamMember}"]`);
+        if (targetTab) {
+          this.switchTab(targetTab);
+        }
+        // Clear the stored value
+        sessionStorage.removeItem('selectedTeamMember');
       }
     }
   }
