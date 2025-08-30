@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
+import kaniImage from '../assets/images/kani-img.jpg';
+import mirzaImage from '../assets/images/mirza-img.webp';
+import ulfImage from '../assets/images/ulf-img.webp';
 import '../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
@@ -39,32 +42,223 @@ const { content } = getTranslations(lang);
             </div>
           </article>
 
-          <article class="about-differences" aria-labelledby="about-differences-title">
-            <h2 class="about-differences__title" id="about-differences-title">What makes us different?</h2>
-            <ul class="about-differences__list">
-              <li class="about-differences__item">
-                The needs of the individual at the center - just like Örebro Municipality, we work on the basis that your needs and goals determine what kind of support you receive
-              </li>
-              <li class="about-differences__item">
-                Rehabilitation home care - we help you become stronger and more independent, what you can do yourself, you do it yourself
-              </li>
-              <li class="about-differences__item">
-                Genuine closeness - the same friendly faces who genuinely care about you
-              </li>
-              <li class="about-differences__item">
-                Multilingual staff - we speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English
-              </li>
-              <li class="about-differences__item">
-                Support from the start - we also help you with social assistance applications if you need to
-              </li>
-              <li class="about-differences__item">
-                Your right to decide - we listen to you and respect your right to decide for yourself
-              </li>
-              <li class="about-differences__item">
-                Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached
-              </li>
-            </ul>
-          </article>
+        <article class="about-differences" aria-labelledby="about-differences-title">
+             <h2 class="about-differences__title" id="about-differences-title">What makes us different?</h2>
+             <ul class="about-differences__list">
+               <li class="about-differences__item">
+                 The needs of the individual at the center - just like Örebro Municipality, we work on the basis that your needs and goals determine what kind of support you receive
+               </li>
+               <li class="about-differences__item">
+                 Rehabilitation home care - we help you become stronger and more independent, what you can do yourself, you do it yourself
+               </li>
+               <li class="about-differences__item">
+                 Genuine closeness - the same friendly faces who genuinely care about you
+               </li>
+               <li class="about-differences__item">
+                 Multilingual staff - we speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English
+               </li>
+               <li class="about-differences__item">
+                 Support from the start - we also help you with social assistance applications if you need to
+               </li>
+               <li class="about-differences__item">
+                 Your right to decide - we listen to you and respect your right to decide for yourself
+               </li>
+               <li class="about-differences__item">
+                 Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached
+               </li>
+             </ul>
+           </article>
+
+                       <article class="about-team" aria-labelledby="about-team-title">
+              <!-- Desktop Tabs -->
+              <div class="about-team__tabs about-team__tabs--desktop">
+                <button class="about-team__tab about-team__tab--active" data-tab="kani" aria-selected="true">
+                  <div class="about-team__tab-image">
+                    <Image src={kaniImage} alt="Kani" width={80} height={80} />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">Kani</h3>
+                    <p class="about-team__tab-role">Employee</p>
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="mirza" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={mirzaImage} alt="Mirza" width={80} height={80} />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">Mirza</h3>
+                    <p class="about-team__tab-role">Owner</p>
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="ulf" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={ulfImage} alt="Ulf" width={80} height={80} />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">Ulf</h3>
+                    <p class="about-team__tab-role">Employee</p>
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="haris" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <div class="about-team__tab-placeholder"></div>
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">Haris Kikic</h3>
+                    <p class="about-team__tab-role">Coordinator</p>
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="lejla" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <div class="about-team__tab-placeholder"></div>
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">Lejla</h3>
+                    <p class="about-team__tab-role">Employee</p>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Desktop Content -->
+              <div class="about-team__content about-team__content--desktop">
+                <div class="about-team__panel about-team__panel--active" data-panel="kani" id="team-kani">
+                  <div class="about-team__panel-image">
+                    <Image src={kaniImage} alt="Kani" width={120} height={120} />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">Kani</h3>
+                    <p class="about-team__panel-role">Employee</p>
+                    <div class="about-team__panel-description">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="mirza" id="team-mirza">
+                  <div class="about-team__panel-image">
+                    <Image src={mirzaImage} alt="Mirza" width={120} height={120} />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">Mirza</h3>
+                    <p class="about-team__panel-role">Owner</p>
+                    <div class="about-team__panel-description">
+                      <p>Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="ulf" id="team-ulf">
+                  <div class="about-team__panel-image">
+                    <Image src={ulfImage} alt="Ulf" width={120} height={120} />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">Ulf</h3>
+                    <p class="about-team__panel-role">Employee</p>
+                    <div class="about-team__panel-description">
+                      <p>Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="haris" id="team-haris">
+                  <div class="about-team__panel-image">
+                    <div class="about-team__panel-placeholder"></div>
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">Haris Kikic</h3>
+                    <p class="about-team__panel-role">Coordinator</p>
+                    <div class="about-team__panel-description">
+                      <p>Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="lejla" id="team-lejla">
+                  <div class="about-team__panel-image">
+                    <div class="about-team__panel-placeholder"></div>
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">Lejla</h3>
+                    <p class="about-team__panel-role">Employee</p>
+                    <div class="about-team__panel-description">
+                      <p>Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile/Tablet Stacked Layout -->
+              <div class="about-team__stacked about-team__stacked--mobile">
+                <div class="about-team__member" id="team-kani-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={kaniImage} alt="Kani" width={100} height={100} />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">Kani</h3>
+                    <p class="about-team__member-role">Employee</p>
+                    <div class="about-team__member-description">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-mirza-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={mirzaImage} alt="Mirza" width={100} height={100} />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">Mirza</h3>
+                    <p class="about-team__member-role">Owner</p>
+                    <div class="about-team__member-description">
+                      <p>Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-ulf-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={ulfImage} alt="Ulf" width={100} height={100} />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">Ulf</h3>
+                    <p class="about-team__member-role">Employee</p>
+                    <div class="about-team__member-description">
+                      <p>Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-haris-mobile">
+                  <div class="about-team__member-image">
+                    <div class="about-team__member-placeholder"></div>
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">Haris Kikic</h3>
+                    <p class="about-team__member-role">Coordinator</p>
+                    <div class="about-team__member-description">
+                      <p>Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-lejla-mobile">
+                  <div class="about-team__member-image">
+                    <div class="about-team__member-placeholder"></div>
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">Lejla</h3>
+                    <p class="about-team__member-role">Employee</p>
+                    <div class="about-team__member-description">
+                      <p>Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
         </div>
       </div>
     </section>
@@ -72,3 +266,92 @@ const { content } = getTranslations(lang);
 
   <Footer />
 </Layout>
+
+<script>
+  class TeamTabs {
+    /**
+     * @type {NodeList}
+     */
+    tabs;
+    
+    /**
+     * @type {NodeList}
+     */
+    panels;
+
+    constructor() {
+      this.tabs = document.querySelectorAll('.about-team__tab');
+      this.panels = document.querySelectorAll('.about-team__panel');
+      this.init();
+    }
+
+    init() {
+      this.tabs.forEach(tab => {
+        tab.addEventListener('click', () => this.switchTab(tab));
+      });
+      
+      // Handle URL hash navigation
+      this.handleHashNavigation();
+    }
+
+    switchTab(selectedTab) {
+      const targetPanel = selectedTab.dataset.tab;
+
+      // Update tab states
+      this.tabs.forEach(tab => {
+        tab.classList.remove('about-team__tab--active');
+        tab.setAttribute('aria-selected', 'false');
+      });
+      selectedTab.classList.add('about-team__tab--active');
+      selectedTab.setAttribute('aria-selected', 'true');
+
+      // Update panel states
+      this.panels.forEach(panel => {
+        panel.classList.remove('about-team__panel--active');
+      });
+      
+      const activePanel = document.querySelector(`[data-panel="${targetPanel}"]`);
+      if (activePanel) {
+        activePanel.classList.add('about-team__panel--active');
+      }
+
+      // Update URL hash for desktop
+      if (window.innerWidth >= 992) {
+        window.location.hash = `team-${targetPanel}`;
+      }
+    }
+
+    handleHashNavigation() {
+      const hash = window.location.hash;
+      if (hash) {
+        const memberId = hash.replace('#', '');
+        const memberName = memberId.replace('team-', '');
+        
+        // For desktop: switch to the correct tab
+        if (window.innerWidth >= 992) {
+          const targetTab = document.querySelector(`[data-tab="${memberName}"]`);
+          if (targetTab) {
+            this.switchTab(targetTab);
+          }
+        } else {
+          // For mobile/tablet: scroll to the member
+          const targetMember = document.getElementById(memberId + '-mobile');
+          if (targetMember) {
+            targetMember.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    }
+  }
+
+  // Initialize team tabs when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new TeamTabs();
+  });
+
+  // Handle hash changes
+  window.addEventListener('hashchange', () => {
+    const teamTabs = new TeamTabs();
+    teamTabs.handleHashNavigation();
+  });
+</script>

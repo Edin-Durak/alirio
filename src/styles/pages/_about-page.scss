@@ -102,4 +102,365 @@
       }
     }
   }
+
+  // About Team Section
+  .about-team {
+    background-color: $brand-red-100;
+    padding: $spacing-12;
+    border-radius: $rounded-lg;
+    margin-top: $spacing-14;
+
+    @include tablet {
+      padding: $spacing-8;
+      margin-top: $spacing-11;
+    }
+
+    @include mobile {
+      padding: $spacing-6;
+      margin-top: $spacing-11;
+    }
+
+    // Desktop Tabs (hidden on mobile/tablet)
+    &__tabs--desktop {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: $spacing-4;
+      margin-bottom: $spacing-8;
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    // Mobile/Tablet Stacked Layout (hidden on desktop)
+    &__stacked--mobile {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-8;
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-6;
+      }
+    }
+
+    &__tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: $spacing-4;
+      margin-bottom: $spacing-8;
+
+      @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-3;
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-2;
+      }
+    }
+
+    &__tab {
+      background-color: $white;
+      border: 2px solid transparent;
+      border-radius: $rounded;
+      padding: $spacing-4;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-2;
+
+      &:hover {
+        border-color: $brand-red-200;
+        transform: translateY(-2px);
+      }
+
+      &--active {
+        border-color: $brand-red;
+        background-color: $brand-red-50;
+      }
+
+      @include mobile {
+        padding: $spacing-3;
+      }
+    }
+
+    &__tab-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &__tab-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+      border-radius: 50%;
+    }
+
+    &__tab-info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-1;
+    }
+
+    &__tab-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__tab-role {
+      font-size: 0.75rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.625rem;
+      }
+    }
+
+    &__content {
+      position: relative;
+      min-height: 200px;
+
+      &--desktop {
+        @include tablet {
+          display: none;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+
+    &__panel {
+      display: none;
+      background-color: $white;
+      border-radius: $rounded;
+      padding: $spacing-8;
+      gap: $spacing-6;
+      align-items: flex-start;
+
+      @include tablet {
+        padding: $spacing-6;
+        gap: $spacing-4;
+      }
+
+      @include mobile {
+        padding: $spacing-4;
+        gap: $spacing-3;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &--active {
+        display: flex;
+      }
+    }
+
+    &__panel-image {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    &__panel-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+      border-radius: 50%;
+    }
+
+    &__panel-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-3;
+    }
+
+    &__panel-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__panel-role {
+      font-size: 1rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.875rem;
+      }
+    }
+
+    &__panel-description {
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $text-color-gray-600;
+        margin: 0;
+
+        @include mobile {
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    // Mobile/Tablet Member Cards
+    &__member {
+      background-color: $white;
+      border-radius: $rounded;
+      padding: $spacing-6;
+      display: flex;
+      gap: $spacing-4;
+      align-items: flex-start;
+
+      @include mobile {
+        padding: $spacing-4;
+        gap: $spacing-3;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    &__member-image {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+      }
+    }
+
+    &__member-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+      border-radius: 50%;
+    }
+
+    &__member-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+
+    &__member-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 1.125rem;
+      }
+    }
+
+    &__member-role {
+      font-size: 0.875rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__member-description {
+      p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: $text-color-gray-600;
+        margin: 0;
+
+        @include mobile {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
 }
