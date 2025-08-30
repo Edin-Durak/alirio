@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import { getLangFromUrl, getTranslations } from '../i18n/ui';
+import { getLangFromUrl, getTranslations as getTranslationsUI } from '../i18n/ui';
 import ukFlag from "../assets/images/icons/Flag_of_the_United_Kingdom.svg";
 import swedenFlag from "../assets/images/icons/Flag-Sweden.svg";
 import bosniaFlag from "../assets/images/icons/Flag_of_Bosnia_and_Herzegovina.svg";
 import saudiFlag from "../assets/images/icons/Flag_of_Saudi_Arabia.svg";
 
 const lang = getLangFromUrl(Astro.url);
-const { content } = getTranslations(lang);
+const { content } = getTranslationsUI(lang);
 
 const languages = [
   { code: 'sv', name: 'Sweden', native: 'Sweden', flag: swedenFlag },
@@ -16,18 +16,13 @@ const languages = [
   { code: 'ar', name: 'العربية', native: 'العربية', flag: saudiFlag }
 ];
 
-// Get route mappings from content files to ensure consistency
-const getRouteMappings = async () => {
-  const { getTranslations } = await import('../i18n/ui');
-  return {
-    en: getTranslations('en').content.routes,
-    bs: getTranslations('bs').content.routes,
-    sv: getTranslations('sv').content.routes,
-    ar: getTranslations('ar').content.routes,
-  };
+// Get route mappings directly from translation files
+const routeMappings = {
+  en: getTranslationsUI('en').content.routes,
+  bs: getTranslationsUI('bs').content.routes,
+  sv: getTranslationsUI('sv').content.routes,
+  ar: getTranslationsUI('ar').content.routes,
 };
-
-const routeMappings = await getRouteMappings();
 ---
 
 <div class="language-dropdown">
@@ -100,7 +95,12 @@ const routeMappings = await getRouteMappings();
     }
     
     init() {
+      if (!this.trigger) {
+        return;
+      }
+      
       this.trigger.addEventListener('click', () => this.toggle());
+      
       this.options.forEach(option => {
         option.addEventListener('click', (e) => this.selectLanguage(e));
       });
@@ -161,19 +161,39 @@ const routeMappings = await getRouteMappings();
       const supportedLanguages = ['en', 'bs', 'ar'];
       if (pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0])) {
         currentLang = pathSegments[0];
-        currentRoute = pathSegments.slice(1).join('/');
+        // Decode the route segments to handle Arabic/Unicode characters
+        currentRoute = pathSegments.slice(1).map(segment => decodeURIComponent(segment)).join('/');
       } else {
         // Swedish (default) - no language prefix
-        currentRoute = pathSegments.join('/');
+        currentRoute = pathSegments.map(segment => decodeURIComponent(segment)).join('/');
       }
       
       // Find the current page type by matching the route
       const currentLangRoutes = routeMappings[currentLang];
+      
       if (currentLangRoutes) {
+        // First try exact match
         for (const [type, route] of Object.entries(currentLangRoutes)) {
-          if (currentRoute === route || (route === '' && currentRoute === '')) {
+          if (currentRoute === route) {
             pageType = type;
             break;
+          }
+        }
+        
+        // If no exact match found, try to determine page type by position/index
+        if (pageType === 'home') {
+          // Check if we're on a non-home page by looking at the route structure
+          if (currentRoute !== '') {
+            // We're on a non-home page, try to determine which one
+            // Check if it's services, about, or pricing based on the current language routes
+            const routeEntries = Object.entries(currentLangRoutes);
+            for (let i = 0; i < routeEntries.length; i++) {
+              const [type, route] = routeEntries[i];
+              if (route === currentRoute) {
+                pageType = type;
+                break;
+              }
+            }
           }
         }
       }
@@ -205,4 +225,10 @@ const routeMappings = await getRouteMappings();
     const dropdowns = document.querySelectorAll('.language-dropdown');
     dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
   });
+  
+  // Also try to initialize immediately if DOM is already loaded
+  if (document.readyState !== 'loading') {
+    const dropdowns = document.querySelectorAll('.language-dropdown');
+    dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
+  }
 </script> 
