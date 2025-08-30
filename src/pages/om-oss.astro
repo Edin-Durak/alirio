@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from "astro:assets";
+import '../styles/main.scss';
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+
+// Get current language and translations
+const lang = 'sv';
+const { content } = getTranslations(lang);
+---
+
+<Layout 
+  title="About Us - Alirio Omsorg"
+  description="Learn about Alirio Omsorg's story, our founders Mirza and Haris, and our vision for compassionate home care services in Örebro, Sweden."
+  keywords="Alirio Omsorg about, home care Örebro, Mirza Haris, Swedish home care, multicultural care, elderly care services"
+  ogImage="https://edin-durak.github.io/alirio/hero-img.webp"
+>
+  <Header />
+  
+  <main class="about-page">
+
+    <section class="about-content" aria-labelledby="about-story-title">
+      <div class="container">
+        <div class="about-content__inner">
+          <article class="about-story">
+            <h1 class="about-story__title" id="about-story-title">Behind Alirio - our story</h1>
+            <div class="about-story__content">
+              <p class="about-story__paragraph">
+                Alirio Omsorg was founded by father and son, Mirza and Haris. Mirza came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. He took care of his great-grandparents for many years, which created a deep understanding of how important it is to have care that feels safe and familiar.
+              </p>
+              <p class="about-story__paragraph">
+                Like many families from the Balkans, we have noticed that language, culture and traditions play a big role in well-being, especially as one gets older. At the same time, we see that all people, regardless of origin, deserve care that feels personal and warm.
+              </p>
+              <p class="about-story__paragraph">
+                Our vision: We dream that one day we can offer even more - perhaps a home for the elderly where different cultures can meet, where the flavors of the homeland are on the menu and where everyone feels at home. But it starts here, with you, in your home, with the care you need.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-differences" aria-labelledby="about-differences-title">
+            <h2 class="about-differences__title" id="about-differences-title">What makes us different?</h2>
+            <ul class="about-differences__list">
+              <li class="about-differences__item">
+                The needs of the individual at the center - just like Örebro Municipality, we work on the basis that your needs and goals determine what kind of support you receive
+              </li>
+              <li class="about-differences__item">
+                Rehabilitation home care - we help you become stronger and more independent, what you can do yourself, you do it yourself
+              </li>
+              <li class="about-differences__item">
+                Genuine closeness - the same friendly faces who genuinely care about you
+              </li>
+              <li class="about-differences__item">
+                Multilingual staff - we speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English
+              </li>
+              <li class="about-differences__item">
+                Support from the start - we also help you with social assistance applications if you need to
+              </li>
+              <li class="about-differences__item">
+                Your right to decide - we listen to you and respect your right to decide for yourself
+              </li>
+              <li class="about-differences__item">
+                Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

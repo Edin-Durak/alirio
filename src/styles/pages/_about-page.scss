@@ -1,0 +1,105 @@
+.about-page {
+  // About Content Section
+
+  .about-content {
+    padding: $spacing-14 0;
+
+    @include tablet {
+      padding: $spacing-11 0;
+    }
+
+    @include mobile {
+      padding: $spacing-11 0;
+    }
+
+    &__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-14;
+
+      @include tablet {
+        gap: $spacing-11;
+      }
+
+      @include mobile {
+        gap: $spacing-11;
+      }
+    }
+  }
+
+  // About Story Section
+  .about-story {
+    &__title {
+      font-weight: 500;
+      color: $text-color-dark-black;
+      margin: 0 0 $spacing-8 0;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-6;
+    }
+
+    &__paragraph {
+      font-size: 1.25rem;
+      line-height: 2;
+      color: $text-color-dark-black;
+      margin: 0;
+      font-weight: 500;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  // About Differences Section
+  .about-differences {
+    &__title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $text-color-dark-black;
+      margin: 0 0 $spacing-8 0;
+      line-height: 1.3;
+
+      @include tablet {
+        font-size: 1.75rem;
+        line-height: 1.3;
+      }
+
+      @include mobile {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+    }
+
+    &__list {
+      list-style: disc;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-5;
+      padding-left: $spacing-5;
+    }
+
+    &__item {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: $text-color-dark-black;
+      position: relative;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
