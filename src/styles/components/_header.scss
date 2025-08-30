@@ -77,5 +77,27 @@
     &:focus {
       outline: none;
     }
+
+    &-text {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
+    }
+    &-icon.desktop {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
+    }
+    &-icon.mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
   }
 }

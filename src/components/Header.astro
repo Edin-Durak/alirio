@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
 import arrowRightIcon from "../assets/images/icons/arrow-right-icon.svg";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
+import phoneIcon from "../assets/images/icons/phone-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
@@ -69,9 +70,13 @@ const isLinkActive = (linkHref: string) => {
         <Image src={hamburgerIcon} alt="Menu" width={24} height={24} loading="eager" />
       </button>
       <a href="tel:+0703350618" class="header__phone-link">
-        {ui['nav.phone']}
-        <span class="header__phone-link-icon">
+        <span class="header__phone-link-text">{ui['nav.phone']}</span>
+        
+        <span class="header__phone-link-icon desktop">
           <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" />
+        </span>
+        <span class="header__phone-link-icon mobile">
+          <Image src={phoneIcon} alt="Phone" width={20} height={20} loading="eager" />
         </span>
       </a>
     </div>
