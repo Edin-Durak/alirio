@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
-import kaniImage from '../assets/images/kani-img.jpg';
+import mirvaImage from '../assets/images/mirva-img.jpg';
 import mirzaImage from '../assets/images/mirza-img.webp';
 import ulfImage from '../assets/images/ulf-img.webp';
 import '../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
+import { lazy } from 'astro:schema';
 
 // Get current language and translations
 const lang = 'sv';
@@ -69,36 +70,40 @@ const { content } = getTranslations(lang);
              </ul>
            </article>
 
-                       <article class="about-team" aria-labelledby="about-team-title">
+        <article class="about-team" aria-labelledby="about-team-title">
+          <h2 class="about-team__title" id="about-team-title" hidden>About our team</h2>
               <!-- Desktop Tabs -->
               <div class="about-team__tabs about-team__tabs--desktop">
                 <button class="about-team__tab about-team__tab--active" data-tab="kani" aria-selected="true">
                   <div class="about-team__tab-image">
-                    <Image src={kaniImage} alt="Kani" width={80} height={80} />
+                    <Image src={mirvaImage} alt="Kani" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">Kani</h3>
                     <p class="about-team__tab-role">Employee</p>
+                    
                   </div>
                 </button>
                 
                 <button class="about-team__tab" data-tab="mirza" aria-selected="false">
                   <div class="about-team__tab-image">
-                    <Image src={mirzaImage} alt="Mirza" width={80} height={80} />
+                    <Image src={mirzaImage} alt="Mirza" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">Mirza</h3>
                     <p class="about-team__tab-role">Owner</p>
+                    
                   </div>
                 </button>
                 
                 <button class="about-team__tab" data-tab="ulf" aria-selected="false">
                   <div class="about-team__tab-image">
-                    <Image src={ulfImage} alt="Ulf" width={80} height={80} />
+                    <Image src={ulfImage} alt="Ulf" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">Ulf</h3>
                     <p class="about-team__tab-role">Employee</p>
+                    
                   </div>
                 </button>
                 
@@ -109,6 +114,7 @@ const { content } = getTranslations(lang);
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">Haris Kikic</h3>
                     <p class="about-team__tab-role">Coordinator</p>
+                    
                   </div>
                 </button>
                 
@@ -119,6 +125,7 @@ const { content } = getTranslations(lang);
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">Lejla</h3>
                     <p class="about-team__tab-role">Employee</p>
+                    
                   </div>
                 </button>
               </div>
@@ -127,7 +134,7 @@ const { content } = getTranslations(lang);
               <div class="about-team__content about-team__content--desktop">
                 <div class="about-team__panel about-team__panel--active" data-panel="kani" id="team-kani">
                   <div class="about-team__panel-image">
-                    <Image src={kaniImage} alt="Kani" width={120} height={120} />
+                    <Image src={mirvaImage} alt="Kani" width={120} height={120} />
                   </div>
                   <div class="about-team__panel-info">
                     <h3 class="about-team__panel-name">Kani</h3>
@@ -195,7 +202,7 @@ const { content } = getTranslations(lang);
               <div class="about-team__stacked about-team__stacked--mobile">
                 <div class="about-team__member" id="team-kani-mobile">
                   <div class="about-team__member-image">
-                    <Image src={kaniImage} alt="Kani" width={100} height={100} />
+                    <Image src={mirvaImage} alt="Kani" width={100} height={100} />
                   </div>
                   <div class="about-team__member-info">
                     <h3 class="about-team__member-name">Kani</h3>

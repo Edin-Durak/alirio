@@ -13,7 +13,6 @@
     }
 
     &__inner {
-      max-width: 900px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -105,37 +104,6 @@
 
   // About Team Section
   .about-team {
-    background-color: $brand-red-100;
-    padding: $spacing-12;
-    border-radius: $rounded-lg;
-    margin-top: $spacing-14;
-
-    @include tablet {
-      padding: $spacing-8;
-      margin-top: $spacing-11;
-    }
-
-    @include mobile {
-      padding: $spacing-6;
-      margin-top: $spacing-11;
-    }
-
-    // Desktop Tabs (hidden on mobile/tablet)
-    &__tabs--desktop {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: $spacing-4;
-      margin-bottom: $spacing-8;
-
-      @include tablet {
-        display: none;
-      }
-
-      @include mobile {
-        display: none;
-      }
-    }
-
     // Mobile/Tablet Stacked Layout (hidden on desktop)
     &__stacked--mobile {
       display: none;
@@ -158,15 +126,31 @@
       grid-template-columns: repeat(5, 1fr);
       gap: $spacing-4;
       margin-bottom: $spacing-8;
+      background-color: $brand-red-400;
+      border-radius: $rounded;
+      padding: $spacing-8 $spacing-5;
 
-      @include tablet {
-        grid-template-columns: repeat(3, 1fr);
+      @include desktop {
+        max-width: 80%;
+        margin: 0 auto $spacing-8;
+      }
+      @include laptop {
+        max-width: 80%;
+        margin: 0 auto $spacing-8;
+      }
+
+      @include tablet-landscape {
+        max-width: 100%;
+        margin: 0 auto $spacing-8;
         gap: $spacing-3;
       }
 
+      @include tablet {
+        display: none;
+      }
+
       @include mobile {
-        grid-template-columns: repeat(2, 1fr);
-        gap: $spacing-2;
+        display: none;
       }
     }
 
@@ -177,11 +161,11 @@
       padding: $spacing-4;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-align: center;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: $spacing-2;
+      align-items: flex-start;
+      gap: $spacing-4;
 
       &:hover {
         border-color: $brand-red-200;
@@ -190,22 +174,33 @@
 
       &--active {
         border-color: $brand-red;
-        background-color: $brand-red-50;
-      }
-
-      @include mobile {
-        padding: $spacing-3;
+        background-color: $brand-red-300;
       }
     }
 
     &__tab-image {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      width: 200px;
+      height: 230px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      align-self: center;
+
+      @include desktop {
+        width: 140px;
+        height: 150px;
+      }
+
+      @include laptop {
+        width: 100px;
+        height: 130px;
+      }
+
+      @include tablet-landscape {
+        width: 100px;
+        height: 130px;
+      }
 
       @include mobile {
         width: 50px;
@@ -223,13 +218,12 @@
         $gray-100 2px,
         $gray-100 4px
       );
-      border-radius: 50%;
     }
 
     &__tab-info {
       display: flex;
       flex-direction: column;
-      gap: $spacing-1;
+      gap: $spacing-2;
     }
 
     &__tab-name {
