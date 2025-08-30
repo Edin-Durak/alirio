@@ -30,49 +30,49 @@ const { content } = getTranslations(lang);
       <div class="container">
         <div class="about-content__inner">
           <article class="about-story" aria-labelledby="about-story-title">
-            <h1 class="about-story__title" id="about-story-title">Behind Alirio - our story</h1>
+            <h1 class="about-story__title" id="about-story-title">{content.about.story.title}</h1>
             <div class="about-story__content">
               <p class="about-story__paragraph">
-                Alirio Omsorg was founded by father and son, Mirza and Haris. Mirza came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. He took care of his great-grandparents for many years, which created a deep understanding of how important it is to have care that feels safe and familiar.
+                {content.about.story.description}
               </p>
               <p class="about-story__paragraph">
-                Like many families from the Balkans, we have noticed that language, culture and traditions play a big role in well-being, especially as one gets older. At the same time, we see that all people, regardless of origin, deserve care that feels personal and warm.
+                {content.about.story.description2}
               </p>
               <p class="about-story__paragraph">
-                Our vision: We dream that one day we can offer even more - perhaps a home for the elderly where different cultures can meet, where the flavors of the homeland are on the menu and where everyone feels at home. But it starts here, with you, in your home, with the care you need.
+                {content.about.story.description3}
               </p>
             </div>
           </article>
 
         <article class="about-differences" aria-labelledby="about-differences-title">
-             <h2 class="about-differences__title" id="about-differences-title">What makes us different?</h2>
+             <h2 class="about-differences__title" id="about-differences-title">{content.about.differences.title}</h2>
              <ul class="about-differences__list">
                <li class="about-differences__item">
-                 The needs of the individual at the center - just like Örebro Municipality, we work on the basis that your needs and goals determine what kind of support you receive
+                 {content.about.differences.item1}
                </li>
                <li class="about-differences__item">
-                 Rehabilitation home care - we help you become stronger and more independent, what you can do yourself, you do it yourself
+                 {content.about.differences.item2}
                </li>
                <li class="about-differences__item">
-                 Genuine closeness - the same friendly faces who genuinely care about you
+                 {content.about.differences.item3}
                </li>
                <li class="about-differences__item">
-                 Multilingual staff - we speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English
+                 {content.about.differences.item4}
                </li>
                <li class="about-differences__item">
-                 Support from the start - we also help you with social assistance applications if you need to
+                 {content.about.differences.item5}
                </li>
                <li class="about-differences__item">
-                 Your right to decide - we listen to you and respect your right to decide for yourself
+                 {content.about.differences.item6}
                </li>
                <li class="about-differences__item">
-                 Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached
+                 {content.about.differences.item7}
                </li>
              </ul>
         </article>
 
         <article class="about-team" aria-labelledby="about-team-title">
-          <h2 class="about-team__title" id="about-team-title" hidden>About our team</h2>
+          <h2 class="about-team__title" id="about-team-title" hidden>{content.about.team.title}</h2>
               <!-- Desktop Tabs -->
               <div class="about-team__tabs about-team__tabs--desktop">
                 <button class="about-team__tab about-team__tab--active" data-tab="mirva" aria-selected="true">
@@ -80,8 +80,8 @@ const { content } = getTranslations(lang);
                     <Image src={mirvaImage} alt="Mirva" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
-                    <h3 class="about-team__tab-name">Mirva</h3>
-                    <p class="about-team__tab-role">Employee</p>
+                    <h3 class="about-team__tab-name">{content.about.team.members.mirva.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.mirva.role}</p>
                     
                   </div>
                 </button>
@@ -91,8 +91,8 @@ const { content } = getTranslations(lang);
                     <Image src={mirzaImage} alt="Mirza" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
-                    <h3 class="about-team__tab-name">Mirza</h3>
-                    <p class="about-team__tab-role">Owner</p>
+                    <h3 class="about-team__tab-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.mirza.role}</p>
                     
                   </div>
                 </button>
@@ -102,8 +102,8 @@ const { content } = getTranslations(lang);
                     <Image src={ulfImage} alt="Ulf" width={200} height={230} loading="lazy" />
                   </div>
                   <div class="about-team__tab-info">
-                    <h3 class="about-team__tab-name">Ulf</h3>
-                    <p class="about-team__tab-role">Employee</p>
+                    <h3 class="about-team__tab-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.ulf.role}</p>
                     
                   </div>
                 </button>
@@ -113,8 +113,8 @@ const { content } = getTranslations(lang);
                     <div class="about-team__tab-placeholder"></div>
                   </div>
                   <div class="about-team__tab-info">
-                    <h3 class="about-team__tab-name">Haris Kikic</h3>
-                    <p class="about-team__tab-role">Coordinator</p>
+                    <h3 class="about-team__tab-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.haris.role}</p>
                     
                   </div>
                 </button>
@@ -124,8 +124,8 @@ const { content } = getTranslations(lang);
                     <div class="about-team__tab-placeholder"></div>
                   </div>
                   <div class="about-team__tab-info">
-                    <h3 class="about-team__tab-name">Lejla</h3>
-                    <p class="about-team__tab-role">Employee</p>
+                    <h3 class="about-team__tab-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.lejla.role}</p>
                     
                   </div>
                 </button>
@@ -138,10 +138,12 @@ const { content } = getTranslations(lang);
                     <Image src={mirvaImage} alt="Mirva" width={225} height={225} loading="lazy" />
                   </div>
                   <div class="about-team__panel-info">
-                    <h3 class="about-team__panel-name">Mirva</h3>
-                    <p class="about-team__panel-role">Employee</p>
+                    <h3 class="about-team__panel-name">
+                        {content.about.team.members.mirva.name}
+                    </h3>
+                    <p class="about-team__panel-role">{content.about.team.members.mirva.role}</p>
                     <div class="about-team__panel-description">
-                      <p>Mirva is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                      <p>{content.about.team.members.mirva.description}</p>
                     </div>
                   </div>
                 </div>
@@ -151,10 +153,10 @@ const { content } = getTranslations(lang);
                     <Image src={mirzaImage} alt="Mirza" width={225} height={225} loading="lazy" />
                   </div>
                   <div class="about-team__panel-info">
-                    <h3 class="about-team__panel-name">Mirza</h3>
-                    <p class="about-team__panel-role">Owner</p>
+                    <h3 class="about-team__panel-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.mirza.role}</p>
                     <div class="about-team__panel-description">
-                      <p>Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.</p>
+                      <p>{content.about.team.members.mirza.description}</p>
                     </div>
                   </div>
                 </div>
@@ -164,10 +166,10 @@ const { content } = getTranslations(lang);
                     <Image src={ulfImage} alt="Ulf" width={225} height={225} loading="lazy" />
                   </div>
                   <div class="about-team__panel-info">
-                    <h3 class="about-team__panel-name">Ulf</h3>
-                    <p class="about-team__panel-role">Employee</p>
+                    <h3 class="about-team__panel-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.ulf.role}</p>
                     <div class="about-team__panel-description">
-                      <p>Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.</p>
+                      <p>{content.about.team.members.ulf.description}</p>
                     </div>
                   </div>
                 </div>
@@ -177,10 +179,10 @@ const { content } = getTranslations(lang);
                     <div class="about-team__panel-placeholder"></div>
                   </div>
                   <div class="about-team__panel-info">
-                    <h3 class="about-team__panel-name">Haris Kikic</h3>
-                    <p class="about-team__panel-role">Coordinator</p>
+                    <h3 class="about-team__panel-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.haris.role}</p>
                     <div class="about-team__panel-description">
-                      <p>Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.</p>
+                      <p>{content.about.team.members.haris.description}</p>
                     </div>
                   </div>
                 </div>
@@ -190,10 +192,10 @@ const { content } = getTranslations(lang);
                     <div class="about-team__panel-placeholder"></div>
                   </div>
                   <div class="about-team__panel-info">
-                    <h3 class="about-team__panel-name">Lejla</h3>
-                    <p class="about-team__panel-role">Employee</p>
+                    <h3 class="about-team__panel-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.lejla.role}</p>
                     <div class="about-team__panel-description">
-                      <p>Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                      <p>{content.about.team.members.lejla.description}</p>
                     </div>
                   </div>
                 </div>
@@ -206,10 +208,10 @@ const { content } = getTranslations(lang);
                     <Image src={mirvaImage} alt="Mirva" width={150} height={120} loading= "lazy" />
                   </div>
                   <div class="about-team__member-info">
-                    <h3 class="about-team__member-name">Mirva</h3>
-                    <p class="about-team__member-role">Employee</p>
+                    <h3 class="about-team__member-name">{content.about.team.members.mirva.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.mirva.role}</p>
                     <div class="about-team__member-description">
-                      <p>Mirva is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                      <p>{content.about.team.members.mirva.description}</p>
                     </div>
                   </div>
                 </div>
@@ -219,10 +221,10 @@ const { content } = getTranslations(lang);
                     <Image src={mirzaImage} alt="Mirza" width={150} height={120} loading= "lazy" />
                   </div>
                   <div class="about-team__member-info">
-                    <h3 class="about-team__member-name">Mirza</h3>
-                    <p class="about-team__member-role">Owner</p>
+                    <h3 class="about-team__member-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.mirza.role}</p>
                     <div class="about-team__member-description">
-                      <p>Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.</p>
+                      <p>{content.about.team.members.mirza.description}</p>
                     </div>
                   </div>
                 </div>
@@ -232,10 +234,10 @@ const { content } = getTranslations(lang);
                     <Image src={ulfImage} alt="Ulf" width={150} height={120} loading= "lazy" />
                   </div>
                   <div class="about-team__member-info">
-                    <h3 class="about-team__member-name">Ulf</h3>
-                    <p class="about-team__member-role">Employee</p>
+                    <h3 class="about-team__member-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.ulf.role}</p>
                     <div class="about-team__member-description">
-                      <p>Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.</p>
+                      <p>{content.about.team.members.ulf.description}</p>
                     </div>
                   </div>
                 </div>
@@ -245,10 +247,10 @@ const { content } = getTranslations(lang);
                     <div class="about-team__member-placeholder"></div>
                   </div>
                   <div class="about-team__member-info">
-                    <h3 class="about-team__member-name">Haris Kikic</h3>
-                    <p class="about-team__member-role">Coordinator</p>
+                    <h3 class="about-team__member-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.haris.role}</p>
                     <div class="about-team__member-description">
-                      <p>Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.</p>
+                      <p>{content.about.team.members.haris.description}</p>
                     </div>
                   </div>
                 </div>
@@ -258,10 +260,10 @@ const { content } = getTranslations(lang);
                     <div class="about-team__member-placeholder"></div>
                   </div>
                   <div class="about-team__member-info">
-                    <h3 class="about-team__member-name">Lejla</h3>
-                    <p class="about-team__member-role">Employee</p>
+                    <h3 class="about-team__member-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.lejla.role}</p>
                     <div class="about-team__member-description">
-                      <p>Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
+                      <p>{content.about.team.members.lejla.description}</p>
                     </div>
                   </div>
                 </div>
@@ -271,19 +273,19 @@ const { content } = getTranslations(lang);
         <section class="about-location" aria-labelledby="about-location-title">
           <div class="about-location__inner container">
                 <span class="about-location__pretitle">
-                Location
+                {content.about.location.pretitle}
                 </span>
                 <h2 class="about-location__title" id="about-location-title">
-                We are here
+                {content.about.location.title}
                 </h2>
-                <p class="about-location__description">Look for us on the map</p>
+                <p class="about-location__description">{content.about.location.description}</p>
                 <div class="about-location__image">
                     <Image src={locationImage} alt="Our location" width={1000} height={1000} loading="lazy" />
                 </div>
                 <div class="about-location__info">
-                    <span class="about-location__info-title">Telefon</span>
-                    <p class="about-location__info-working-hours">Mo - Fr: 08:00 - 16:00</p>
-                    <a href="tel:+0703350618" class="about-location__info-link">070-3350618</a>
+                    <span class="about-location__info-title">{content.about.location.info.title}</span>
+                    <p class="about-location__info-working-hours">{content.about.location.info.workingHours}</p>
+                    <a href="tel:+0703350618" class="about-location__info-link">{content.about.location.info.phone}</a>
                 </div>
           </div>
         </section>
