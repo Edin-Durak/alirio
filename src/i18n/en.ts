@@ -211,4 +211,33 @@ export const en = {
       },
     },
   },
+
+  about: {
+    story: {
+      title: "Behind Alirio - our story",
+      description:
+        "Alirio Omsorg was founded by father and son, Mirza and Haris. Mirza came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. He took care of his great-grandparents for many years, which created a deep understanding of how important it is to have care that feels safe and familiar.",
+      description2:
+        "Like many families from the Balkans, we have noticed that language, culture and traditions play a big role in well-being, especially as one gets older. At the same time, we see that all people, regardless of origin, deserve care that feels personal and warm.",
+      description3:
+        "Our vision: We dream that one day we can offer even more - perhaps a home for the elderly where different cultures can meet, where the flavors of the homeland are on the menu and where everyone feels at home. But it starts here, with you, in your home, with the care you need.",
+    },
+    differences: {
+      title: "What makes us different?",
+      item1:
+        "The needs of the individual at the center - just like Örebro Municipality, we work on the basis that your needs and goals determine what kind of support you receive",
+      item2:
+        "Rehabilitation home care - we help you become stronger and more independent, what you can do yourself, you do it yourself",
+      item3:
+        "Genuine closeness - the same friendly faces who genuinely care about you",
+      item4:
+        "Multilingual staff - we speak Swedish, Bosnian, Croatian, Serbian, Arabic, German and English",
+      item5:
+        "Support from the start - we also help you with social assistance applications if you need to",
+      item6:
+        "Your right to decide - we listen to you and respect your right to decide for yourself",
+      item7:
+        "Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached",
+    },
+  },
 } as const;
