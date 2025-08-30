@@ -292,13 +292,18 @@
 
     &__panel-image {
       flex-shrink: 0;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 225px;
+      height: 225px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include tablet-landscape {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+      }
 
       @include mobile {
         width: 100px;
@@ -386,11 +391,11 @@
       flex-shrink: 0;
       width: 100px;
       height: 100px;
-      border-radius: 50%;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      align-self: center;
 
       @include mobile {
         width: 80px;
