@@ -333,6 +333,23 @@
           margin-bottom: 0;
         }
       }
+
+      &--link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        &:focus {
+          outline: 2px solid $brand-red;
+          outline-offset: 2px;
+        }
+      }
     }
 
     &__card-image {
