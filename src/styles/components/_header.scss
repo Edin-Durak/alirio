@@ -53,4 +53,29 @@
       }
     }
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+  &__phone-link {
+    background-color: $brand-red-400;
+    color: $white;
+    padding: $spacing-3 $spacing-4;
+    border-radius: $rounded-2xs;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    &:hover {
+      background-color: $brand-red-500;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
 }

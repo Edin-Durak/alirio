@@ -2,6 +2,7 @@
 import "../styles/main.scss";
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/alirio-logo.png";
+import arrowRightIcon from "../assets/images/icons/arrow-right-icon.svg";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
 import { getRelativeLocaleUrl } from 'astro:i18n';
@@ -45,7 +46,7 @@ const isLinkActive = (linkHref: string) => {
 <header class="header">
   <div class="header__container">
     <a href={logoHref} class="header__logo-link">
-      <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" />
+      <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" loading="eager" />
     </a>
     
     <nav class="header__nav">
@@ -65,8 +66,14 @@ const isLinkActive = (linkHref: string) => {
         <LanguageDropdown />
       </div>
       <button class="header__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} />
+        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} loading="eager" />
       </button>
+      <a href="tel:+0703350618" class="header__phone-link">
+        {ui['nav.phone']}
+        <span class="header__phone-link-icon">
+          <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" />
+        </span>
+      </a>
     </div>
   </div>
   
