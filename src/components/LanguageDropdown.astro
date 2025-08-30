@@ -1,18 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import languagesIcon from "../assets/images/icons/languages-icon.svg";
 import { getLangFromUrl, getTranslations } from '../i18n/ui';
+import ukFlag from "../assets/images/icons/Flag_of_the_United_Kingdom.svg";
+import swedenFlag from "../assets/images/icons/Flag-Sweden.svg";
+import bosniaFlag from "../assets/images/icons/Flag_of_Bosnia_and_Herzegovina.svg";
+import saudiFlag from "../assets/images/icons/Flag_of_Saudi_Arabia.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const { content } = getTranslations(lang);
 
 const languages = [
-  { code: 'en', name: 'English', native: 'English' },
-  { code: 'sv', name: 'Sweden', native: 'Sweden' },
-  { code: 'bs', name: 'Bosanski', native: 'Bosanski' },
-  { code: 'ar', name: 'العربية', native: 'العربية' },
-  { code: 'ku', name: 'کوردی', native: 'کوردی' },
-  { code: 'sy', name: 'ܣܘܪܝܝܐ', native: 'ܣܘܪܝܝܐ' }
+  { code: 'sv', name: 'Sweden', native: 'Sweden', flag: swedenFlag },
+  { code: 'en', name: 'English', native: 'English', flag: ukFlag },
+  { code: 'bs', name: 'Bosanski', native: 'Bosanski', flag: bosniaFlag },
+  { code: 'ar', name: 'العربية', native: 'العربية', flag: saudiFlag }
 ];
 
 // Route mapping for all languages
@@ -26,7 +27,12 @@ const routeMappings = {
 
 <div class="language-dropdown">
   <button class="language-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
-    <Image src={languagesIcon} alt="Languages icon" width={20} height={20} />
+    {(() => {
+      const currentLanguage = languages.find(l => l.code === lang);
+      return currentLanguage ? (
+        <Image src={currentLanguage.flag} alt={`${currentLanguage.name} flag`} width={25} height={20} />
+      ) : null;
+    })()}
     <span class="language-dropdown__current">{lang.toUpperCase()}</span>
     <svg class="language-dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
       <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,7 +47,7 @@ const routeMappings = {
           data-lang={language.code}
           role="menuitem"
         >
-          <span class="language-dropdown__code">{language.code.toUpperCase()}</span>
+          <Image src={language.flag} alt={`${language.name} flag`} width={25} height={20} />
           <span class="language-dropdown__name">{language.native}</span>
         </button>
       </li>

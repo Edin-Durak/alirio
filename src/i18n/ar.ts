@@ -1,9 +1,9 @@
 export const ar = {
   routes: {
     home: "",
-    services: "usluge",
-    pricing: "cijene",
-    about: "o-nama",
+    services: "خدمات",
+    pricing: "الأسعار",
+    about: "حول",
   },
   home: {
     // Hero Section
