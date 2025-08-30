@@ -2,17 +2,16 @@
 import { en } from "./en";
 import { bs } from "./bs";
 import { sv } from "./sv";
+import { ar } from "./ar";
 
 export const languages = {
   en: "English",
   sv: "Svenska",
   bs: "Bosanski",
   ar: "العربية",
-  ku: "کوردی",
-  sy: "ܣܘܪܝܝܐ",
 };
 
-export const defaultLang = "en";
+export const defaultLang = "sv";
 
 export const ui = {
   en: {
@@ -63,6 +62,22 @@ export const ui = {
     "footer.contact": "Kontakta oss",
     "footer.privacy": "Integritetspolicy",
   },
+  ar: {
+    "nav.home": "الرئيسية",
+    "nav.services": "الخدمات",
+    "nav.pricing": "الأسعار",
+    "nav.about": "حول",
+    "nav.contact": "اتصل بنا",
+    "common.loading": "جاري التحميل...",
+    "common.error": "خطأ",
+    "common.success": "نجح",
+    "footer.description":
+      "نحلم بأن نتمكن يوماً ما من تقديم المزيد - ربما منزل للمسنين حيث يمكن للثقافات المختلفة أن تلتقي، حيث توجد نكهات الوطن في القائمة وحيث يشعر الجميع وكأنهم في المنزل. لكن الأمر يبدأ هنا، معك، في منزلك، مع الرعاية التي تحتاجها.",
+    "footer.company": "Alirio",
+    "footer.help": "مساعدة",
+    "footer.contact": "اتصل بنا",
+    "footer.privacy": "سياسة الخصوصية",
+  },
 } as const;
 
 // Content translations object
@@ -70,12 +85,13 @@ export const contentTranslations = {
   en,
   bs,
   sv,
+  ar,
 } as const;
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split("/");
   if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
+  return defaultLang; // Now returns "sv" as default
 }
 
 export function useTranslations(lang: keyof typeof ui) {
@@ -87,7 +103,7 @@ export function useTranslations(lang: keyof typeof ui) {
 // Create unified translation function
 export function getTranslations(lang: string) {
   return {
-    ui: ui[lang] || ui.en,
-    content: contentTranslations[lang] || contentTranslations.en,
+    ui: ui[lang] || ui.sv,
+    content: contentTranslations[lang] || contentTranslations.sv,
   };
 }

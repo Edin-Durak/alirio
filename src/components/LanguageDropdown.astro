@@ -21,8 +21,6 @@ const routeMappings = {
   bs: { home: '', services: 'usluge', pricing: 'cijene', about: 'o-nama' },
   sv: { home: '', services: 'tjanster', pricing: 'priser', about: 'om-oss' },
   ar: { home: '', services: 'خدمات', pricing: 'الأسعار', about: 'حول' },
-  ku: { home: '', services: 'خزمەتگوزارییەکان', pricing: 'نرخەکان', about: 'دەربارە' },
-  sy: { home: '', services: 'ܬܫܡܫܬܐ', pricing: 'ܐܣܟܡܐ', about: 'ܥܠ' }
 };
 ---
 
@@ -145,8 +143,8 @@ const routeMappings = {
       
       let targetPath = '';
       
-      // Check if current path has a language prefix
-      const supportedLanguages = ['en', 'sv', 'bs', 'ar', 'ku', 'sy'];
+      // Check if current path has a language prefix (Swedish is default, so no prefix)
+      const supportedLanguages = ['en', 'bs', 'ar', 'ku', 'sy'];
       const hasLanguagePrefix = pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0]);
       
       if (hasLanguagePrefix) {
@@ -169,23 +167,22 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-                 // Build target URL
-         if (langCode === 'en') {
-           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-         } else {
-           targetPath = `/${langCode}/${targetRoute}/`;
-         }
-         
-         // Handle root path for English
-         if (langCode === 'en' && targetRoute === '') {
-           targetPath = '/';
-         }
+        // Build target URL - Swedish is default (no prefix), others need language prefix
+        if (langCode === 'sv') {
+          targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+          // Handle root path for Swedish
+          if (targetRoute === '') {
+            targetPath = '/';
+          }
+        } else {
+          targetPath = `/${langCode}/${targetRoute}/`;
+        }
       } else {
         // Current path has no language prefix (e.g., /services)
         const currentRoute = pathSegments.join('/');
         
-        // Find the page type by matching current route
-        const currentLangRoutes = routeMappings['en'];
+        // Find the page type by matching current route (Swedish is default)
+        const currentLangRoutes = routeMappings['sv'];
         let pageType = 'home';
         
         for (const [type, route] of Object.entries(currentLangRoutes)) {
@@ -199,17 +196,16 @@ const routeMappings = {
         const targetLangRoutes = routeMappings[langCode];
         const targetRoute = targetLangRoutes[pageType];
         
-                 // Build target URL
-         if (langCode === 'en') {
-           targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-         } else {
-           targetPath = `/${langCode}/${targetRoute}/`;
-         }
-         
-         // Handle root path for English
-         if (langCode === 'en' && targetRoute === '') {
-           targetPath = '/';
-         }
+        // Build target URL - Swedish is default (no prefix), others need language prefix
+        if (langCode === 'sv') {
+          targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
+          // Handle root path for Swedish
+          if (targetRoute === '') {
+            targetPath = '/';
+          }
+        } else {
+          targetPath = `/${langCode}/${targetRoute}/`;
+        }
       }
       
       // Navigate to the target page
