@@ -23,6 +23,20 @@ const footerNavLinks = footerNavItems.map(item => ({
 
 // Logo link
 const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
+
+// Helper function to check if a link is active
+const isLinkActive = (linkHref: string) => {
+  const currentPath = Astro.url.pathname;
+  const linkPath = new URL(linkHref, Astro.url).pathname;
+  
+  // Handle root path specially
+  if (linkPath === '/' || linkPath === `/${lang}/`) {
+    return currentPath === '/' || currentPath === `/${lang}/`;
+  }
+  
+  // For other paths, check if current path starts with link path
+  return currentPath.startsWith(linkPath);
+};
 ---
 
 <footer class="footer">
@@ -44,7 +58,7 @@ const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
       <ul class="footer__nav-list">
         {footerNavLinks.map(link => (
           <li class="footer__nav-item">
-            <a href={link.href} class={`footer__nav-link ${Astro.url.pathname === link.href ? 'footer__nav-link--active' : ''}`}>
+            <a href={link.href} class={`footer__nav-link ${isLinkActive(link.href) ? 'footer__nav-link--active' : ''}`}>
               {link.text}
             </a>
           </li>

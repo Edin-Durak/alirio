@@ -26,6 +26,20 @@ const navLinks = navItems.map(item => ({
 
 // Logo link
 const logoHref = getRelativeLocaleUrl(lang, '');
+
+// Helper function to check if a link is active
+const isLinkActive = (linkHref: string) => {
+  const currentPath = Astro.url.pathname;
+  const linkPath = new URL(linkHref, Astro.url).pathname;
+  
+  // Handle root path specially
+  if (linkPath === '/' || linkPath === `/${lang}/`) {
+    return currentPath === '/' || currentPath === `/${lang}/`;
+  }
+  
+  // For other paths, check if current path starts with link path
+  return currentPath.startsWith(linkPath);
+};
 ---
 
 <header class="header">
@@ -38,7 +52,7 @@ const logoHref = getRelativeLocaleUrl(lang, '');
       <ul class="header__nav-list">
         {navLinks.map(link => (
           <li class="header__nav-item">
-            <a href={link.href} class={`header__nav-link ${Astro.url.pathname === link.href ? 'header__nav-link--active' : ''}`}>
+            <a href={link.href} class={`header__nav-link ${isLinkActive(link.href) ? 'header__nav-link--active' : ''}`}>
               {link.text}
             </a>
           </li>
@@ -71,7 +85,7 @@ const logoHref = getRelativeLocaleUrl(lang, '');
         <ul class="header__mobile-nav-list">
           {navLinks.map(link => (
             <li class="header__mobile-nav-item">
-              <a href={link.href} class={`header__mobile-nav-link ${Astro.url.pathname === link.href ? 'header__mobile-nav-link--active' : ''}`}>
+              <a href={link.href} class={`header__mobile-nav-link ${isLinkActive(link.href) ? 'header__mobile-nav-link--active' : ''}`}>
                 {link.text}
               </a>
             </li>

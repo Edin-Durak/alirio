@@ -16,13 +16,18 @@ const languages = [
   { code: 'ar', name: 'العربية', native: 'العربية', flag: saudiFlag }
 ];
 
-// Route mapping for all languages
-const routeMappings = {
-  en: { home: '', services: 'services', pricing: 'pricing', about: 'about' },
-  bs: { home: '', services: 'usluge', pricing: 'cijene', about: 'o-nama' },
-  sv: { home: '', services: 'tjanster', pricing: 'priser', about: 'om-oss' },
-  ar: { home: '', services: 'خدمات', pricing: 'الأسعار', about: 'حول' },
+// Get route mappings from content files to ensure consistency
+const getRouteMappings = async () => {
+  const { getTranslations } = await import('../i18n/ui');
+  return {
+    en: getTranslations('en').content.routes,
+    bs: getTranslations('bs').content.routes,
+    sv: getTranslations('sv').content.routes,
+    ar: getTranslations('ar').content.routes,
+  };
 };
+
+const routeMappings = await getRouteMappings();
 ---
 
 <div class="language-dropdown">
@@ -138,7 +143,7 @@ const routeMappings = {
     
     selectLanguage(event) {
       const option = event.currentTarget;
-      const langCode = option.dataset.lang;
+      const targetLang = option.dataset.lang;
       
       // Close dropdown
       this.close();
@@ -147,71 +152,47 @@ const routeMappings = {
       const currentPath = window.location.pathname;
       const pathSegments = currentPath.split('/').filter(segment => segment);
       
-      let targetPath = '';
+      // Determine current page type and language
+      let currentLang = 'sv'; // Default language
+      let currentRoute = '';
+      let pageType = 'home';
       
-      // Check if current path has a language prefix (Swedish is default, so no prefix)
-      const supportedLanguages = ['en', 'bs', 'ar', 'ku', 'sy'];
-      const hasLanguagePrefix = pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0]);
-      
-      if (hasLanguagePrefix) {
-        // Current path has language prefix (e.g., /bs/usluge)
-        const currentLang = pathSegments[0];
-        const currentRoute = pathSegments.slice(1).join('/');
-        
-        // Find the page type by matching current route
-        const currentLangRoutes = routeMappings[currentLang];
-        let pageType = 'home';
-        
-        for (const [type, route] of Object.entries(currentLangRoutes)) {
-          if (currentRoute === route || (route === '' && currentRoute === '')) {
-            pageType = type;
-            break;
-          }
-        }
-        
-        // Get translated route for target language
-        const targetLangRoutes = routeMappings[langCode];
-        const targetRoute = targetLangRoutes[pageType];
-        
-        // Build target URL - Swedish is default (no prefix), others need language prefix
-        if (langCode === 'sv') {
-          targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-          // Handle root path for Swedish
-          if (targetRoute === '') {
-            targetPath = '/';
-          }
-        } else {
-          targetPath = `/${langCode}/${targetRoute}/`;
-        }
+      // Check if current path has a language prefix
+      const supportedLanguages = ['en', 'bs', 'ar'];
+      if (pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0])) {
+        currentLang = pathSegments[0];
+        currentRoute = pathSegments.slice(1).join('/');
       } else {
-        // Current path has no language prefix (e.g., /services)
-        const currentRoute = pathSegments.join('/');
-        
-        // Find the page type by matching current route (Swedish is default)
-        const currentLangRoutes = routeMappings['sv'];
-        let pageType = 'home';
-        
+        // Swedish (default) - no language prefix
+        currentRoute = pathSegments.join('/');
+      }
+      
+      // Find the current page type by matching the route
+      const currentLangRoutes = routeMappings[currentLang];
+      if (currentLangRoutes) {
         for (const [type, route] of Object.entries(currentLangRoutes)) {
           if (currentRoute === route || (route === '' && currentRoute === '')) {
             pageType = type;
             break;
           }
         }
-        
-        // Get translated route for target language
-        const targetLangRoutes = routeMappings[langCode];
-        const targetRoute = targetLangRoutes[pageType];
-        
-        // Build target URL - Swedish is default (no prefix), others need language prefix
-        if (langCode === 'sv') {
-          targetPath = '/' + targetRoute + (targetRoute !== '' ? '/' : '');
-          // Handle root path for Swedish
-          if (targetRoute === '') {
-            targetPath = '/';
-          }
-        } else {
-          targetPath = `/${langCode}/${targetRoute}/`;
-        }
+      }
+      
+      // Get the target route for the new language
+      const targetLangRoutes = routeMappings[targetLang];
+      if (!targetLangRoutes) return;
+      
+      const targetRoute = targetLangRoutes[pageType];
+      if (targetRoute === undefined) return;
+      
+      // Build the target URL
+      let targetPath;
+      if (targetLang === 'sv') {
+        // Swedish is default - no language prefix
+        targetPath = targetRoute === '' ? '/' : `/${targetRoute}/`;
+      } else {
+        // Other languages need language prefix
+        targetPath = targetRoute === '' ? `/${targetLang}/` : `/${targetLang}/${targetRoute}/`;
       }
       
       // Navigate to the target page
