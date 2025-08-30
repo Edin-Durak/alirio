@@ -212,4 +212,77 @@ export const sv = {
       },
     },
   },
+  about: {
+    story: {
+      title: "Bakom Alirio – vår historia",
+      description:
+        "Alirio Omsorg grundades av far och son, Mirza och Haris. Mirza kom till Sverige på 1990-talet från Bosnien och har kallat Örebro sitt hem sedan dess. Han tog hand om sina gammelföräldrar i många år, vilket skapade en djup förståelse för hur viktigt det är att ha en vård som känns trygg och familjär.",
+      description2:
+        "Liksom många familjer från Balkan har vi märkt att språk, kultur och traditioner spelar en stor roll för välbefinnandet, särskilt när man blir äldre. Samtidigt ser vi att alla människor, oavsett ursprung, förtjänar en vård som känns personlig och varm.",
+      description3:
+        "Vår vision: Vi drömmer om att vi en dag kan erbjuda ännu mer – kanske ett äldreboende där olika kulturer kan mötas, där hemlandets smaker står på menyn och där alla känner sig hemma. Men det börjar här, hos dig, i ditt hem, med den vård du behöver.",
+    },
+    differences: {
+      title: "Vad gör oss annorlunda?",
+      item1:
+        "Individens behov i centrum – precis som Örebro kommun arbetar vi utifrån att dina behov och mål avgör vilket stöd du får",
+      item2:
+        "Rehabiliteringshemsjukvård – vi hjälper dig att bli starkare och mer självständig, det du kan göra själv gör du själv",
+      item3:
+        "Genuin närhet – samma vänliga ansikten som genuint bryr sig om dig",
+      item4:
+        "Flerspråkig personal – vi talar svenska, bosniska, kroatiska, serbiska, arabiska, tyska och engelska",
+      item5:
+        "Stöd från början – vi hjälper dig även med ansökningar om socialbidrag om du behöver",
+      item6:
+        "Din rätt att bestämma – vi lyssnar på dig och respekterar din rätt att bestämma själv",
+      item7:
+        "Stressfritt – Osäker? Vi tar gärna en kaffe först utan förpliktelser",
+    },
+    team: {
+      title: "Om vårt team",
+      members: {
+        mirva: {
+          name: "Mirva",
+          role: "Anställd",
+          description:
+            "Mirva är en dedikerad medlem av vårt vårdsteam, som bringar värme och medkänsla i alla interaktioner. Hon har flerspråkiga färdigheter och kulturell förståelse som hjälper oss att tillhandahålla personlig vård som respekterar varje individs bakgrund och behov.",
+        },
+        mirza: {
+          name: "Mirza",
+          role: "Grundare",
+          description:
+            "Mirza är grundaren och ägaren av Alirio Omsorg. Han kom till Sverige på 1990-talet från Bosnien och har kallat Örebro sitt hem sedan dess. Han tog hand om sina gammelföräldrar i många år, vilket skapade en djup förståelse för hur viktigt det är att ha en vård som känns trygg och familjär.",
+        },
+        ulf: {
+          name: "Ulf",
+          role: "Anställd",
+          description:
+            "Ulf har år av erfarenhet i äldrevård i vårt team. Han är dedikerad till att tillhandahålla kvalitetsvård och hans förståelse för de enskilda behoven gör honom till en oöverträffad medlem av vårt team.",
+        },
+        haris: {
+          name: "Haris Kikic",
+          role: "Koordinator",
+          description:
+            "Haris arbetar som vår koordinator, säkerställer att kommunikationen mellan vårt team och de familjer vi stöttar är smidig. Hans organiseringsfärdigheter och uppmärksamhet på detaljer hjälper oss att tillhandahålla det bästa möjliga vårdserfarenheten.",
+        },
+        lejla: {
+          name: "Lejla",
+          role: "Anställd",
+          description:
+            "Lejla är en dedikerad medlem av vårt vårdsteam, som bringar värme och medkänsla i alla interaktioner. Hon har flerspråkiga färdigheter och kulturell förståelse som hjälper oss att tillhandahålla personlig vård som respekterar varje individs bakgrund och behov.",
+        },
+      },
+    },
+    location: {
+      pretitle: "Plats",
+      title: "Vi är här",
+      description: "Se oss på kartan",
+      info: {
+        title: "Telefon",
+        workingHours: "Mån - Fre: 08:00 - 16:00",
+        phone: "070-3350618",
+      },
+    },
+  },
 } as const;

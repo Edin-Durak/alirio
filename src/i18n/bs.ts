@@ -211,4 +211,77 @@ export const bs = {
       },
     },
   },
+  about: {
+    story: {
+      title: "Iza Alirio – naša priča",
+      description:
+        "Alirio Omsorg su osnovali otac i sin, Mirza i Haris. Mirza je došao u Švedsku 1990-ih godina iz Bosne i od tada naziva Örebro svojim domom. Dugi niz godina brinuo se o svojim pradjed i prababa, što je stvorilo duboko razumijevanje koliko je važno imati njegu koja se osjeća sigurno i poznato",
+      description2:
+        "Kao mnoge porodice sa Balkana, primijetili smo da jezik, kultura i tradicije igraju veliku ulogu u blagostanju, posebno kada se postari. Istovremeno, vidimo da svi ljudi, bez obzira na porijeklo, zaslužuju njegu koja se osjeća lično i toplo.",
+      description3:
+        "Naša vizija: Sanjamo da jednog dana možemo ponuditi još više - možda dom za starije gdje se različite kulture mogu susresti, gdje su okusi domovine na meniju i gdje se svi osjećaju kao kod kuće. Ali počinje ovdje, s vama, u vašem domu, s njegom koju trebate.",
+    },
+    differences: {
+      title: "Što nas čini različitima?",
+      item1:
+        "Potrebe individue u centru - baš kao Općina Örebro, radimo na osnovu da vaše potrebe i ciljevi određuju kakvu podršku dobijate",
+      item2:
+        "Rehabilitacijska kućna njega - pomažemo vam da postanete jači i samostalniji, ono što možete sami raditi, to i radite sami",
+      item3:
+        "Pristna bliskost - ista prijateljska lica koja se istinski brinu za vas",
+      item4:
+        "Višejezično osoblje - govorimo švedski, bosanski, hrvatski, srpski, arapski, njemački i engleski",
+      item5:
+        "Podrška od početka - također vam pomažemo s prijavama za socijalnu pomoć ako trebate",
+      item6:
+        "Vaše pravo da odlučujete - slušamo vas i poštujemo vaše pravo da sami odlučujete",
+      item7:
+        "Bez stresa - niste sigurni? Rado ćemo prvo popiti kafu bez obaveza",
+    },
+    team: {
+      title: "O našem timu",
+      members: {
+        mirva: {
+          name: "Mirva",
+          role: "Zaposleni",
+          description:
+            "Mirva je posvećeni član našeg tima za njegu, donoseći toplinu i suosjećanje u svakoj interakciji. Njene višejezične vještine i kulturno razumijevanje nam pomažu da pružimo personaliziranu njegu koja poštuje pozadinu i želje svakog pojedinca.",
+        },
+        mirza: {
+          name: "Mirza",
+          role: "Osnivač",
+          description:
+            "Mirza je osnivač i vlasnik Alirio Omsorg. Došao je u Švedsku 1990-ih godina iz Bosne i od tada naziva Örebro svojim domom. Sa godinama iskustva brinuti o svojim pradjedima i prababama, Mirza razumije važnost brige koja se osjeća sigurno i poznato.",
+        },
+        ulf: {
+          name: "Ulf",
+          role: "Zaposleni",
+          description:
+            "Ulf donosi godine iskustva u njegu starijih ljudi u našem timu. Njegova posvećenost pružanju kvalitetne njige i njegovo razumijevanje jedinstvenih potreba svakog pojedinca ga čini nezamjenljivim članom našeg tima.",
+        },
+        haris: {
+          name: "Haris Kikic",
+          role: "Koordinator",
+          description:
+            "Haris radi kao naš koordinator, osiguravajući glatku komunikaciju između našeg tima i porodica koje pomažemo. Njegove organizacione vještine i pažnja na detalje nam pomažu da pružimo najbolje moguće iskustvo njegovanja.",
+        },
+        lejla: {
+          name: "Lejla",
+          role: "Zaposleni",
+          description:
+            "Lejla je posvećeni član našeg tima za njegu, donoseći toplinu i suosjećanje u svakoj interakciji. Njene višejezične vještine i kulturno razumijevanje nam pomažu da pružimo personaliziranu njegu koja poštuje pozadinu i želje svakog pojedinca.",
+        },
+      },
+    },
+    location: {
+      pretitle: "Lokacija",
+      title: "Mi smo pvdje",
+      description: "Pogledajte nas na mapi",
+      info: {
+        title: "Telefon",
+        workingHours: "Pon - Pet: 08:00 - 16:00",
+        phone: "070-3350618",
+      },
+    },
+  },
 } as const;

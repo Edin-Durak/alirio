@@ -239,5 +239,50 @@ export const en = {
       item7:
         "Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached",
     },
+    team: {
+      title: "About our team",
+      members: {
+        mirva: {
+          name: "Mirva",
+          role: "Employee",
+          description:
+            "Mirva is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.",
+        },
+        mirza: {
+          name: "Mirza",
+          role: "Owner",
+          description:
+            "Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.",
+        },
+        ulf: {
+          name: "Ulf",
+          role: "Employee",
+          description:
+            "Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.",
+        },
+        haris: {
+          name: "Haris Kikic",
+          role: "Coordinator",
+          description:
+            "Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.",
+        },
+        lejla: {
+          name: "Lejla",
+          role: "Employee",
+          description:
+            "Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.",
+        },
+      },
+    },
+    location: {
+      pretitle: "Location",
+      title: "We are here",
+      description: "Look for us on the map",
+      info: {
+        title: "Phone",
+        workingHours: "Mo - Fr: 08:00 - 16:00",
+        phone: "070-3350618",
+      },
+    },
   },
 } as const;

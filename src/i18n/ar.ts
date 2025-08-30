@@ -8,9 +8,9 @@ export const ar = {
   home: {
     // Hero Section
     hero: {
-      title: "Individua u centru - blizu vas svaki dan za jači život",
+      title: "الفرد في المركز - قريب منك كل يوم لحياة أقوى",
       description:
-        "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
+        "نحن هنا من أجلكم! معتمدون من بلدية أوريبرو، وجاهزون لبدء رحلتنا معًا.",
       stats: {
         residents: "zadovoljnih <br> korisnika",
         hearts: "pružene <br> usluge",
@@ -18,54 +18,54 @@ export const ar = {
     },
     // Benefits Section
     benefits: {
-      title: "Što nas čini različitima?",
+      title: "ما الذي يجعلنا مختلفين؟",
       subtitle:
-        "Pozovite nas čak i ako se samo pitate - ne pritisnemo, slušamo.",
+        "اتصل بنا حتى لو كنت تتساءل فقط - فنحن لا نضغط عليك، بل نستمع إليك",
       rehabilitative: {
-        title: "Potrebe individue u centru",
+        title: "الاحتياجات الفردية في المركز",
         description:
-          "baš kao Općina Örebro, radimo na osnovu da vaše potrebe i ciljevi određuju kakvu podršku dobijate",
+          "تمامًا مثل بلدية أوريبرو، نعمل على أساس أن احتياجاتك وأهدافك تُحدد الدعم الذي تتلقاه",
       },
       closeness: {
-        title: "Pristna bliskost",
-        description: "ista prijateljska lica koja se istinski brinu za vas",
+        title: "قرب حقيقي",
+        description: "نفس الوجوه الودودة التي تهتم بك بصدق",
       },
       multilingual: {
-        title: "Višejezično osoblje",
+        title: "طاقم عمل متعدد اللغات",
         description:
-          "govorimo švedski, bosanski, hrvatski, srpski, arapski, njemački i engleski",
+          "نتحدث السويدية والبوسنية والكرواتية والصربية والعربية والألمانية والإنجليزية",
       },
       support: {
-        title: "Podrška od početka",
+        title: "دعم من البداية",
         description:
-          "također vam pomažemo s prijavama za socijalnu pomoć ako trebate",
+          "نساعدك أيضًا في طلبات الإعانات الاجتماعية إذا كنت بحاجة إليها",
       },
       abilities: {
-        title: "Vjerujemo u vaše sposobnosti",
+        title: "اثق بقدراتك",
         description:
-          "Vidimo što možete učiniti i podržavamo vas da više toga učinite sami, dodajte malo više teksta ovdje",
+          "نرى ما يمكنك فعله وندعمك في فعل أكثر، أضف مثلاً بضعة أسطر أخرى هنا",
       },
       youDecide: {
-        title: "Vaše pravo da odlučujete",
-        description: "slušamo vas i poštujemo vaše pravo da sami odlučujete",
+        title: "حقك في اتخاذ القرار",
+        description: "نستمع إليك ونحترم حقك في اتخاذ القرار بنفسك",
       },
     },
     // Team Section
     team: {
-      title: "Naše Osoblje",
-      subtitle: "Upoznajte naš tim visoko kvalifikovanih stručnjaka ",
+      title: "فريقنا",
+      subtitle: "اعرف فريقنا من الخبراء المؤهلين",
       members: {
         mirza: {
           name: "Mirza",
-          role: "Osnivač",
+          role: "المؤسس والمالك",
         },
         kani: {
           name: "Kani",
-          role: "Direktor i osnivač",
+          role: "المنظم والمؤسس",
         },
         ulf: {
           name: "Ulf",
-          role: "Direktor i osnivač",
+          role: "المنظم والمؤسس",
         },
       },
     },
@@ -73,141 +73,213 @@ export const ar = {
     services: {
       title: "Naše Usluge",
       subtitle:
-        "Nudimo profesionalnu kućnu njegu koja je potpuno prilagođena vašim individualnim potrebama i ciljevima.",
+        "نقدم رعاية منزلية مهنية تناسب تمامًا احتياجاتك الفردية وأهدافك.",
       service1: {
-        title: "Lična njega",
+        title: "رعاية شخصية",
         description:
-          "Pomoć s ličnom higijenom i tušem, Podrška pri oblačenju i svlačenju, Pomoć s obrucima i podsjećanjem na lijekove",
+          "مساعدة في التنظيف الشخصي والتنظيف، دعم في الإرجاع والغسيل، مساعدة في الأوراق وتذكير بالأدوية",
       },
       service2: {
-        title: "Uslužne aktivnosti",
+        title: "الأنشطة الخدمية",
         description:
-          "Čišćenje i kućni poslovi, Pranje i njega odjeće, Kupovanje hrane i namirnic.",
+          "التنظيف والأعمال المنزلية، الغسيل والإرجاع، شراء الطعام والأغذية.",
       },
       service3: {
-        title: "Socijalna skrb",
+        title: "رعاية اجتماعية",
         description:
-          "Društvo i razgovor, Praćenje do liječničkih posjeta, Pomoć s kontaktima s vlastima",
+          "الجماعة والمحادثة، متابعة الزيارات الطبية، مساعدة في الاتصالات بالحكومة",
       },
     },
     // Testimonials Section
     testimonials: {
-      quote: "Hvala vam, Alirio, što svaki dan činite razliku.",
-      text: "Alirio je bio blagoslov za našu porodicu. Nivo njege, suosjećanja i profesionalnosti koji pružaju je nešto zaista posebno. Od samog početka, osoblje nas je učinilo da se osjećamo dobrodošlo i podržano",
+      quote: "شكرا لك, عليريو, لأنك تجعل كل يوم فرقا.",
+      text: "عليريو كان لفرحة لعائلتنا. مستوى الرعاية، الإعجاب والمهنية التي تقدمونها هي شيء حقا مميز. منذ البداية، قام الموظفون بجعلنا نشعر بالرحمة والدعم",
       author: "Ana",
-      jobTitle: "CEO",
+      jobTitle: "المؤسس والمالك",
     },
     // FAQ Section
     faq: {
-      title: "Često postavljena pitanja",
+      title: "الأسئلة الشائعة",
       subtitle:
-        "Poziv vas ni na što ne obavezuje, ali može biti početak nečeg dobrog.",
+        "الاتصال بك لا يلزمه أي مصروف، لكنه يمكن أن يكون بداية شيء جيد.",
       question1: {
-        question: "Iza Alirio - naša priča",
+        question: "خلف عليريو - قصتنا",
         answer:
-          "Alirio Omsorg su osnovali otac i sin, Mirza i Haris. Mirza je došao u Švedsku 1990-ih godina iz Bosne i od tada naziva Örebro svojim domom.",
+          "أسس ميرزا ​​وحارس دار أليريو أومسوغ للرعاية، الأب والابن. قدم ميرزا ​​إلى السويد في تسعينيات القرن الماضي من البوسنة، واتخذ من أوريبرو موطنًا له منذ ذلك الحين.",
       },
       question2: {
-        question: "Koje usluge nudimo?",
+        question: "ما الذي نقدمه؟",
         answer:
-          "Nudimo profesionalnu kućnu njegu koja je potpuno prilagođena vašim individualnim potrebama i ciljevima. Radimo na osnovu IBIC (Potrebe individue u centru) - nacionalni način rada koji je Nacionalni odbor za zdravstvo i socijalnu skrb razvio za jačanje vaše participacije i koji koristi Općina Örebro.",
+          "نقدم رعاية منزلية مهنية تناسب تمامًا احتياجاتك الفردية وأهدافك. نعمل على أساس IBIC (الاحتياجات الفردية في المركز) - نظام العمل القومي الذي طوره مجلس الصحة والرعاية الاجتماعية لتعزيز أدائك والذي يستخدمه بلدية أوريبرو.",
       },
       question3: {
-        question: "Kako funkcioniše?",
+        question: "كيف يعمل؟",
         answer:
-          "Kontaktirajte nas, Besplatna posjeta, Prijava za socijalnu pomoć, Izbor osoblja, Meki početak. Veoma jednostavan proces koji vodi do vašeg zadovoljstva.",
+          "اتصل بنا، زيارة مجانية، طلب الإعانات الاجتماعية، اختيار الموظفين، بداية سلسة. عملية بسيطة تؤدي إلى رضاك.",
       },
       question4: {
-        question: "Radno vrijeme i dostupnost",
-        answer:
-          "Ponedjeljak-nedjelja 07:00-22:00, Hitni telefon dostupan za hitna pitanja",
+        question: "وقت العمل والتوفر",
+        answer: "الإثنين - الأحد 08:00 - 16:00، الهاتف الحي للأسئلة الحيوية",
       },
       question5: {
-        question: "Šta ako nisam zadovoljan/na sa njegovateljem?",
+        question: "ماذا لو لم أكون راضيا بالرعاية التي تقدمها؟",
         answer:
-          "Vaše zadovoljstvo nam je prioritet. Ako niste zadovoljni sa dodijeljenim njegovateljem, odmah ćemo organizovati zamjenu i pronaći nekoga ko bolje odgovara vašim potrebama.",
+          "رضاك هو أولويتنا. إذا لم تكن راضيا بالرعاية التي تقدمها، سنقوم بتنظيم التعويض وإيجاد شخص يتناسب أكثر مع احتياجاتك.",
       },
       question6: {
-        question: "Kako započeti sa uslugama kućne njege?",
+        question: "كيف أبدأ باستخدام خدمات الرعاية المنزلية؟",
         answer:
-          "Proces je jednostavan - prvo obavimo besplatnu konsultaciju da razumijemo vaše potrebe, zatim kreiramo personalizirani plan njege i dodjeljujemo odgovarajućeg njegovatelja.",
+          "العملية مبسطة - نبدأ بمشاورة مجانية لفهم احتياجاتك، ثم ننشئ برنامج الرعاية الشخصي ونقوم بتعيين الرعاية المناسبة.",
       },
     },
     // Contact Section
     contact: {
-      title: "Imate još pitanja?",
-      description: "Javite se našem ljubaznom timu.",
-      button: "Pozovite",
+      title: "لديك أسئلة أخرى؟",
+      description:
+        "لا تستطيع العثور على الجواب الذي تبحث عنه؟ يرجى التحدث إلى فريقنا الودود.",
+      button: "اتصل بنا",
     },
   },
 
   services: {
     hero: {
-      title: "Kućna njega u Alirio Omsorg",
-      heroCTA: "Pozovi Alirio Omsorg",
-      heroImgAlt: "Starija žena u naručju mlade žene",
+      title: "الرعاية المنزلية في عليريو أومسوغ",
+      heroCTA: "اتصل بعليريو أومسوغ",
+      heroImgAlt: "المرأة القديمة في حب المرأة الأصغر سنا",
     },
     services: {
-      preTitle: "Usluge",
-      title: "Kućna njega – potpuno prilagođena vama",
+      preTitle: "الخدمات",
+      title: "الرعاية المنزلية – مطابق تمامًا لك",
       description:
-        "Radimo na osnovu IBIC modela (Potrebe individue u centru), razvijenog od strane Nacionalnog odbora za zdravstvo i socijalnu skrb.",
+        "نعمل على أساس IBIC model (الاحتياجات الفردية في المركز)، الذي طوره مجلس الصحة والرعاية الاجتماعية.",
       service1: {
-        title: "Lična njega",
+        title: "رعاية شخصية",
         description:
-          "Pomoć s ličnom higijenom i tušem <br> Podrška pri oblačenju i svlačenju <br> Pomoć s obrocima i lijekovima <br> Odlasci na toalet i pomoć pri inkontinenciji",
+          "مساعدة في التنظيف الشخصي والتنظيف، دعم في الإرجاع والغسيل، مساعدة في الأوراق وتذكير بالأدوية",
       },
       service2: {
-        title: "Uslužne aktivnosti",
+        title: "الأنشطة الخدمية",
         description:
-          "Čišćenje i kućni poslovi <br> Pranje i njega odjeće <br> Kupovina hrane i namirnica <br> Čišćenje prozora i jednostavni poslov.",
+          "التنظيف والأعمال المنزلية، الغسيل والإرجاع، شراء الطعام والأغذية.",
       },
       service3: {
-        title: "Socijalna skrb",
+        title: "رعاية اجتماعية",
         description:
-          "Društvo i razgovor <br> Praćenje do liječničkih posjeta <br> Pomoć s kontaktima s vlastima <br> Aktivnosti i šetnje",
+          "الجماعة والمحادثة، متابعة الزيارات الطبية، مساعدة في الاتصالات بالحكومة",
       },
       service4: {
-        title: "Pomažemo vam i prije nego počnete:",
+        title: "نساعدك أيضًا قبل أن تبدأ:",
         description:
-          "Besplatno savjetovanje kod vas kući <br>Pomoć s prijavama za socijalnu pomoć <br>Postupno uvođenje u vašem ritmu <br> Porodični razgovori",
+          "مشاورة مجانية في منزلك <br>دعم في طلبات الإعانات الاجتماعية <br>تدريجيًا بتنسيقك <br>المحادثات العائلية",
       },
       service5: {
-        title: "Kako funkcioniše:",
+        title: "كيف يعمل؟",
         description:
-          "Kontaktirajte nas (telefon ili email) <br>Besplatna posjeta kod kuće <br>Pomoć s prijavom za socijalnu pomoć <br>Izbor osoblja <br>Meki početak",
+          "اتصل بنا، زيارة مجانية، طلب الإعانات الاجتماعية، اختيار الموظفين، بداية سلسة. عملية بسيطة تؤدي إلى رضاك.",
       },
       service6: {
-        title: "Radno vrijeme i dostupnost",
+        title: "وقت العمل والتوفر",
         description:
-          "Uslužne aktivnosti: pon–ned 07:00–22:00 <br>Aktivnosti njege: prema odluci o socijalnoj pomoći <br>Hitni telefon: uvijek dostupan <br>Planiranje: fleksibilno prema vašim željama",
+          "الأنشطة الخدمية: الإثنين - الأحد 07:00 - 22:00 <br>الأنشطة الخدمية: وفقًا لقرار الإعانات الاجتماعية <br>الهاتف الحي: دائم المتاح <br>التخطيط: مرن وفقًا لرغباتك",
       },
       service7: {
-        title: "Troškovi i plaćanje",
+        title: "التكاليف والدفع",
         description:
-          "Kućnu njegu finansira Općina Örebro <br> Maksimalna cijena: 2.642 SEK/mjesečno (2025.) <br> Cijena je ista bez obzira da li birate općinsku ili privatnu njegu <br> Dodatno: kućne usluge uz RUT odbitak",
+          "تمول بلدية أوريبرو الرعاية المنزلية <br> السعر الأقصى: 2.642 SEK/شهر (2025.) <br> السعر هو نفسه سواء كنت تختار الرعاية المحلية أو الخاصة <br> إضافي: الرعاية المنزلية بخصم RUT",
       },
       service8: {
-        title: "Kvaliteta i sigurnost",
+        title: "الجودة والأمان",
         description:
-          "Odobreni od Općine Örebro <br> Osoblje s identifikacijskim karticama <br> Povjerljivost i zaštita integriteta <br> Potpuno osiguranje <br> Redovno praćenje kvalitete",
+          "موافق عليه من قبل بلدية أوريبرو <br> الموظفون ببطاقات التعريف <br> السرية وحماية الإنتروبية <br> التأمين الكامل <br> التدقيق المنتظم للجودة",
       },
     },
     whyAlirio: {
-      title: "Zašto izabrati Alirio Care?",
+      title: "لماذا تختار رعاية عليريو؟",
       description:
-        "Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.",
+        "هنا أكتب بعض النصوص التي تصف بشكل متقارب ما يجب أن تختار المستخدمون بالضرورة Alirio home care service، بدون الكثير من النصوص. واضح وقراري.",
       statistics: {
-        description: "Usluga pruženih usluga godišnje",
+        description: "الخدمة المقدمة من خلال السنة",
       },
       statistics2: {
-        description: "Posvećenost korisnicima",
+        description: "الاستعداد للعمل بما يتناسب مع احتياجات العملاء",
       },
       statistics3: {
-        description: "Godina iskustva",
+        description: "سنوات من الخبرة",
       },
       statistics4: {
-        description: "Zadovoljnih korisnika",
+        description: "العملاء الراضين",
+      },
+    },
+  },
+  about: {
+    story: {
+      title: "خلف عليريو – قصتنا",
+      description:
+        "أسس ميرزا ​​وحارس دار أليريو أومسوغ للرعاية، الأب والابن. قدم ميرزا ​​إلى السويد في تسعينيات القرن الماضي من البوسنة، واتخذ من أوريبرو موطنًا له منذ ذلك الحين. اعتنى بجدّيه لسنوات عديدة، مما غرس فينا فهمًا عميقًا لأهمية الرعاية التي تُشعر بالأمان والألفة.",
+      description2:
+        "ومثل العديد من العائلات من البلقان، لاحظنا أن اللغة والثقافة والتقاليد تلعب دورًا كبيرًا في الرفاهية، خاصة مع التقدم في السن. في الوقت نفسه، نرى أن جميع الناس، بغض النظر عن أصولهم، يستحقون رعاية شخصية ودافئة.",
+      description3:
+        "رؤيتنا: نحلم بأن نتمكن يومًا ما من تقديم المزيد - ربما دار رعاية للمسنين تلتقي فيها ثقافات مختلفة، حيث تُقدم نكهات الوطن الأصيلة، ويشعر الجميع وكأنهم في وطنهم. لكن الأمر يبدأ من هنا، معك، في منزلك، مع الرعاية التي تحتاجها.",
+    },
+    differences: {
+      title: "ما الذي يميزنا؟",
+      item1:
+        "الاحتياجات الفردية في المركز - تمامًا مثل بلدية أوريبرو، نعمل على أساس أن احتياجاتك وأهدافك تُحدد الدعم الذي تتلقاه.",
+      item2:
+        "رعاية منزلية لإعادة التأهيل - نساعدك على أن تصبح أقوى وأكثر استقلالية، ما تستطيع فعله بنفسك، تفعله بنفسك.",
+      item3: "قرب حقيقي - نفس الوجوه الودودة التي تهتم بك بصدق.",
+      item4:
+        "طاقم عمل متعدد اللغات - نتحدث السويدية والبوسنية والكرواتية والصربية والعربية والألمانية والإنجليزية.",
+      item5:
+        "دعم من البداية - نساعدك أيضًا في طلبات الإعانات الاجتماعية إذا كنت بحاجة إليها",
+      item6:
+        "حقك في اتخاذ القرار - نستمع إليك ونحترم حقك في اتخاذ القرار بنفسك.",
+      item7:
+        "راحة بال - غير متأكد؟ يسعدنا أن نتناول قهوتنا أولًا دون أي التزام.",
+    },
+    team: {
+      title: "عن فريقنا",
+      members: {
+        mirva: {
+          name: "Mirva",
+          role: "موظف",
+          description:
+            "ميرفا عضوٌ مُخلصٌ في فريق الرعاية لدينا، تُضفي الدفء والتعاطف على كل تفاعل. مهاراتها اللغوية المتعددة وفهمها الثقافي يُساعداننا على تقديم رعاية شخصية تُراعي خلفية كل فرد وتفضيلاته.",
+        },
+        mirza: {
+          name: "Mirza",
+          role: "المؤسس والمالك",
+          description:
+            "ميرزا ​​هو مؤسس ومالك شركة عليريو أومسورغ. قدم إلى السويد في تسعينيات القرن الماضي من البوسنة، واتخذ من أوريبرو موطنًا له منذ ذلك الحين. بفضل سنوات خبرته في رعاية أجداده، يُدرك ميرزا ​​أهمية الرعاية الشخصية والرحيمة التي تُشعر بالأمان والراحة.",
+        },
+        ulf: {
+          name: "Ulf",
+          role: "موظف",
+          description:
+            "ألوف يحمل سنواتًا من الخبرة في رعاية المسنين في فريقنا. رأسه لتقديم رعاية من الجودة وفهمه لاحتياجات الفرد الفريدة يجعله عضوًا قيمًا في فريقنا.",
+        },
+        haris: {
+          name: "Haris Kikic",
+          role: "المنظم",
+          description:
+            "هاريس يعمل كمنظم لدينا، مضمنة إتصالات سلسة بين فريقنا والعائلات التي نعمل معهم. مهاراته التنظيمية وتفضيلاته للتفاصيل تساعدنا على تقديم تجربة الرعاية الأفضل.",
+        },
+        lejla: {
+          name: "Lejla",
+          role: "موظف",
+          description:
+            "ليجلا عضوٌ مُخلصٌ في فريق الرعاية لدينا، تُضفي الدفء والتعاطف على كل تفاعل. مهاراتها اللغوية المتعددة وفهمها الثقافي يُساعداننا على تقديم رعاية شخصية تُراعي خلفية كل فرد وتفضيلاته.",
+        },
+      },
+    },
+    location: {
+      pretitle: "مكان",
+      title: "نحن هنا",
+      description: "انظر على الخريطة",
+      info: {
+        title: "هاتف",
+        workingHours: "من الإثنين إلى الأحد 08:00 - 16:00",
+        phone: "070-3350618",
       },
     },
   },
