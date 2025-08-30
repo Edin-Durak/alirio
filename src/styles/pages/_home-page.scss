@@ -548,6 +548,7 @@
       padding: $spacing-6;
       background-color: $white;
       transition: all 0.3s ease;
+      height: 100%;
 
       &:hover {
         background: linear-gradient(180deg, #ffffff 0%, #e06464 81.64%);
