@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import mirvaImage from '../assets/images/mirva-img.jpg';
 import mirzaImage from '../assets/images/mirza-img.webp';
 import ulfImage from '../assets/images/ulf-img.webp';
+import locationImage from '../assets/images/location-img.webp';
 import '../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 import { lazy } from 'astro:schema';
@@ -28,7 +29,7 @@ const { content } = getTranslations(lang);
     <section class="about-content" aria-labelledby="about-story-title">
       <div class="container">
         <div class="about-content__inner">
-          <article class="about-story">
+          <article class="about-story" aria-labelledby="about-story-title">
             <h1 class="about-story__title" id="about-story-title">Behind Alirio - our story</h1>
             <div class="about-story__content">
               <p class="about-story__paragraph">
@@ -68,7 +69,7 @@ const { content } = getTranslations(lang);
                  Stress Free - Not sure? We'll be happy to have a coffee first with no strings attached
                </li>
              </ul>
-           </article>
+        </article>
 
         <article class="about-team" aria-labelledby="about-team-title">
           <h2 class="about-team__title" id="about-team-title" hidden>About our team</h2>
@@ -140,7 +141,7 @@ const { content } = getTranslations(lang);
                     <h3 class="about-team__panel-name">Mirva</h3>
                     <p class="about-team__panel-role">Employee</p>
                     <div class="about-team__panel-description">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>Mirva is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
                     </div>
                   </div>
                 </div>
@@ -208,7 +209,7 @@ const { content } = getTranslations(lang);
                     <h3 class="about-team__member-name">Mirva</h3>
                     <p class="about-team__member-role">Employee</p>
                     <div class="about-team__member-description">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                      <p>Mirva is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.</p>
                     </div>
                   </div>
                 </div>
@@ -265,7 +266,28 @@ const { content } = getTranslations(lang);
                   </div>
                 </div>
               </div>
-            </article>
+        </article>
+
+        <section class="about-location" aria-labelledby="about-location-title">
+          <div class="about-location__inner container">
+                <span class="about-location__pretitle">
+                Location
+                </span>
+                <h2 class="about-location__title" id="about-location-title">
+                We are here
+                </h2>
+                <p class="about-location__description">Look for us on the map</p>
+                <div class="about-location__image">
+                    <Image src={locationImage} alt="Our location" width={1000} height={1000} loading="lazy" />
+                </div>
+                <div class="about-location__info">
+                    <span class="about-location__info-title">Telefon</span>
+                    <p class="about-location__info-working-hours">Mo - Fr: 08:00 - 16:00</p>
+                    <a href="tel:+0703350618" class="about-location__info-link">070-3350618</a>
+                </div>
+          </div>
+        </section>
+
         </div>
       </div>
     </section>
