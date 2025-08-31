@@ -30,6 +30,8 @@ export const ui = {
     "footer.help": "Help",
     "footer.contact": "Contact Us",
     "footer.privacy": "Privacy Policy",
+    "footer.email": "Email Alirio Care",
+    "footer.phone": "Call Alirio Care",
   },
   bs: {
     "nav.home": "Početna",
@@ -47,6 +49,8 @@ export const ui = {
     "footer.help": "Pomoć",
     "footer.contact": "Kontaktirajte nas",
     "footer.privacy": "Politika privatnosti",
+    "footer.email": "Email Alirio Care",
+    "footer.phone": "Pozovite Alirio Care",
   },
   sv: {
     "nav.home": "Hem",
@@ -64,6 +68,8 @@ export const ui = {
     "footer.help": "Hjälp",
     "footer.contact": "Kontakta oss",
     "footer.privacy": "Integritetspolicy",
+    "footer.email": "Mejla Alirio Care",
+    "footer.phone": "Ring Alirio Care",
   },
   ar: {
     "nav.home": "الرئيسية",
@@ -81,6 +87,8 @@ export const ui = {
     "footer.help": "مساعدة",
     "footer.contact": "اتصل بنا",
     "footer.privacy": "سياسة الخصوصية",
+    "footer.email": "البريد الإلكتروني أليريو كير",
+    "footer.phone": "اتصل بـ Alirio Care",
   },
 } as const;
 

@@ -145,6 +145,8 @@
   display: block;
   width: 100%;
   max-width: 300px;
+  margin-bottom: $spacing-4;
+
   &:hover {
     background-color: $brand-red-500;
   }
@@ -156,6 +158,20 @@
 
   &:active {
     background-color: $brand-red-600;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    background-color: $color-rosy;
+    color: $text-color-dark-black;
+    &:hover {
+      background-color: $color-rosy;
+      color: $text-color-dark-black;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($brand-red-400, 0.3);
+    }
   }
 }
 
