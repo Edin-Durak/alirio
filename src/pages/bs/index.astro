@@ -26,6 +26,7 @@ import mirzaAvatarImage from '../../assets/images/mirza-avatar-img.webp';
 import ulfAvatarImage from '../../assets/images/ulf-avatar-img.webp';
 import mirvaAvatarImage from '../../assets/images/mirva-avatar-img.jpg';
 import { getTranslations, getLangFromUrl } from '../../i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import '../../styles/main.scss';
 
@@ -178,7 +179,9 @@ const { content } = getTranslations(lang);
 				<div class="meet-the-team-section__content">
 					<div class="meet-the-team-section__card">
 						<div class="meet-the-team-section__card-image">
+							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirva" class="meet-the-team-section__card meet-the-team-section__card--link">
 							<Image src={mirvaImage} alt="Mirvat - član tima" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+							</a>
 						</div>
 						<div class="meet-the-team-section__card-content content-one">
 							<h3 class="meet-the-team-section__card-title">
@@ -191,7 +194,9 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="meet-the-team-section__card">
 						<div class="meet-the-team-section__card-image">
+							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
 							<Image src={mirzaImage} alt="Mirza - član tima" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
+							</a>
 						</div>
 						<div class="meet-the-team-section__card-content content-two">
 							<h3 class="meet-the-team-section__card-title">
@@ -204,7 +209,9 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="meet-the-team-section__card">
 						<div class="meet-the-team-section__card-image">
+							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
 							<Image src={ulfImage} alt="Ulf - član tima" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							</a>
 						</div>
 						<div class="meet-the-team-section__card-content content-three">
 							<h3 class="meet-the-team-section__card-title">

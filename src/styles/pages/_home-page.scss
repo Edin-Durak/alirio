@@ -399,6 +399,8 @@
 
     .image-one {
       transform: rotate(5deg);
+      max-height: 280px;
+      object-fit: cover;
 
       @include tablet {
         transform: rotate(0deg);
@@ -479,6 +481,14 @@
           border-right: 20px solid transparent;
           border-top: 20px solid $white;
         }
+      }
+
+      @include tablet {
+        left: 20px;
+      }
+
+      @include mobile {
+        left: 20px;
       }
     }
 
