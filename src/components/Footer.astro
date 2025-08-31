@@ -88,10 +88,10 @@ const isLinkActive = (linkHref: string) => {
   <!-- Copyright -->
   <div class="footer__copyright">
     <p class="footer__copyright-text">
-      © Copyright 2025, Designed and developed by 
-      <a href="https://www.linkedin.com/in/asad-halilovic/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">Asad</a>
-      & 
-      <a href="https://edin-durak-dev.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">Edin</a>
+      {ui['footer.copyright'].replace('{year}', new Date().getFullYear().toString())} 
+      <a href="https://www.linkedin.com/in/asad-halilovic/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">{ui['footer.developer1']}</a>
+      {ui['footer.and']} 
+      <a href="https://edin-durak-dev.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">{ui['footer.developer2']}</a>
     </p>
   </div>
 </footer>

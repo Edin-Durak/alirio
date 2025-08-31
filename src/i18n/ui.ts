@@ -32,6 +32,10 @@ export const ui = {
     "footer.privacy": "Privacy Policy",
     "footer.email": "Email Alirio Care",
     "footer.phone": "Call Alirio Care",
+    "footer.copyright": "© Copyright {year}, Designed and developed by",
+    "footer.developer1": "Asad",
+    "footer.developer2": "Edin",
+    "footer.and": "&",
   },
   bs: {
     "nav.home": "Početna",
@@ -51,6 +55,10 @@ export const ui = {
     "footer.privacy": "Politika privatnosti",
     "footer.email": "Email Alirio Care",
     "footer.phone": "Pozovite Alirio Care",
+    "footer.copyright": "© Copyright {year}, Dizajnirano i razvijeno od strane",
+    "footer.developer1": "Asad",
+    "footer.developer2": "Edin",
+    "footer.and": "i",
   },
   sv: {
     "nav.home": "Hem",
@@ -70,6 +78,10 @@ export const ui = {
     "footer.privacy": "Integritetspolicy",
     "footer.email": "Mejla Alirio Care",
     "footer.phone": "Ring Alirio Care",
+    "footer.copyright": "© Copyright {year}, Designat och utvecklat av",
+    "footer.developer1": "Asad",
+    "footer.developer2": "Edin",
+    "footer.and": "och",
   },
   ar: {
     "nav.home": "الرئيسية",
@@ -89,6 +101,10 @@ export const ui = {
     "footer.privacy": "سياسة الخصوصية",
     "footer.email": "البريد الإلكتروني أليريو كير",
     "footer.phone": "اتصل بـ Alirio Care",
+    "footer.copyright": "© حقوق النشر {year}، تم التصميم والتطوير بواسطة",
+    "footer.developer1": "أسد",
+    "footer.developer2": "إيدين",
+    "footer.and": "و",
   },
 } as const;
 
