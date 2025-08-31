@@ -53,7 +53,7 @@ const { content } = getTranslations(lang);
 						</a>
 						<Image src={heroLineIcon} alt="Linje ikon" width={20} height={40} loading={'eager'} class="hero-statistics__line-icon" />
 						<div class="hero-cta__certificate">
-							<Image src={certificateImage} alt="Certifikatbild" width={173} height={175} loading={'eager'} />
+							<Image src={certificateImage} alt="Certifikatbild" width={173} height={175} loading={'lazy'} />
 						</div>
 					</div>
 				</div>
@@ -63,7 +63,7 @@ const { content } = getTranslations(lang);
 						id="hero-image" 
 						src={heroImagePlaceholder} 
 						alt="Gammal man och ung kvinna" 
-						loading={'eager'} 
+						loading={'lazy'} 
 						width={597} 
 						height={647} 
 						data-actual-src={heroImage.src}
