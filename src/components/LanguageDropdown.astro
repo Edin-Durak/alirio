@@ -118,6 +118,24 @@ const routeMappings = {
           this.close();
         }
       });
+      
+      // Check for stored language preference on page load
+      this.checkStoredLanguagePreference();
+    }
+    
+    checkStoredLanguagePreference() {
+      const storedLang = localStorage.getItem('preferredLanguage');
+      if (storedLang && storedLang !== 'sv') {
+        // Check if we're not already on the stored language
+        const currentPath = window.location.pathname;
+        const pathSegments = currentPath.split('/').filter(segment => segment);
+        
+        // If we're on Swedish (default) and have a stored preference, redirect
+        if (pathSegments.length === 0 || !['en', 'bs', 'ar'].includes(pathSegments[0])) {
+          // We're on Swedish page, redirect to stored language
+          window.location.href = `/${storedLang}/`;
+        }
+      }
     }
     
     toggle() {
@@ -147,6 +165,9 @@ const routeMappings = {
       
       // Close dropdown
       this.close();
+      
+      // Save language preference to localStorage
+      localStorage.setItem('preferredLanguage', targetLang);
       
       // Get current path
       const currentPath = window.location.pathname;

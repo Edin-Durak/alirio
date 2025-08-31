@@ -1,5 +1,6 @@
 ---
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
+import CookieConsent from '../components/CookieConsent.astro';
 
 export interface Props {
 	title?: string;
@@ -54,6 +55,8 @@ const {
 	</head>
 	<body class={lang === 'ar' ? 'arabic' : ''}>
 		<slot />
+		
+		<CookieConsent />
 	</body>
 </html>
 
