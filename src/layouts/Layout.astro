@@ -1,6 +1,8 @@
 ---
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 import CookieConsent from '../components/CookieConsent.astro';
+import {Image} from 'astro:assets';
+import favicon from '../assets/images/icons/favicon.svg';
 
 export interface Props {
 	title?: string;
@@ -35,8 +37,7 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="../assets/images/icons/favicon.svg" />
-
+		<link rel="icon" type="image/svg+xml" href={favicon.src} />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
