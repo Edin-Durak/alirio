@@ -55,60 +55,60 @@ const currentContent = cookieContent[lang] || cookieContent.sv;
 <script>
   class CookieConsent {
     constructor() {
-      this.banner = document.getElementById('cookie-consent');
-      this.acceptBtn = this.banner?.querySelector('[data-action="accept"]');
-      this.declineBtn = this.banner?.querySelector('[data-action="decline"]');
+      const banner = document.getElementById('cookie-consent');
+      const acceptBtn = banner?.querySelector('[data-action="accept"]');
+      const declineBtn = banner?.querySelector('[data-action="decline"]');
       
-      this.init();
+      this.init(banner, acceptBtn, declineBtn);
     }
     
-    init() {
+    init(banner, acceptBtn, declineBtn) {
       // Check if user has already made a choice
       const hasConsented = localStorage.getItem('cookieConsent');
       
       if (hasConsented === null) {
         // Show banner if no choice has been made
-        this.showBanner();
+        this.showBanner(banner);
       }
       
       // Add event listeners
-      this.acceptBtn?.addEventListener('click', () => this.accept());
-      this.declineBtn?.addEventListener('click', () => this.decline());
+      acceptBtn?.addEventListener('click', () => this.accept(banner));
+      declineBtn?.addEventListener('click', () => this.decline(banner));
     }
     
-    showBanner() {
-      if (this.banner) {
-        this.banner.style.display = 'block';
+    showBanner(banner) {
+      if (banner) {
+        banner.style.display = 'block';
         // Add slide-in animation
         setTimeout(() => {
-          this.banner.classList.add('cookie-consent--visible');
+          banner.classList.add('cookie-consent--visible');
         }, 100);
       }
     }
     
-    accept() {
+    accept(banner) {
       localStorage.setItem('cookieConsent', 'accepted');
       localStorage.setItem('cookieConsentDate', new Date().toISOString());
-      this.hideBanner();
+      this.hideBanner(banner);
       
       // Trigger any additional actions for accepted cookies
       this.onAccept();
     }
     
-    decline() {
+    decline(banner) {
       localStorage.setItem('cookieConsent', 'declined');
       localStorage.setItem('cookieConsentDate', new Date().toISOString());
-      this.hideBanner();
+      this.hideBanner(banner);
       
       // Trigger any additional actions for declined cookies
       this.onDecline();
     }
     
-    hideBanner() {
-      if (this.banner) {
-        this.banner.classList.remove('cookie-consent--visible');
+    hideBanner(banner) {
+      if (banner) {
+        banner.classList.remove('cookie-consent--visible');
         setTimeout(() => {
-          this.banner.style.display = 'none';
+          banner.style.display = 'none';
         }, 300);
       }
     }
