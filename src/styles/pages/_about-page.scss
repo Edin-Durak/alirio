@@ -532,3 +532,18 @@
     }
   }
 }
+
+.arabic {
+  .about-story {
+    text-align: right;
+  }
+  .about-differences {
+    direction: rtl;
+  }
+
+  .about-team__tabs,
+  .about-team__panel,
+  .about-team__member {
+    direction: rtl;
+  }
+}
