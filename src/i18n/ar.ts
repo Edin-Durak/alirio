@@ -53,15 +53,15 @@ export const ar = {
       subtitle: "اعرف فريقنا من الخبراء المؤهلين",
       members: {
         mirza: {
-          name: "Mirza",
+          name: "ميرزا",
           role: "المؤسس والمالك",
         },
-        kani: {
-          name: "Kani",
+        mirvat: {
+          name: "ميرفت",
           role: "المنظم والمؤسس",
         },
         ulf: {
-          name: "Ulf",
+          name: "أولف",
           role: "المنظم والمؤسس",
         },
       },

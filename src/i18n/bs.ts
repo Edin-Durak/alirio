@@ -56,8 +56,8 @@ export const bs = {
           name: "Mirza",
           role: "Osnivač",
         },
-        kani: {
-          name: "Kani",
+        mirvat: {
+          name: "Mirvat",
           role: "Direktor i osnivač",
         },
         ulf: {

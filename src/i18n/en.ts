@@ -58,8 +58,8 @@ export const en = {
           name: "Mirza",
           role: "CEO & Founder",
         },
-        kani: {
-          name: "Kani",
+        mirvat: {
+          name: "Mirvat",
           role: "CEO & Founder",
         },
         ulf: {

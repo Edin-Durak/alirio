@@ -57,8 +57,8 @@ export const sv = {
           name: "Mirza",
           role: "Grundare",
         },
-        kani: {
-          name: "Kani",
+        mirvat: {
+          name: "Mirvat",
           role: "Grundare",
         },
         ulf: {
