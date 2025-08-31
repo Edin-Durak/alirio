@@ -23,6 +23,14 @@ const routeMappings = {
   sv: getTranslationsUI('sv').content.routes,
   ar: getTranslationsUI('ar').content.routes,
 };
+
+// Create a simplified languages array for client-side use
+const clientLanguages = [
+  { code: 'sv', name: 'Sweden', native: 'Sweden', flagSrc: swedenFlag.src },
+  { code: 'en', name: 'English', native: 'English', flagSrc: ukFlag.src },
+  { code: 'bs', name: 'Bosanski', native: 'Bosanski', flagSrc: bosniaFlag.src },
+  { code: 'ar', name: 'العربية', native: 'العربية', flagSrc: saudiFlag.src }
+];
 ---
 
 <div class="language-dropdown">
@@ -56,7 +64,7 @@ const routeMappings = {
   </ul>
 </div>
 
-<script define:vars={{ routeMappings, languages }}>
+<script define:vars={{ routeMappings, languages: clientLanguages }}>
   /**
    * @typedef {Object} LanguageDropdown
    * @property {HTMLElement} dropdown
@@ -86,14 +94,20 @@ const routeMappings = {
      */
     options;
     
-    constructor(element) {
-      this.dropdown = element;
-      this.trigger = element.querySelector('.language-dropdown__trigger');
-      this.menu = element.querySelector('.language-dropdown__menu');
-      this.options = element.querySelectorAll('.language-dropdown__option');
-      
-      this.init();
-    }
+         constructor(element) {
+       this.dropdown = element;
+       this.trigger = element.querySelector('.language-dropdown__trigger');
+       this.menu = element.querySelector('.language-dropdown__menu');
+       this.options = element.querySelectorAll('.language-dropdown__option');
+       
+       // Safety check - ensure we have the required data
+       if (typeof languages === 'undefined' || typeof routeMappings === 'undefined') {
+         console.error('LanguageDropdown: Required data not available');
+         return;
+       }
+       
+       this.init();
+     }
     
     init() {
       if (!this.trigger) {
@@ -248,54 +262,63 @@ const routeMappings = {
       window.location.href = targetPath;
     }
     
-    updateActiveState() {
-      // Get current language from URL
-      const currentPath = window.location.pathname;
-      const basePath = '/alirio';
-      const pathWithoutBase = currentPath.replace(basePath, '');
-      const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
-      
-      let currentLang = 'sv'; // Default to Swedish
-      
-      // Check if current path has a language prefix
-      const supportedLanguages = ['en', 'sv', 'bs', 'ar'];
-      if (pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0])) {
-        currentLang = pathSegments[0];
-      }
-      
-      // Update trigger text
-      const triggerText = this.trigger.querySelector('.language-dropdown__current');
-      if (triggerText) {
-        triggerText.textContent = currentLang.toUpperCase();
-      }
-      
-      // Update active state for all options
-      this.options.forEach(option => {
-        const langCode = option.dataset.lang;
-        const isActive = langCode === currentLang;
-        
-        option.classList.toggle('language-dropdown__option--active', isActive);
-        option.setAttribute('aria-current', isActive ? 'true' : 'false');
-      });
-      
-      // Update trigger flag - find the current language and update the flag
-      const currentLanguage = this.languages.find(l => l.code === currentLang);
-      if (currentLanguage) {
-        const flagElement = this.trigger.querySelector('img');
-        if (flagElement) {
-          // Update the flag image source
-          flagElement.src = currentLanguage.flag.src;
-          flagElement.alt = `${currentLanguage.name} flag`;
-        }
-      }
-    }
+         updateActiveState() {
+       // Safety check - ensure required elements exist
+       if (!this.trigger || !this.options) {
+         return;
+       }
+       
+       // Get current language from URL
+       const currentPath = window.location.pathname;
+       const basePath = '/alirio';
+       const pathWithoutBase = currentPath.replace(basePath, '');
+       const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
+       
+       let currentLang = 'sv'; // Default to Swedish
+       
+       // Check if current path has a language prefix
+       const supportedLanguages = ['en', 'sv', 'bs', 'ar'];
+       if (pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0])) {
+         currentLang = pathSegments[0];
+       }
+       
+       // Update trigger text
+       const triggerText = this.trigger.querySelector('.language-dropdown__current');
+       if (triggerText) {
+         triggerText.textContent = currentLang.toUpperCase();
+       }
+       
+       // Update active state for all options
+       this.options.forEach(option => {
+         const langCode = option.dataset.lang;
+         const isActive = langCode === currentLang;
+         
+         option.classList.toggle('language-dropdown__option--active', isActive);
+         option.setAttribute('aria-current', isActive ? 'true' : 'false');
+       });
+       
+       // Update trigger flag - find the current language and update the flag
+       if (typeof languages !== 'undefined' && Array.isArray(languages)) {
+         const currentLanguage = languages.find(l => l.code === currentLang);
+         if (currentLanguage && currentLanguage.flagSrc) {
+           const flagElement = this.trigger.querySelector('img');
+           if (flagElement) {
+             // Update the flag image source
+             flagElement.src = currentLanguage.flagSrc;
+             flagElement.alt = `${currentLanguage.name} flag`;
+           }
+         }
+       }
+     }
   }
   
-  // Initialize all language dropdowns
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdowns = document.querySelectorAll('.language-dropdown');
-    dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
-  });
+     // Initialize all language dropdowns
+   document.addEventListener('DOMContentLoaded', () => {
+     console.log('Languages available:', languages);
+     console.log('Route mappings available:', routeMappings);
+     const dropdowns = document.querySelectorAll('.language-dropdown');
+     dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
+   });
   
   // Also try to initialize immediately if DOM is already loaded
   if (document.readyState !== 'loading') {
