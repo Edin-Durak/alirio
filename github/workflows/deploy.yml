@@ -4,7 +4,7 @@ on:
   # Trigger the workflow every time you push to the `production/env` branch
   # Using a different branch name? Replace `production/env` with your branch's name
   push:
-    branches: [production/env]
+    branches: [production/enviorment-2]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
