@@ -39,14 +39,14 @@ export const en = {
           "We'll also help you with the application for help if you need it, also add a little more text here",
       },
       abilities: {
-        title: "Believe in your abilities",
+        title: "The needs of the individual at the center",
         description:
-          "We see what you can do and support you to do more yourself, add a litle bit more of text here",
+          "Just like Örebro Municipality, we work on the basis that your needs and goals determine what support you receive",
       },
       youDecide: {
-        title: "No stress",
+        title: "Your right to decide",
         description:
-          "Hesitant? We're happy to have a coffee first with no obligations, also a bit of text wouldn’t hurt",
+          "We listen to you and respect your right to make your own decisions",
       },
     },
     // Team Section

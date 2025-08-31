@@ -19,9 +19,9 @@ export const bs = {
       subtitle:
         "Pozovite nas čak i ako se samo pitate - ne pritisnemo, slušamo.",
       rehabilitative: {
-        title: "Potrebe individue u centru",
+        title: "Rehabilitacijska kućna njega",
         description:
-          "baš kao Općina Örebro, radimo na osnovu da vaše potrebe i ciljevi određuju kakvu podršku dobijate",
+          "pomažemo vam da postanete jači i samostalniji, ono što možete sami raditi, to i radite sami",
       },
       closeness: {
         title: "Pristna bliskost",
@@ -38,9 +38,9 @@ export const bs = {
           "također vam pomažemo s prijavama za socijalnu pomoć ako trebate",
       },
       abilities: {
-        title: "Vjerujemo u vaše sposobnosti",
+        title: "Potrebe individue u centru",
         description:
-          "Vidimo što možete učiniti i podržavamo vas da više toga učinite sami, dodajte malo više teksta ovdje",
+          "baš kao Općina Örebro, radimo na osnovu da vaše potrebe i ciljevi određuju kakvu podršku dobijate",
       },
       youDecide: {
         title: "Vaše pravo da odlučujete",
