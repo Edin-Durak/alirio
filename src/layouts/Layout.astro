@@ -24,7 +24,7 @@ const {
 	title = metaContent[lang]?.title || metaContent.sv.title,
 	description = metaContent[lang]?.description || metaContent.sv.description,
 	keywords = metaContent[lang]?.keywords || metaContent.sv.keywords,
-	ogImage = "https://edin-durak.github.io/alirio/hero-img.webp"
+	ogImage = "/src/assets/images/thumbnails/home-page-sv.webp"
 } = Astro.props;
 
 ---
@@ -52,7 +52,7 @@ const {
 		<meta name="twitter:description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={lang === 'ar' ? 'arabic' : ''}>
 		<slot />
 	</body>
 </html>

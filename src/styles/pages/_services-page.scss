@@ -453,3 +453,30 @@
     }
   }
 }
+
+.arabic {
+  .hero-section__button {
+    flex-direction: row-reverse;
+    img {
+      rotate: 180deg;
+    }
+  }
+
+  .services-grid {
+    direction: rtl;
+  }
+
+  .why-choose-us-section__title,
+  .why-choose-us-section__description {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .why-choose-us-section__content {
+    flex-direction: row-reverse;
+  }
+
+  .why-choose-us-section__statistics-item-number {
+    text-align: right;
+  }
+}

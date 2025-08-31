@@ -775,3 +775,44 @@
     }
   }
 }
+
+.arabic {
+  .hero-section__inner {
+    flex-direction: row-reverse;
+    text-align: right;
+
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+    }
+  }
+
+  .hero-section__description,
+  .hero-cta {
+    margin-left: auto;
+  }
+
+  .our-benefits-section__content {
+    direction: rtl;
+  }
+
+  .our-services-section__card-title {
+    flex-direction: row-reverse;
+
+    img {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  .our-services-section__card-description {
+    text-align: right;
+  }
+  .faq-section__content {
+    text-align: right;
+  }
+  .faq-item__trigger {
+    flex-direction: row-reverse;
+  }
+  .faq-item__question {
+    flex: none;
+  }
+}

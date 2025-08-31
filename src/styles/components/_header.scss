@@ -101,3 +101,18 @@
     }
   }
 }
+
+.arabic {
+  .header__container,
+  .header__nav-list,
+  .header__actions,
+  .header__phone-link {
+    flex-direction: row-reverse;
+  }
+
+  .header__phone-link {
+    img {
+      rotate: 180deg;
+    }
+  }
+}
