@@ -34,9 +34,9 @@ const isLinkActive = (linkHref: string) => {
   const currentPath = Astro.url.pathname;
   const linkPath = new URL(linkHref, Astro.url).pathname;
   
-  // Handle root path specially
-  if (linkPath === '/' || linkPath === `/${lang}/`) {
-    return currentPath === '/' || currentPath === `/${lang}/`;
+  // Handle root path specially for GitHub Pages base path
+  if (linkPath === '/alirio/' || linkPath === `/alirio/${lang}/`) {
+    return currentPath === '/alirio/' || currentPath === `/alirio/${lang}/`;
   }
   
   // For other paths, check if current path starts with link path
@@ -47,7 +47,7 @@ const isLinkActive = (linkHref: string) => {
 <header class="header">
   <div class="header__container">
     <a href={logoHref} class="header__logo-link">
-      <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" loading="eager" />
+      <Image src={logoImage} alt={ui['header.logo.alt']} width={80} height={80} class="header__logo-image" loading="eager" />
     </a>
     
     <nav class="header__nav">
@@ -66,8 +66,8 @@ const isLinkActive = (linkHref: string) => {
       <div class="header__languages">
         <LanguageDropdown />
       </div>
-      <button class="header__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} loading="eager" />
+      <button class="header__mobile-toggle" aria-label={ui['header.mobile.toggle']} aria-expanded="false">
+        <Image src={hamburgerIcon} alt={ui['header.menu.alt']} width={24} height={24} loading="eager" />
       </button>
       <a href="tel:+0703350618" class="header__phone-link">
         <span class="header__phone-link-text">{ui['nav.phone']}</span>
@@ -86,7 +86,7 @@ const isLinkActive = (linkHref: string) => {
   <div class="header__mobile-nav" aria-hidden="true">
     <div class="header__mobile-nav-content">
       <div class="header__mobile-nav-header">
-        <button class="header__mobile-close" aria-label="Close mobile menu">
+        <button class="header__mobile-close" aria-label={ui['header.mobile.close']}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

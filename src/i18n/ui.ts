@@ -36,6 +36,11 @@ export const ui = {
     "footer.developer1": "Asad",
     "footer.developer2": "Edin",
     "footer.and": "&",
+    "header.mobile.toggle": "Toggle mobile menu",
+    "header.mobile.close": "Close mobile menu",
+    "header.logo.alt": "Alirio logo",
+    "header.menu.alt": "Menu",
+    "footer.logo.alt": "Alirio logo",
   },
   bs: {
     "nav.home": "Početna",
@@ -59,6 +64,11 @@ export const ui = {
     "footer.developer1": "Asad",
     "footer.developer2": "Edin",
     "footer.and": "i",
+    "header.mobile.toggle": "Prebacivanje mobilnog menija",
+    "header.mobile.close": "Zatvori mobilni meni",
+    "header.logo.alt": "Alirio logo",
+    "header.menu.alt": "Meni",
+    "footer.logo.alt": "Alirio logo",
   },
   sv: {
     "nav.home": "Hem",
@@ -82,6 +92,11 @@ export const ui = {
     "footer.developer1": "Asad",
     "footer.developer2": "Edin",
     "footer.and": "och",
+    "header.mobile.toggle": "Växla mobilmeny",
+    "header.mobile.close": "Stäng mobilmeny",
+    "header.logo.alt": "Alirio logo",
+    "header.menu.alt": "Meny",
+    "footer.logo.alt": "Alirio logo",
   },
   ar: {
     "nav.home": "الرئيسية",
@@ -105,6 +120,11 @@ export const ui = {
     "footer.developer1": "أسد",
     "footer.developer2": "إيدين",
     "footer.and": "و",
+    "header.mobile.toggle": "تبديل القائمة المحمولة",
+    "header.mobile.close": "إغلاق القائمة المحمولة",
+    "header.logo.alt": "شعار أليريو",
+    "header.menu.alt": "القائمة",
+    "footer.logo.alt": "شعار أليريو",
   },
 } as const;
 
@@ -117,8 +137,22 @@ export const contentTranslations = {
 } as const;
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split("/");
+  const pathname = url.pathname;
+
+  // Handle GitHub Pages base path
+  if (pathname.startsWith("/alirio/")) {
+    const pathWithoutBase = pathname.replace("/alirio", "");
+    const segments = pathWithoutBase.split("/").filter((segment) => segment);
+
+    if (segments.length > 0 && segments[0] in ui) {
+      return segments[0] as keyof typeof ui;
+    }
+  }
+
+  // Fallback to original logic for non-base path
+  const [, lang] = pathname.split("/");
   if (lang in ui) return lang as keyof typeof ui;
+
   return defaultLang; // Now returns "sv" as default
 }
 

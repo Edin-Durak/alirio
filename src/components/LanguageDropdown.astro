@@ -46,6 +46,7 @@ const routeMappings = {
           class={`language-dropdown__option ${language.code === lang ? 'language-dropdown__option--active' : ''}`}
           data-lang={language.code}
           role="menuitem"
+          aria-current={language.code === lang ? 'true' : 'false'}
         >
           <Image src={language.flag} alt={`${language.name} flag`} width={25} height={20} />
           <span class="language-dropdown__name">{language.native}</span>
@@ -55,7 +56,7 @@ const routeMappings = {
   </ul>
 </div>
 
-<script define:vars={{ routeMappings }}>
+<script define:vars={{ routeMappings, languages }}>
   /**
    * @typedef {Object} LanguageDropdown
    * @property {HTMLElement} dropdown
@@ -121,6 +122,9 @@ const routeMappings = {
       
       // Check for stored language preference on page load
       this.checkStoredLanguagePreference();
+      
+      // Update active state based on current URL
+      this.updateActiveState();
     }
     
     checkStoredLanguagePreference() {
@@ -128,12 +132,14 @@ const routeMappings = {
       if (storedLang && storedLang !== 'sv') {
         // Check if we're not already on the stored language
         const currentPath = window.location.pathname;
-        const pathSegments = currentPath.split('/').filter(segment => segment);
+        const basePath = '/alirio';
+        const pathWithoutBase = currentPath.replace(basePath, '');
+        const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
         
         // If we're on Swedish (default) and have a stored preference, redirect
         if (pathSegments.length === 0 || !['en', 'bs', 'ar'].includes(pathSegments[0])) {
           // We're on Swedish page, redirect to stored language
-          window.location.href = `/${storedLang}/`;
+          window.location.href = `${basePath}/${storedLang}/`;
         }
       }
     }
@@ -169,9 +175,11 @@ const routeMappings = {
       // Save language preference to localStorage
       localStorage.setItem('preferredLanguage', targetLang);
       
-      // Get current path
+      // Get current path and remove base path
       const currentPath = window.location.pathname;
-      const pathSegments = currentPath.split('/').filter(segment => segment);
+      const basePath = '/alirio';
+      const pathWithoutBase = currentPath.replace(basePath, '');
+      const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
       
       // Determine current page type and language
       let currentLang = 'sv'; // Default language
@@ -226,18 +234,60 @@ const routeMappings = {
       const targetRoute = targetLangRoutes[pageType];
       if (targetRoute === undefined) return;
       
-      // Build the target URL
+      // Build the target URL with base path
       let targetPath;
       if (targetLang === 'sv') {
         // Swedish is default - no language prefix
-        targetPath = targetRoute === '' ? '/' : `/${targetRoute}/`;
+        targetPath = basePath + (targetRoute === '' ? '/' : `/${targetRoute}/`);
       } else {
         // Other languages need language prefix
-        targetPath = targetRoute === '' ? `/${targetLang}/` : `/${targetLang}/${targetRoute}/`;
+        targetPath = basePath + (targetRoute === '' ? `/${targetLang}/` : `/${targetLang}/${targetRoute}/`);
       }
       
-      // Navigate to the target page
+      // Navigate to the target page - this will reload the page and update all components
       window.location.href = targetPath;
+    }
+    
+    updateActiveState() {
+      // Get current language from URL
+      const currentPath = window.location.pathname;
+      const basePath = '/alirio';
+      const pathWithoutBase = currentPath.replace(basePath, '');
+      const pathSegments = pathWithoutBase.split('/').filter(segment => segment);
+      
+      let currentLang = 'sv'; // Default to Swedish
+      
+      // Check if current path has a language prefix
+      const supportedLanguages = ['en', 'sv', 'bs', 'ar'];
+      if (pathSegments.length > 0 && supportedLanguages.includes(pathSegments[0])) {
+        currentLang = pathSegments[0];
+      }
+      
+      // Update trigger text
+      const triggerText = this.trigger.querySelector('.language-dropdown__current');
+      if (triggerText) {
+        triggerText.textContent = currentLang.toUpperCase();
+      }
+      
+      // Update active state for all options
+      this.options.forEach(option => {
+        const langCode = option.dataset.lang;
+        const isActive = langCode === currentLang;
+        
+        option.classList.toggle('language-dropdown__option--active', isActive);
+        option.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
+      
+      // Update trigger flag - find the current language and update the flag
+      const currentLanguage = this.languages.find(l => l.code === currentLang);
+      if (currentLanguage) {
+        const flagElement = this.trigger.querySelector('img');
+        if (flagElement) {
+          // Update the flag image source
+          flagElement.src = currentLanguage.flag.src;
+          flagElement.alt = `${currentLanguage.name} flag`;
+        }
+      }
     }
   }
   
