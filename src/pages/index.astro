@@ -17,6 +17,9 @@ import mirzaImage from '../assets/images/mirza-img.webp';
 import ulfImage from '../assets/images/ulf-img.webp';
 import mirvaImage from '../assets/images/mirva-img.jpg';
 import serviceCardImage from '../assets/images/service-card-img.webp';
+import serviceCardImageOne from '../assets/images/card-one.webp';
+import serviceCardImageTwo from '../assets/images/card-two.webp';
+import serviceCardImageThree from '../assets/images/card-three.webp';
 import arrowUpIcon from '../assets/images/icons/arrow-up-right-icon.svg';
 import arrowUpHoverIcon from '../assets/images/icons/arrow-up-right-hover-icon.svg';
 import FAQ from '../components/FAQ.astro';
@@ -223,7 +226,7 @@ const { content } = getTranslations(lang);
 				<div class="our-services-section__content">
 					<div class="our-services-section__card">
 						<div class="our-services-section__card-image">
-							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+							<Image src={serviceCardImageOne} alt="Old man holds a ball in a hand" width={350} height={350} loading={'lazy'} />
 						</div>
 						<div class="our-services-section__card-content">
 							<h3 class="our-services-section__card-title">
@@ -238,7 +241,7 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="our-services-section__card">
 						<div class="our-services-section__card-image">
-							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+							<Image src={serviceCardImageTwo} alt="Two women packaging clothes" width={350} height={350} loading={'lazy'} />
 						</div>
 						<div class="our-services-section__card-content">
 							<h3 class="our-services-section__card-title">
@@ -253,7 +256,7 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="our-services-section__card">
 						<div class="our-services-section__card-image">
-							<Image src={serviceCardImage} alt="Service card image" width={350} height={350} loading={'lazy'} />
+							<Image src={serviceCardImageThree} alt="Young chef preparing food with old man" width={350} height={350} loading={'lazy'} />
 						</div>
 						<div class="our-services-section__card-content">
 							<h3 class="our-services-section__card-title">
@@ -288,7 +291,7 @@ const { content } = getTranslations(lang);
 				<p class="still-have-questions-section__description">
 					{content.home.contact.description}
 				</p>
-				<a href="#" class="still-have-questions-section__button">
+				<a href="tel:+0703350618" class="still-have-questions-section__button">
 					{content.home.contact.button}
 				</a>
 				</div>
