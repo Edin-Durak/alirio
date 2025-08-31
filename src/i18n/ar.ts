@@ -68,7 +68,7 @@ export const ar = {
     },
     // Services Section
     services: {
-      title: "Naše Usluge",
+      title: "الخدمات",
       subtitle:
         "نقدم رعاية منزلية مهنية تناسب تمامًا احتياجاتك الفردية وأهدافك.",
       service1: {
