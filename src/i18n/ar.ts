@@ -11,10 +11,7 @@ export const ar = {
       title: "الفرد في المركز - قريب منك كل يوم لحياة أقوى",
       description:
         "نحن هنا من أجلكم! معتمدون من بلدية أوريبرو، وجاهزون لبدء رحلتنا معًا.",
-      stats: {
-        residents: "zadovoljnih <br> korisnika",
-        hearts: "pružene <br> usluge",
-      },
+      phone: "070-335-06-18",
     },
     // Benefits Section
     benefits: {

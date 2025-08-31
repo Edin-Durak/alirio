@@ -8,13 +8,11 @@ export const en = {
   home: {
     // Hero Section
     hero: {
-      title: "We provide more than care for you",
+      title:
+        "The individual at the center - close to you every day for a stronger life",
       description:
-        "We offer love, dignity, and a true sense of belonging. Because to us, caring means creating a home where hearts are safe, lives are valued, and no one ever feels alone.",
-      stats: {
-        residents: "Satisfied <br> Residents",
-        hearts: "Hearts feel <br> loved",
-      },
+        "We are here for you now! Approved by Örebro Municipality and ready to begin our journey together.",
+      phone: "070-335-06-18",
     },
     // Benefits Section
     benefits: {

@@ -11,10 +11,7 @@ export const bs = {
       title: "Individua u centru - blizu vas svaki dan za jači život",
       description:
         "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
-      stats: {
-        residents: "zadovoljnih <br> korisnika",
-        hearts: "pružene <br> usluge",
-      },
+      phone: "070-335-06-18",
     },
     // Benefits Section
     benefits: {

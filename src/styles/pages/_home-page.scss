@@ -30,7 +30,7 @@
       max-width: 569px;
     }
 
-    .hero-statistics {
+    .hero-cta {
       font-family: $font-family-heading;
       display: flex;
       justify-content: space-between;
@@ -39,20 +39,30 @@
 
       @include mobile {
         flex-direction: column;
-      }
-
-      &__item {
-        display: flex;
-        align-items: center;
         gap: $spacing-6;
       }
-      &__number {
-        font-size: 42px;
-        line-height: 62px;
+      &__button {
+        font-size: 2.625rem;
+        line-height: 1.5;
+        color: $white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        @include tablet {
+          font-size: 2rem;
+        }
+        @include mobile {
+          font-size: 2rem;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
-      &__text {
-        font-size: 20px;
-        line-height: 20px;
+
+      &__certificate {
+        width: 173px;
+        height: 175px;
       }
     }
   }

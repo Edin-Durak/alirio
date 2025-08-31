@@ -8,13 +8,10 @@ export const sv = {
   home: {
     // Hero Section
     hero: {
-      title: "Vi bygger digitala upplevelser som engagerar",
+      title: "Individen i centrum - nära dig varje dag för ett starkare liv",
       description:
-        "Från idé till färdig produkt – vi skapar skräddarsydda lösningar för ditt varumärke.",
-      stats: {
-        residents: "nöjda <br> användare",
-        hearts: "tillhandahållna <br> tjänster",
-      },
+        "Nu är vi här för dig! Godkända av Örebro kommun och redo att börja vår resa tillsammans.",
+      phone: "070-335-06-18",
     },
     // Benefits Section
     benefits: {
