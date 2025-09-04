@@ -255,10 +255,12 @@ export const bs = {
           role: "Osnivač",
           description:
             "Mirza je osnivač i vlasnik Alirio Omsorg. Došao je u Švedsku 1990-ih godina iz Bosne i od tada naziva Örebro svojim domom. Sa godinama iskustva brinuti o svojim pradjedima i prababama, Mirza razumije važnost brige koja se osjeća sigurno i poznato.",
+          email: "mirza@alirio.se",
         },
         ulf: {
           name: "Ulf",
-          role: "Zaposleni",
+          role: "Poslovni menadžer",
+          email: "ulf@alirio.se",
           description:
             "Ulf donosi godine iskustva u njegu starijih ljudi u našem timu. Njegova posvećenost pružanju kvalitetne njige i njegovo razumijevanje jedinstvenih potreba svakog pojedinca ga čini nezamjenljivim članom našeg tima.",
         },
@@ -278,7 +280,7 @@ export const bs = {
     },
     location: {
       pretitle: "Lokacija",
-      title: "Mi smo pvdje",
+      title: "Mi smo Alirio Omsorg",
       description: "Pogledajte nas na mapi",
       info: {
         title: "Telefon",

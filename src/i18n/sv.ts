@@ -256,12 +256,14 @@ export const sv = {
           role: "Grundare",
           description:
             "Mirza är grundaren och ägaren av Alirio Omsorg. Han kom till Sverige på 1990-talet från Bosnien och har kallat Örebro sitt hem sedan dess. Han tog hand om sina gammelföräldrar i många år, vilket skapade en djup förståelse för hur viktigt det är att ha en vård som känns trygg och familjär.",
+          email: "mirza@alirio.se",
         },
         ulf: {
           name: "Ulf",
-          role: "Anställd",
+          role: "Verksamhetschef",
           description:
             "Ulf har år av erfarenhet i äldrevård i vårt team. Han är dedikerad till att tillhandahålla kvalitetsvård och hans förståelse för de enskilda behoven gör honom till en oöverträffad medlem av vårt team.",
+          email: "ulf@alirio.se",
         },
         haris: {
           name: "Haris Kikic",
@@ -279,7 +281,7 @@ export const sv = {
     },
     location: {
       pretitle: "Plats",
-      title: "Vi är här",
+      title: "Vi är Alirio Omsorg",
       description: "Se oss på kartan",
       info: {
         title: "Telefon",

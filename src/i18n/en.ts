@@ -257,12 +257,14 @@ export const en = {
           role: "Owner",
           description:
             "Mirza is the founder and owner of Alirio Omsorg. He came to Sweden in the 1990s from Bosnia and has called Örebro his home ever since. With years of experience caring for his great-grandparents, Mirza understands the importance of compassionate, personalized care that feels safe and familiar.",
+          email: "mirza@alirio.se",
         },
         ulf: {
           name: "Ulf",
-          role: "Employee",
+          role: "Business manager",
           description:
             "Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.",
+          email: "ulf@alirio.se",
         },
         haris: {
           name: "Haris Kikic",
@@ -280,7 +282,7 @@ export const en = {
     },
     location: {
       pretitle: "Location",
-      title: "We are here",
+      title: "We are Alirio Omsorg",
       description: "Look for us on the map",
       info: {
         title: "Phone",

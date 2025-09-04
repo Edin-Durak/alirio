@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
 import ulfImage from '../../assets/images/ulf-img.webp';
-import locationImage from '../../assets/images/location-img.webp';
+import logoImage from '../../assets/images/alirio-logo.svg';
 import '../../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../../i18n/ui';
 
@@ -74,6 +74,7 @@ const { content } = getTranslations(lang);
           <h2 class="about-team__title" id="about-team-title" hidden>{content.about.team.title}</h2>
               <!-- Desktop Tabs -->
               <div class="about-team__tabs about-team__tabs--desktop">
+                 <!-- 
                 <button class="about-team__tab about-team__tab--active" data-tab="mirva" aria-selected="true">
                   <div class="about-team__tab-image">
                     <Image src={mirvaImage} alt="Mirvat" width={200} height={230} loading="lazy" />
@@ -84,7 +85,7 @@ const { content } = getTranslations(lang);
                     
                   </div>
                 </button>
-                
+              -->
                 <button class="about-team__tab" data-tab="mirza" aria-selected="false">
                   <div class="about-team__tab-image">
                     <Image src={mirzaImage} alt="Mirza" width={200} height={230} loading="lazy" />
@@ -106,7 +107,7 @@ const { content } = getTranslations(lang);
                     
                   </div>
                 </button>
-                
+                <!--  
                 <button class="about-team__tab" data-tab="haris" aria-selected="false">
                   <div class="about-team__tab-image">
                     <div class="about-team__tab-placeholder"></div>
@@ -128,10 +129,12 @@ const { content } = getTranslations(lang);
                     
                   </div>
                 </button>
+                -->
               </div>
 
               <!-- Desktop Content -->
               <div class="about-team__content about-team__content--desktop">
+                <!-- 
                 <div class="about-team__panel about-team__panel--active" data-panel="mirva" id="team-mirva">
                   <div class="about-team__panel-image">
                     <Image src={mirvaImage} alt="Mirvat" width={225} height={225} loading="lazy" />
@@ -146,8 +149,8 @@ const { content } = getTranslations(lang);
                     </div>
                   </div>
                 </div>
-
-                <div class="about-team__panel" data-panel="mirza" id="team-mirza">
+                -->
+                <div class="about-team__panel about-team__panel--active" data-panel="mirza" id="team-mirza">
                   <div class="about-team__panel-image">
                     <Image src={mirzaImage} alt="Mirza" width={225} height={225} loading="lazy" />
                   </div>
@@ -157,6 +160,9 @@ const { content } = getTranslations(lang);
                     <div class="about-team__panel-description">
                       <p>{content.about.team.members.mirza.description}</p>
                     </div>
+                    <a href=mailto:mirza@alirio.se class="meet-the-team-section__card-link">
+                      {content.about.team.members.mirza.email}
+                    </a>
                   </div>
                 </div>
 
@@ -170,9 +176,12 @@ const { content } = getTranslations(lang);
                     <div class="about-team__panel-description">
                       <p>{content.about.team.members.ulf.description}</p>
                     </div>
+                    <a href=mailto:ulf@alirio.se class="meet-the-team-section__card-link">
+                      {content.about.team.members.ulf.email}
+                    </a>
                   </div>
                 </div>
-
+ <!-- 
                 <div class="about-team__panel" data-panel="haris" id="team-haris">
                   <div class="about-team__panel-image">
                     <div class="about-team__panel-placeholder"></div>
@@ -198,10 +207,12 @@ const { content } = getTranslations(lang);
                     </div>
                   </div>
                 </div>
+                -->
               </div>
-
+              
               <!-- Mobile/Tablet Stacked Layout -->
               <div class="about-team__stacked about-team__stacked--mobile">
+                <!-- 
                 <div class="about-team__member" id="team-mirva-mobile">
                   <div class="about-team__member-image">
                     <Image src={mirvaImage} alt="Mirvat" width={150} height={120} loading= "lazy" />
@@ -214,7 +225,7 @@ const { content } = getTranslations(lang);
                     </div>
                   </div>
                 </div>
-
+                -->
                 <div class="about-team__member" id="team-mirza-mobile">
                   <div class="about-team__member-image">
                     <Image src={mirzaImage} alt="Mirza" width={150} height={120} loading= "lazy" />
@@ -225,6 +236,9 @@ const { content } = getTranslations(lang);
                     <div class="about-team__member-description">
                       <p>{content.about.team.members.mirza.description}</p>
                     </div>
+                    <a href=mailto:mirza@alirio.se class="meet-the-team-section__card-link">
+                      {content.about.team.members.mirza.email}
+                    </a>
                   </div>
                 </div>
 
@@ -238,9 +252,12 @@ const { content } = getTranslations(lang);
                     <div class="about-team__member-description">
                       <p>{content.about.team.members.ulf.description}</p>
                     </div>
+                    <a href=mailto:ulf@alirio.se class="meet-the-team-section__card-link">
+                      {content.about.team.members.ulf.email}
+                    </a>
                   </div>
                 </div>
-
+                <!-- 
                 <div class="about-team__member" id="team-haris-mobile">
                   <div class="about-team__member-image">
                     <div class="about-team__member-placeholder"></div>
@@ -266,20 +283,25 @@ const { content } = getTranslations(lang);
                     </div>
                   </div>
                 </div>
+                -->
               </div>
         </article>
 
         <section class="about-location" aria-labelledby="about-location-title">
           <div class="about-location__inner container">
+            <!--  
                 <span class="about-location__pretitle">
                 {content.about.location.pretitle}
                 </span>
+                -->
                 <h2 class="about-location__title" id="about-location-title">
                 {content.about.location.title}
                 </h2>
+                <!-- 
                 <p class="about-location__description">{content.about.location.description}</p>
+                 -->
                 <div class="about-location__image">
-                    <Image src={locationImage} alt="Our location" width={1000} height={1000} loading="lazy" />
+                    <Image src={logoImage} alt="Our location" width={500} height={500} loading="lazy" />
                 </div>
                 <div class="about-location__info">
                     <span class="about-location__info-title">{content.about.location.info.title}</span>
