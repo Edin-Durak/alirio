@@ -11,7 +11,7 @@ export const ar = {
       title: "الفرد في المركز - قريب منك كل يوم لحياة أقوى",
       description:
         "نحن هنا من أجلكم! معتمدون من بلدية أوريبرو، وجاهزون لبدء رحلتنا معًا.",
-      phone: "070-335-06-18",
+      phone: "+4679-348-32-98",
     },
     // Benefits Section
     benefits: {
@@ -55,14 +55,20 @@ export const ar = {
         mirza: {
           name: "ميرزا",
           role: "المؤسس والمالك",
+          email: "mirza@alirio.se",
+          phone: "+46793483298",
         },
         mirvat: {
           name: "ميرفت",
           role: "المنظم والمؤسس",
+          email: "mirvat@alirio.se",
+          phone: "",
         },
         ulf: {
           name: "أولف",
-          role: "المنظم والمؤسس",
+          role: "مدير أعمال",
+          email: "ulf@alirio.se",
+          phone: "",
         },
       },
     },
@@ -276,7 +282,7 @@ export const ar = {
       info: {
         title: "هاتف",
         workingHours: "من الإثنين إلى الأحد 08:00 - 16:00",
-        phone: "070-3350618",
+        phone: "+4679-348-32-98",
       },
     },
   },

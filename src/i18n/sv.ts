@@ -11,7 +11,7 @@ export const sv = {
       title: "Individen i centrum - nära dig varje dag för ett starkare liv",
       description:
         "Nu är vi här för dig! Godkända av Örebro kommun och redo att börja vår resa tillsammans.",
-      phone: "070-335-06-18",
+      phone: "+4679-348-32-98",
     },
     // Benefits Section
     benefits: {
@@ -56,14 +56,20 @@ export const sv = {
         mirza: {
           name: "Mirza",
           role: "Grundare",
+          email: "mirza@alirio.se",
+          phone: "+46793483298",
         },
         mirvat: {
           name: "Mirvat",
           role: "Grundare",
+          email: "mirvat@alirio.se",
+          phone: "",
         },
         ulf: {
           name: "Ulf",
-          role: "Grundare",
+          role: "Verksamhetschef",
+          email: "ulf@alirio.se",
+          phone: "",
         },
       },
     },
@@ -278,7 +284,7 @@ export const sv = {
       info: {
         title: "Telefon",
         workingHours: "Mån - Fre: 08:00 - 16:00",
-        phone: "070-3350618",
+        phone: "+4679-348-32-98",
       },
     },
   },

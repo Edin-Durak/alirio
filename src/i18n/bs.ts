@@ -11,7 +11,7 @@ export const bs = {
       title: "Individua u centru - blizu vas svaki dan za jači život",
       description:
         "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
-      phone: "070-335-06-18",
+      phone: "+4679-348-32-98",
     },
     // Benefits Section
     benefits: {
@@ -55,14 +55,20 @@ export const bs = {
         mirza: {
           name: "Mirza",
           role: "Osnivač",
+          email: "mirza@alirio.se",
+          phone: "+46793483298",
         },
         mirvat: {
           name: "Mirvat",
           role: "Direktor i osnivač",
+          email: "mirvat@alirio.se",
+          phone: "",
         },
         ulf: {
           name: "Ulf",
-          role: "Direktor i osnivač",
+          role: "Poslovni menadžer",
+          email: "ulf@alirio.se",
+          phone: "",
         },
       },
     },
@@ -277,7 +283,7 @@ export const bs = {
       info: {
         title: "Telefon",
         workingHours: "Pon - Pet: 08:00 - 16:00",
-        phone: "070-3350618",
+        phone: "+4679-348-32-98",
       },
     },
   },

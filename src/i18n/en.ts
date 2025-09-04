@@ -12,7 +12,7 @@ export const en = {
         "The individual at the center - close to you every day for a stronger life",
       description:
         "We are here for you now! Approved by Örebro Municipality and ready to begin our journey together.",
-      phone: "070-335-06-18",
+      phone: "+4679-348-32-98",
     },
     // Benefits Section
     benefits: {
@@ -57,14 +57,20 @@ export const en = {
         mirza: {
           name: "Mirza",
           role: "CEO & Founder",
+          email: "mirza@alirio.se",
+          phone: "+46793483298",
         },
         mirvat: {
           name: "Mirvat",
           role: "CEO & Founder",
+          email: "mirvat@alirio.se",
+          phone: "",
         },
         ulf: {
           name: "Ulf",
-          role: "CEO & Founder",
+          role: "Business manager",
+          email: "ulf@alirio.se",
+          phone: "",
         },
       },
     },
@@ -279,7 +285,7 @@ export const en = {
       info: {
         title: "Phone",
         workingHours: "Mo - Fr: 08:00 - 16:00",
-        phone: "070-3350618",
+        phone: "+4679-348-32-98",
       },
     },
   },

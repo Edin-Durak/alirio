@@ -53,7 +53,7 @@ const { content } = getTranslations(lang);
 						{content.home.hero.description}
 					</p>
 					<div class="hero-cta">
-						<a href="tel:+0703350618" class="hero-cta__button">
+						<a href="tel:+46793483298" class="hero-cta__button">
 							{content.home.hero.phone}
 						</a>
 						<Image src={heroLineIcon} alt="Line icon" width={20} height={40} class="hero-statistics__line-icon" />
@@ -168,63 +168,6 @@ const { content } = getTranslations(lang);
 			</div>
 		</section>
 
-		<section class="meet-the-team-section" aria-labelledby="meet-our-team-title">
-			<div class="meet-the-team-section__inner container">
-				<h2 class="meet-the-team-section__title" id="meet-our-team-title">
-					{content.home.team.title}
-				</h2>
-				<h3 class="meet-the-team-section__subtitle">
-					{content.home.team.subtitle}
-				</h3>
-				<div class="meet-the-team-section__content">
-					<div class="meet-the-team-section__card">
-						<div class="meet-the-team-section__card-image">
-							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirva" class="meet-the-team-section__card meet-the-team-section__card--link">
-							<Image src={mirvaImage} alt="Mirvat - team member" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
-							</a>
-						</div>
-						<div class="meet-the-team-section__card-content content-one">
-							<h3 class="meet-the-team-section__card-title">
-								{content.home.team.members.mirvat.name}
-							</h3>
-							<p class="meet-the-team-section__card-description">
-								{content.home.team.members.mirvat.role}
-							</p>
-						</div>
-					</div>
-					<div class="meet-the-team-section__card">
-						<div class="meet-the-team-section__card-image">
-							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
-							<Image src={mirzaImage} alt="Mirza - team member" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
-							</a>
-						</div>
-						<div class="meet-the-team-section__card-content content-two">
-							<h3 class="meet-the-team-section__card-title">
-								{content.home.team.members.mirza.name}
-							</h3>
-							<p class="meet-the-team-section__card-description">
-								{content.home.team.members.mirza.role}
-							</p>
-						</div>
-					</div>
-					<div class="meet-the-team-section__card">
-						<div class="meet-the-team-section__card-image">
-							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
-							<Image src={ulfImage} alt="Ulf - team member" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
-							</a>
-						</div>
-						<div class="meet-the-team-section__card-content content-three">
-							<h3 class="meet-the-team-section__card-title">
-								{content.home.team.members.ulf.name}
-							</h3>
-							<p class="meet-the-team-section__card-description">
-								{content.home.team.members.ulf.role}
-							</p>
-						</div>
-					</div>										
-				</div>
-			</div>
-		</section>
 
 		<section class="our-services-section" aria-labelledby="our-services-title">
 			<div class="our-services-section__inner container">
@@ -284,6 +227,79 @@ const { content } = getTranslations(lang);
 			</div>
 		</section>
 
+		<section class="meet-the-team-section" aria-labelledby="meet-our-team-title">
+			<div class="meet-the-team-section__inner container">
+				<h2 class="meet-the-team-section__title" id="meet-our-team-title">
+					{content.home.team.title}
+				</h2>
+				<h3 class="meet-the-team-section__subtitle">
+					{content.home.team.subtitle}
+				</h3>
+				<div class="meet-the-team-section__content">
+					<!--  
+					<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirva" class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
+							<Image src={mirvaImage} alt="Mirvat - team medlem" width={180} height={300} loading={'lazy'} class:list={['image-one']} />
+						</div>
+						<div class="meet-the-team-section__card-content content-one">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.mirvat.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.mirvat.role}
+							</p>
+						</div>
+					</a>
+					-->
+					<div class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
+							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
+							<Image src={mirzaImage} alt="Mirza - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
+							</a>
+						</div>
+						<div class="meet-the-team-section__card-content content-two">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.mirza.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.mirza.role}
+							</p>
+							<a href=mailto:mirza@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.mirza.email}
+							</a>
+							<a href="tel:+46793483298" class="meet-the-team-section__card-link">
+								{content.home.team.members.mirza.phone}
+							</a>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
+							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
+							
+							<Image src={ulfImage} alt="Ulf - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							</a>
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.ulf.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.ulf.role}
+							</p>
+							<a href=mailto:ulf@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.ulf.email}
+							</a>
+							<a href="tel:+46793483298" class="meet-the-team-section__card-link">
+								{content.home.team.members.ulf.phone}
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
 		
 		<FAQ />
 
@@ -291,9 +307,12 @@ const { content } = getTranslations(lang);
 			<div class="still-have-questions-section__inner container">
 				<div class="still-have-questions-section__content">
 					<div class="still-have-questions-section__images">
+						
 						<Image src={ulfAvatarImage} alt="Ulf avatar" width={48} height={48} loading={'lazy'} class:list={['image-one']} />
 						<Image src={mirzaAvatarImage} alt="Mirza avatar" width={48} height={48} loading={'lazy'} class:list={['image-two']} />
+						<!--  
 						<Image src={mirvaAvatarImage} alt="Mirvat avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
+						-->
 					</div>
 				
 				<h2 class="still-have-questions-section__title" id="still-have-questions-title">
@@ -302,7 +321,7 @@ const { content } = getTranslations(lang);
 				<p class="still-have-questions-section__description">
 					{content.home.contact.description}
 				</p>
-				<a href="tel:+0703350618" class="still-have-questions-section__button">
+				<a href="tel:+46793483298" class="still-have-questions-section__button">
 					{content.home.contact.button}
 				</a>
 				</div>
