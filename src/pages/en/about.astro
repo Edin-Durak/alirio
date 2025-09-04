@@ -1,0 +1,410 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from "astro:assets";
+import mirvaImage from '../../assets/images/mirva-img.jpg';
+import mirzaImage from '../../assets/images/mirza-img.webp';
+import ulfImage from '../../assets/images/ulf-img.webp';
+import locationImage from '../../assets/images/location-img.webp';
+import '../../styles/main.scss';
+import { getTranslations, getLangFromUrl } from '../../i18n/ui';
+
+// Get current language and translations
+const lang = 'en';
+const { content } = getTranslations(lang);
+---
+
+<Layout 
+  title="About Us - Alirio Omsorg"
+  description="Learn about Alirio Omsorg's story, our founders Mirza and Haris, and our vision for compassionate home care services in Örebro, Sweden."
+  keywords="Alirio Omsorg about, home care Örebro, Mirza Haris, Swedish home care, multicultural care, elderly care services"
+  ogImage="/src/assets/images/thumbnails/about-page-en.webp"
+>
+  <Header />
+  
+  <main class="about-page">
+
+    <section class="about-content" aria-labelledby="about-story-title">
+      <div class="container">
+        <div class="about-content__inner">
+          <article class="about-story" aria-labelledby="about-story-title">
+            <h1 class="about-story__title" id="about-story-title">{content.about.story.title}</h1>
+            <div class="about-story__content">
+              <p class="about-story__paragraph">
+                {content.about.story.description}
+              </p>
+              <p class="about-story__paragraph">
+                {content.about.story.description2}
+              </p>
+              <p class="about-story__paragraph">
+                {content.about.story.description3}
+              </p>
+            </div>
+          </article>
+
+        <article class="about-differences" aria-labelledby="about-differences-title">
+             <h2 class="about-differences__title" id="about-differences-title">{content.about.differences.title}</h2>
+             <ul class="about-differences__list">
+               <li class="about-differences__item">
+                 {content.about.differences.item1}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item2}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item3}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item4}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item5}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item6}
+               </li>
+               <li class="about-differences__item">
+                 {content.about.differences.item7}
+               </li>
+             </ul>
+        </article>
+
+        <article class="about-team" aria-labelledby="about-team-title">
+          <h2 class="about-team__title" id="about-team-title" hidden>{content.about.team.title}</h2>
+              <!-- Desktop Tabs -->
+              <div class="about-team__tabs about-team__tabs--desktop">
+                <button class="about-team__tab about-team__tab--active" data-tab="mirva" aria-selected="true">
+                  <div class="about-team__tab-image">
+                    <Image src={mirvaImage} alt="Mirvat" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.mirva.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.mirva.role}</p>
+                    
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="mirza" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={mirzaImage} alt="Mirza" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.mirza.role}</p>
+                    
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="ulf" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={ulfImage} alt="Ulf" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.ulf.role}</p>
+                    
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="haris" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <div class="about-team__tab-placeholder"></div>
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.haris.role}</p>
+                    
+                  </div>
+                </button>
+                
+                <button class="about-team__tab" data-tab="lejla" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <div class="about-team__tab-placeholder"></div>
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.lejla.role}</p>
+                    
+                  </div>
+                </button>
+              </div>
+
+              <!-- Desktop Content -->
+              <div class="about-team__content about-team__content--desktop">
+                <div class="about-team__panel about-team__panel--active" data-panel="mirva" id="team-mirva">
+                  <div class="about-team__panel-image">
+                    <Image src={mirvaImage} alt="Mirvat" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">
+                        {content.about.team.members.mirva.name}
+                    </h3>
+                    <p class="about-team__panel-role">{content.about.team.members.mirva.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.mirva.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="mirza" id="team-mirza">
+                  <div class="about-team__panel-image">
+                    <Image src={mirzaImage} alt="Mirza" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.mirza.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.mirza.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="ulf" id="team-ulf">
+                  <div class="about-team__panel-image">
+                    <Image src={ulfImage} alt="Ulf" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.ulf.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.ulf.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="haris" id="team-haris">
+                  <div class="about-team__panel-image">
+                    <div class="about-team__panel-placeholder"></div>
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.haris.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.haris.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__panel" data-panel="lejla" id="team-lejla">
+                  <div class="about-team__panel-image">
+                    <div class="about-team__panel-placeholder"></div>
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.lejla.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.lejla.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile/Tablet Stacked Layout -->
+              <div class="about-team__stacked about-team__stacked--mobile">
+                <div class="about-team__member" id="team-mirva-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={mirvaImage} alt="Mirvat" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.mirva.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.mirva.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.mirva.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-mirza-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={mirzaImage} alt="Mirza" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.mirza.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.mirza.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.mirza.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-ulf-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={ulfImage} alt="Ulf" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.ulf.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.ulf.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.ulf.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-haris-mobile">
+                  <div class="about-team__member-image">
+                    <div class="about-team__member-placeholder"></div>
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.haris.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.haris.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="about-team__member" id="team-lejla-mobile">
+                  <div class="about-team__member-image">
+                    <div class="about-team__member-placeholder"></div>
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.lejla.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.lejla.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.lejla.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </article>
+
+        <section class="about-location" aria-labelledby="about-location-title">
+          <div class="about-location__inner container">
+                <span class="about-location__pretitle">
+                {content.about.location.pretitle}
+                </span>
+                <h2 class="about-location__title" id="about-location-title">
+                {content.about.location.title}
+                </h2>
+                <p class="about-location__description">{content.about.location.description}</p>
+                <div class="about-location__image">
+                    <Image src={locationImage} alt="Our location" width={1000} height={1000} loading="lazy" />
+                </div>
+                <div class="about-location__info">
+                    <span class="about-location__info-title">{content.about.location.info.title}</span>
+                    <p class="about-location__info-working-hours">{content.about.location.info.workingHours}</p>
+                    <a href="tel:+0703350618" class="about-location__info-link">{content.about.location.info.phone}</a>
+                </div>
+          </div>
+        </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  class TeamTabs {
+    /**
+     * @type {NodeList}
+     */
+    tabs;
+    
+    /**
+     * @type {NodeList}
+     */
+    panels;
+
+    constructor() {
+      this.tabs = document.querySelectorAll('.about-team__tab');
+      this.panels = document.querySelectorAll('.about-team__panel');
+      this.init();
+    }
+
+    init() {
+      this.tabs.forEach(tab => {
+        tab.addEventListener('click', () => this.switchTab(tab));
+      });
+      
+      // Handle URL hash navigation
+      this.handleHashNavigation();
+      
+      // Handle desktop navigation from home page
+      this.handleDesktopNavigation();
+    }
+
+    switchTab(selectedTab) {
+      const targetPanel = selectedTab.dataset.tab;
+
+      // Update tab states
+      this.tabs.forEach(tab => {
+        tab.classList.remove('about-team__tab--active');
+        tab.setAttribute('aria-selected', 'false');
+      });
+      selectedTab.classList.add('about-team__tab--active');
+      selectedTab.setAttribute('aria-selected', 'true');
+
+      // Update panel states
+      this.panels.forEach(panel => {
+        panel.classList.remove('about-team__panel--active');
+      });
+      
+      const activePanel = document.querySelector(`[data-panel="${targetPanel}"]`);
+      if (activePanel) {
+        activePanel.classList.add('about-team__panel--active');
+      }
+
+      // Don't update URL hash on desktop to avoid layout shift
+    }
+
+    handleHashNavigation() {
+      const hash = window.location.hash;
+      if (hash) {
+        const memberId = hash.replace('#', '');
+        const memberName = memberId.replace('team-', '');
+        
+        // For desktop: switch to the correct tab without URL hash
+        if (window.innerWidth >= 992) {
+          const targetTab = document.querySelector(`[data-tab="${memberName}"]`);
+          if (targetTab) {
+            this.switchTab(targetTab);
+          }
+        } else {
+          // For mobile/tablet: scroll to the member with header offset
+          const targetMember = document.getElementById(memberId + '-mobile');
+          if (targetMember) {
+            // Get header height for offset
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 110;
+            
+            // Calculate scroll position with header offset
+            const elementTop = targetMember.offsetTop - headerHeight - 20; // 20px extra padding
+            
+            window.scrollTo({
+              top: elementTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    }
+
+    handleDesktopNavigation() {
+      // Check if we have a stored team member from home page navigation
+      const storedTeamMember = sessionStorage.getItem('selectedTeamMember');
+      if (storedTeamMember && window.innerWidth >= 992) {
+        const targetTab = document.querySelector(`[data-tab="${storedTeamMember}"]`);
+        if (targetTab) {
+          this.switchTab(targetTab);
+        }
+        // Clear the stored value
+        sessionStorage.removeItem('selectedTeamMember');
+      }
+    }
+  }
+
+  // Initialize team tabs when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new TeamTabs();
+  });
+
+  // Handle hash changes
+  window.addEventListener('hashchange', () => {
+    const teamTabs = new TeamTabs();
+    teamTabs.handleHashNavigation();
+  });
+</script>

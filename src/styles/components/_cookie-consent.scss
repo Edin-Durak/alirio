@@ -1,0 +1,131 @@
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $white;
+  color: $text-color-dark-black;
+  padding: $spacing-5;
+  z-index: 10;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid $brand-red-400;
+
+  &--visible {
+    transform: translateY(0);
+  }
+
+  &__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-5;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0 0 $spacing-2 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $font-family-heading;
+    color: $text-color-dark-black;
+    line-height: 1.4;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $text-color-gray-600;
+    font-family: $font-family-base;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    flex-shrink: 0;
+  }
+
+  &__button {
+    padding: $spacing-3 $spacing-5;
+    border: none;
+    border-radius: $rounded-2xs;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: $font-family-base;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+
+    &--accept {
+      background: $brand-red-400;
+      color: $white;
+
+      &:hover {
+        background: $brand-red-500;
+        transform: translateY(-2px);
+        box-shadow: $box-shadow-lg;
+      }
+
+      &:focus {
+        outline: 2px solid $brand-red-400;
+        outline-offset: 2px;
+      }
+    }
+
+    &--decline {
+      background: transparent;
+      color: $text-color-gray-600;
+      border: 1px solid $gray-300;
+
+      &:hover {
+        background: $gray-100;
+        border-color: $gray-400;
+        color: $text-color-dark-black;
+      }
+
+      &:focus {
+        outline: 2px solid $brand-red-400;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-4;
+
+    &__container {
+      flex-direction: column;
+      text-align: center;
+      gap: $spacing-4;
+    }
+
+    &__actions {
+      flex-direction: column;
+      width: 100%;
+      gap: $spacing-3;
+    }
+
+    &__button {
+      width: 100%;
+      padding: $spacing-4 $spacing-5;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+  }
+}

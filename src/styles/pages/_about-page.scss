@@ -1,0 +1,549 @@
+.about-page {
+  // About Content Section
+
+  .about-content {
+    padding: $spacing-14 0;
+
+    @include tablet {
+      padding: $spacing-11 0;
+    }
+
+    @include mobile {
+      padding: $spacing-11 0;
+    }
+
+    &__inner {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-14;
+
+      @include tablet {
+        gap: $spacing-11;
+      }
+
+      @include mobile {
+        gap: $spacing-11;
+      }
+    }
+  }
+
+  // About Story Section
+  .about-story {
+    &__title {
+      font-weight: 500;
+      color: $text-color-dark-black;
+      margin: 0 0 $spacing-8 0;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-6;
+    }
+
+    &__paragraph {
+      font-size: 1.25rem;
+      line-height: 2;
+      color: $text-color-dark-black;
+      margin: 0;
+      font-weight: 500;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  // About Differences Section
+  .about-differences {
+    &__title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $text-color-dark-black;
+      margin: 0 0 $spacing-8 0;
+      line-height: 1.3;
+
+      @include tablet {
+        font-size: 1.75rem;
+        line-height: 1.3;
+      }
+
+      @include mobile {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+    }
+
+    &__list {
+      list-style: disc;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-5;
+      padding-left: $spacing-5;
+    }
+
+    &__item {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: $text-color-dark-black;
+      position: relative;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  // About Team Section
+  .about-team {
+    // Mobile/Tablet Stacked Layout (hidden on desktop)
+    &__stacked--mobile {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-8;
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-6;
+      }
+    }
+
+    &__tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: $spacing-4;
+      margin-bottom: $spacing-8;
+      background-color: $brand-red-400;
+      border-radius: $rounded;
+      padding: $spacing-8 $spacing-5;
+
+      @include desktop {
+        max-width: 80%;
+        margin: 0 auto $spacing-8;
+      }
+      @include laptop {
+        max-width: 80%;
+        margin: 0 auto $spacing-8;
+      }
+
+      @include tablet-landscape {
+        max-width: 100%;
+        margin: 0 auto $spacing-8;
+        gap: $spacing-3;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__tab {
+      background-color: $white;
+      border: 2px solid transparent;
+      border-radius: $rounded;
+      padding: $spacing-4;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-4;
+
+      &:hover {
+        border-color: $brand-red-200;
+        transform: translateY(-2px);
+      }
+
+      &--active {
+        border-color: $brand-red-300;
+        background-color: $brand-red-300;
+      }
+    }
+
+    &__tab-image {
+      width: 200px;
+      height: 230px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+
+      @include desktop {
+        width: 140px;
+        height: 150px;
+      }
+
+      @include laptop {
+        width: 100px;
+        height: 130px;
+      }
+
+      @include tablet-landscape {
+        width: 100px;
+        height: 130px;
+      }
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &__tab-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+    }
+
+    &__tab-info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+
+    &__tab-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__tab-role {
+      font-size: 0.75rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.625rem;
+      }
+    }
+
+    &__content {
+      position: relative;
+      min-height: 200px;
+
+      &--desktop {
+        @include tablet {
+          display: none;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+
+    &__panel {
+      display: none;
+      background-color: $white;
+      border-radius: $rounded;
+      padding: $spacing-8;
+      gap: $spacing-6;
+      align-items: flex-start;
+
+      @include tablet {
+        padding: $spacing-6;
+        gap: $spacing-4;
+      }
+
+      @include mobile {
+        padding: $spacing-4;
+        gap: $spacing-3;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &--active {
+        display: flex;
+      }
+    }
+
+    &__panel-image {
+      flex-shrink: 0;
+      width: 225px;
+      height: 225px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include tablet-landscape {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+      }
+
+      @include mobile {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    &__panel-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+      border-radius: 50%;
+    }
+
+    &__panel-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-3;
+    }
+
+    &__panel-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__panel-role {
+      font-size: 1rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.875rem;
+      }
+    }
+
+    &__panel-description {
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $text-color-gray-600;
+        margin: 0;
+
+        @include mobile {
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    // Mobile/Tablet Member Cards
+    &__member {
+      background-color: $white;
+      border-radius: $rounded;
+      padding: $spacing-6;
+      display: flex;
+      gap: $spacing-4;
+      align-items: flex-start;
+
+      @include mobile {
+        padding: $spacing-4;
+        gap: $spacing-3;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    &__member-image {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+
+      @include mobile {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+      }
+    }
+
+    &__member-placeholder {
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        $gray-200,
+        $gray-200 2px,
+        $gray-100 2px,
+        $gray-100 4px
+      );
+      border-radius: 50%;
+    }
+
+    &__member-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+
+    &__member-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-color-dark-black;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 1.125rem;
+      }
+    }
+
+    &__member-role {
+      font-size: 0.875rem;
+      color: $brand-red;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__member-description {
+      p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: $text-color-gray-600;
+        margin: 0;
+
+        @include mobile {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  // About Location Section
+  .about-location {
+    &__inner {
+      background-color: $white;
+      text-align: center;
+      color: $text-color-dark-black;
+      border-radius: $rounded;
+      padding: $spacing-8 0;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-3;
+    }
+
+    &__pretitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $brand-red;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    &__title {
+      margin-bottom: $spacing-3;
+    }
+
+    &__description {
+      font-size: 1.25rem;
+      color: $text-color-gray-500;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      img {
+        border-radius: $rounded;
+        border: 1px solid $gray-200;
+        box-shadow: $box-shadow-lg;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-3;
+
+      &-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $text-color-dark-black;
+        line-height: 1.2;
+      }
+
+      &-working-hours {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $text-color-gray-500;
+        margin: 0;
+      }
+      a {
+        font-family: $font-family-heading;
+      }
+    }
+  }
+}
+
+.arabic {
+  .about-story {
+    text-align: right;
+  }
+  .about-differences {
+    direction: rtl;
+  }
+
+  .about-team__tabs,
+  .about-team__panel,
+  .about-team__member {
+    direction: rtl;
+  }
+}

@@ -1,25 +1,41 @@
 ---
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
+import CookieConsent from '../components/CookieConsent.astro';
+
 export interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string;
 	ogImage?: string;
+	lang?: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const { ui } = getTranslations(lang);
+
+const metaContent = {
+	sv: {
+		title: "Hemtjänst i Alirio Omsorg",
+		description: "Lär dig mer om Alirio Omsorgs historia, våra grundare Mirza och Haris, och vår vision för omsorgsfulla hemtjänsttjänster i Örebro, Sverige.",
+		keywords: "Alirio Omsorg om oss, hemtjänst Örebro, Mirza Haris, Svensk hemtjänst, multicultural omsorg, åldersnäringstjänster"
+	}
+};
+
 const { 
-	title = "Alirio Omsorg - Compassionate Home Care Services",
-	description = "Alirio Omsorg provides compassionate home care services with multilingual staff. We offer rehabilitative care, genuine closeness, and support from the start. 150+ satisfied residents.",
-	keywords = "home care, Alirio Omsorg, rehabilitative care, multilingual staff, Swedish home care, elderly care, home nursing, compassionate care",
-	ogImage = "https://edin-durak.github.io/alirio/hero-img.webp"
+	title = metaContent[lang]?.title || metaContent.sv.title,
+	description = metaContent[lang]?.description || metaContent.sv.description,
+	keywords = metaContent[lang]?.keywords || metaContent.sv.keywords,
+	ogImage = "/src/assets/images/thumbnails/home-page-sv.webp"
 } = Astro.props;
+
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/src/assets/images/icons/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
@@ -37,8 +53,10 @@ const {
 		<meta name="twitter:description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={lang === 'ar' ? 'arabic' : ''}>
 		<slot />
+		
+		<CookieConsent />
 	</body>
 </html>
 

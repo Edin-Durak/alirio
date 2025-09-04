@@ -169,3 +169,10 @@
     font-family: "Arial", "Tahoma", sans-serif;
   }
 }
+
+.arabic {
+  .language-dropdown__menu {
+    right: auto;
+    left: -10%;
+  }
+}

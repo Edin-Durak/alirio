@@ -1,70 +1,97 @@
 ---
 import { Image } from "astro:assets";
-import logoImage from "../assets/images/alirio-logo.png";
+import logoImage from "../assets/images/alirio-logo.svg";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
-// Get current page path
-const currentPath = Astro.url.pathname;
+const lang = getLangFromUrl(Astro.url);
+const { ui, content } = getTranslations(lang);
+
+// Define footer navigation structure
+const footerNavItems = [
+  { key: 'nav.home', routeKey: 'home' },
+  { key: 'nav.services', routeKey: 'services' },
+  { key: 'nav.about', routeKey: 'about' },
+];
+
+// Generate URLs for current language
+const footerNavLinks = footerNavItems.map(item => ({
+  ...item,
+  href: getRelativeLocaleUrl(lang, content.routes[item.routeKey]),
+  text: ui[item.key]
+}));
+
+// Logo link
+const logoHref = getRelativeLocaleUrl(lang, content.routes.home);
+
+// Helper function to check if a link is active
+const isLinkActive = (linkHref: string) => {
+  const currentPath = Astro.url.pathname;
+  const linkPath = new URL(linkHref, Astro.url).pathname;
+  
+  // Handle root path specially
+  if (linkPath === '/' || linkPath === `/${lang}/`) {
+    return currentPath === '/' || currentPath === `/${lang}/`;
+  }
+  
+  // For other paths, check if current path starts with link path
+  return currentPath.startsWith(linkPath);
+};
 ---
 
 <footer class="footer">
   <div class="footer__container">
     <!-- Brand Section -->
     <div class="footer__brand">
-      <a href="/alirio/" class="footer__logo" aria-label="Alirio logo">
+      <a href={logoHref} class="footer__logo" aria-label="Alirio logo">
         <Image src={logoImage} alt="Alirio logo" width={86} height={101} class="footer__logo-image" />
 
       </a>
       <p class="footer__description">
-        Alirio gives you best in class support in living like what you dreamed of, with our specialized team feel free to let us deal with everyday joy you need to have.
+        {ui['footer.description']}
       </p>
     </div>
 
     <!-- Company Links -->
     <div class="footer__section">
-      <h3 class="footer__section-title">Company</h3>
+      <h3 class="footer__section-title">{ui['footer.company']}</h3>
       <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <a href="/alirio/" class={`footer__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'footer__nav-link--active' : ''}`}>Home</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/alirio/services" class={`footer__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'footer__nav-link--active' : ''}`}>Services</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/alirio/about" class="footer__nav-link">About US</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/alirio/pricing" class="footer__nav-link">Pricing</a>
-        </li>
+        {footerNavLinks.map(link => (
+          <li class="footer__nav-item">
+            <a href={link.href} class={`footer__nav-link ${isLinkActive(link.href) ? 'footer__nav-link--active' : ''}`}>
+              {link.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
 
     <!-- Help Links -->
     <div class="footer__section">
-      <h3 class="footer__section-title">Help</h3>
+      <h3 class="footer__section-title">{ui['footer.help']}</h3>
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <a href="/alirio/contact" class="footer__nav-link">Contact Us</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="/alirio/privacy" class="footer__nav-link">Privacy Policy</a>
+          <a href="mailto:info@alirio.se" class="footer__nav-link">{ui['footer.contact']}</a>
         </li>
       </ul>
     </div>
 
     <!-- Contact Form -->
     <div class="footer__section">
-      <h3 class="footer__section-title">Contact</h3>
-      <a href="tel:+923123456789" class="footer__contact-link">+92 312 345 6789</a>
+      <h3 class="footer__section-title">{ui['footer.contact']}</h3>
+      <a href="tel:+0703350618" class="footer__contact-link">{ui['footer.phone']}</a>
+      <a href="mailto:info@alirio.se" class="footer__contact-link">{ui['footer.email']}</a>
+
     </div>
   </div>
 
   <!-- Copyright -->
   <div class="footer__copyright">
     <p class="footer__copyright-text">
-      © Copyright 2025, Designed and developed by 
-      <a href="https://www.linkedin.com/in/asad-halilovic/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">Asad</a>
-      & 
-      <a href="https://edin-durak-dev.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">Edin</a>
+      {ui['footer.copyright'].replace('{year}', new Date().getFullYear().toString())} 
+      <a href="https://www.linkedin.com/in/asad-halilovic/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">{ui['footer.developer1']}</a>
+      {ui['footer.and']} 
+      <a href="https://edin-durak-dev.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer__copyright-link">{ui['footer.developer2']}</a>
     </p>
   </div>
 </footer>

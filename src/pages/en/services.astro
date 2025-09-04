@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from "astro:assets";
+import arrowRightIcon from '../../assets/images/icons/arrow-right-icon.svg';
+import serviceHeroImage from '../../assets/images/service-hero-img.jpg';
+import linesImage from '../../assets/images/lines-img.jpg';
+import '../../styles/main.scss';
+import { getTranslations, getLangFromUrl } from '../../i18n/ui';
+
+// Get current language and translations
+const lang = 'en';
+const { content } = getTranslations(lang);
+---
+
+<Layout 
+  title="Home Care Services - Alirio Omsorg"
+  description="Learn how to apply for home care services at Alirio Omsorg. We guide you through the application process and provide comprehensive support for elderly care needs."
+  keywords="home care application, Alirio Omsorg services, how to apply for home care, elderly care services, Swedish home care, contact person, aid assessment"
+  ogImage="/src/assets/images/thumbnails/services-page-en.webp"
+>
+  <Header />
+  
+  <main class="services-page">
+    <section class="hero-section" aria-labelledby="services-hero-title">
+      <div class="container">
+        <div class="-hero-section__inner">
+          <h1 class="hero-section__title" id="services-hero-title">{content.services.hero.title}</h1>
+          <a href="tel:+0703350618" class="hero-section__button">
+            {content.services.hero.heroCTA}
+            <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" class="hero-section__button-icon" />
+          </a>
+
+          <div class="hero-section__image">
+            <Image src={serviceHeroImage} alt="Young woman huges older woman" width={500} height={500} loading="eager" class="hero-section__image-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="services-title">
+      <div class="services-section__inner container">
+        <span class="services-section__pre-title">{content.services.services.preTitle}</span>
+        <h2 class="services-section__title" id="services-title">
+            {content.services.services.title}
+        </h2>
+        <p class="services-section__description">{content.services.services.description}</p>
+        <div class="services-grid">
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service1.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service1.description}>               
+            </p>
+
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service2.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service2.description}>
+                
+            </p>
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service3.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service3.description}>
+                
+            </p>
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service4.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service4.description}>
+                
+            </p>
+            
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service5.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service5.description}>
+                
+            </p>
+          </div>
+
+          <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service6.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service6.description}>                
+            </p>
+          </div>
+		  <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service7.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service7.description}>                
+            </p>
+          </div>
+		  <div class="service-card">
+
+            <h3 class="service-card__title">{content.services.services.service8.title}</h3>
+            <p class="service-card__description" set:html={content.services.services.service8.description}>                
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose-us-section" aria-labelledby="why-choose-us-title">
+      <div class="container">
+        <div class="why-choose-us-section__inner">
+          <h2 class="why-choose-us-section__title">{content.services.whyAlirio.title}</h2>
+          <p class="why-choose-us-section__description">{content.services.whyAlirio.description}</p>
+          <div class="why-choose-us-section__content">
+            <div class="why-choose-us-section__statistics">
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">400+</span>
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics.description}</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">101%</span>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics2.description}</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">35</span>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics3.description}</p>
+                </div>
+                <div class="why-choose-us-section__statistics-item">
+                    <span class="why-choose-us-section__statistics-item-number">95+</span>
+
+                    <p class="why-choose-us-section__statistics-item-description">{content.services.whyAlirio.statistics4.description}</p>
+                </div>
+            </div>
+            <div class="why-choose-us-section__image">
+                <Image src={linesImage} alt="Lines" width={560} height={560} loading="lazy" class="why-choose-us-section__image-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

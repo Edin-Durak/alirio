@@ -1,0 +1,150 @@
+---
+import { getLangFromUrl, getTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const { content } = getTranslations(lang);
+
+// Cookie consent content translations
+const cookieContent = {
+  en: {
+    title: "We use cookies",
+    description: "We use cookies to enhance your browsing experience and analyze our traffic. By clicking 'Accept', you consent to our use of cookies.",
+    accept: "Accept",
+    decline: "Decline",
+  },
+  sv: {
+    title: "Vi använder cookies",
+    description: "Vi använder cookies för att förbättra din upplevelse och analysera vår trafik. Genom att klicka 'Acceptera' samtycker du till vår användning av cookies.",
+    accept: "Acceptera",
+    decline: "Avböj",
+  },
+  bs: {
+    title: "Koristimo kolačiće",
+    description: "Koristimo kolačiće za poboljšanje vašeg iskustva pregledavanja i analizu naše prometne gužve. Klikom na 'Prihvati' pristajete na našu upotrebu kolačića.",
+    accept: "Prihvati",
+    decline: "Odbij",
+  },
+  ar: {
+    title: "نحن نستخدم ملفات تعريف الارتباط",
+    description: "نحن نستخدم ملفات تعريف الارتباط لتحسين تجربة التصفح الخاصة بك وتحليل حركة المرور لدينا. بالنقر على 'قبول'، فإنك توافق على استخدامنا لملفات تعريف الارتباط.",
+    accept: "قبول",
+    decline: "رفض",
+  }
+};
+
+const currentContent = cookieContent[lang] || cookieContent.sv;
+---
+
+<div id="cookie-consent" class="cookie-consent" style="display: none;">
+  <div class="cookie-consent__container">
+    <div class="cookie-consent__content">
+      <h3 class="cookie-consent__title">{currentContent.title}</h3>
+      <p class="cookie-consent__description">{currentContent.description}</p>
+    </div>
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__button cookie-consent__button--accept" data-action="accept">
+        {currentContent.accept}
+      </button>
+      <button class="cookie-consent__button cookie-consent__button--decline" data-action="decline">
+        {currentContent.decline}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  class CookieConsent {
+    constructor() {
+      const banner = document.getElementById('cookie-consent');
+      const acceptBtn = banner?.querySelector('[data-action="accept"]');
+      const declineBtn = banner?.querySelector('[data-action="decline"]');
+      
+      this.init(banner, acceptBtn, declineBtn);
+    }
+    
+    init(banner, acceptBtn, declineBtn) {
+      // Check if user has already made a choice
+      const hasConsented = localStorage.getItem('cookieConsent');
+      
+      if (hasConsented === null) {
+        // Show banner if no choice has been made
+        this.showBanner(banner);
+      }
+      
+      // Add event listeners
+      acceptBtn?.addEventListener('click', () => this.accept(banner));
+      declineBtn?.addEventListener('click', () => this.decline(banner));
+    }
+    
+    showBanner(banner) {
+      if (banner) {
+        banner.style.display = 'block';
+        // Add slide-in animation
+        setTimeout(() => {
+          banner.classList.add('cookie-consent--visible');
+        }, 100);
+      }
+    }
+    
+    accept(banner) {
+      localStorage.setItem('cookieConsent', 'accepted');
+      localStorage.setItem('cookieConsentDate', new Date().toISOString());
+      this.hideBanner(banner);
+      
+      // Trigger any additional actions for accepted cookies
+      this.onAccept();
+    }
+    
+    decline(banner) {
+      localStorage.setItem('cookieConsent', 'declined');
+      localStorage.setItem('cookieConsentDate', new Date().toISOString());
+      this.hideBanner(banner);
+      
+      // Trigger any additional actions for declined cookies
+      this.onDecline();
+    }
+    
+    hideBanner(banner) {
+      if (banner) {
+        banner.classList.remove('cookie-consent--visible');
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 300);
+      }
+    }
+    
+    onAccept() {
+      // Enable analytics, tracking, etc.
+      console.log('Cookies accepted - enabling analytics');
+      // You can add Google Analytics, Facebook Pixel, etc. here
+    }
+    
+    onDecline() {
+      // Disable analytics, tracking, etc.
+      console.log('Cookies declined - analytics disabled');
+      // You can disable tracking scripts here
+    }
+    
+    // Public method to check consent status
+    static hasConsented() {
+      return localStorage.getItem('cookieConsent') === 'accepted';
+    }
+    
+    // Public method to check if user has made any choice
+    static hasMadeChoice() {
+      return localStorage.getItem('cookieConsent') !== null;
+    }
+  }
+  
+  // Initialize cookie consent
+  document.addEventListener('DOMContentLoaded', () => {
+    new CookieConsent();
+  });
+  
+  // Also try to initialize immediately if DOM is already loaded
+  if (document.readyState !== 'loading') {
+    new CookieConsent();
+  }
+</script>
+
+

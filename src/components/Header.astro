@@ -1,34 +1,64 @@
 ---
 import "../styles/main.scss";
 import { Image } from "astro:assets";
-import logoImage from "../assets/images/alirio-logo.png";
+import logoImage from "../assets/images/alirio-logo.svg";
+import arrowRightIcon from "../assets/images/icons/arrow-right-icon.svg";
 import hamburgerIcon from "../assets/images/icons/hamburger-icon.svg";
+import phoneIcon from "../assets/images/icons/phone-icon.svg";
 import LanguageDropdown from "./LanguageDropdown.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
-// Get current page path
-const currentPath = Astro.url.pathname;
+const lang = getLangFromUrl(Astro.url);
+const { ui, content } = getTranslations(lang);
+
+// Define navigation structure
+const navItems = [
+  { key: 'nav.home', route: content.routes.home },
+  { key: 'nav.services', route: content.routes.services },
+  { key: 'nav.about', route: content.routes.about }
+];
+
+// Generate URLs for current language
+const navLinks = navItems.map(item => ({
+  ...item,
+  href: getRelativeLocaleUrl(lang, item.route),
+  text: ui[item.key]
+}));
+
+// Logo link
+const logoHref = getRelativeLocaleUrl(lang, '');
+
+// Helper function to check if a link is active
+const isLinkActive = (linkHref: string) => {
+  const currentPath = Astro.url.pathname;
+  const linkPath = new URL(linkHref, Astro.url).pathname;
+  
+  // Handle root path specially
+  if (linkPath === '/' || linkPath === `/${lang}/`) {
+    return currentPath === '/' || currentPath === `/${lang}/`;
+  }
+  
+  // For other paths, check if current path starts with link path
+  return currentPath.startsWith(linkPath);
+};
 ---
 
 <header class="header">
   <div class="header__container">
-    <a href="/alirio/" class="header__logo-link">
-      <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" />
+    <a href={logoHref} class="header__logo-link">
+      <Image src={logoImage} alt="Logo image" width={80} height={80} class="header__logo-image" loading="eager" />
     </a>
     
     <nav class="header__nav">
       <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="/alirio/" class={`header__nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__nav-link--active' : ''}`}>Home</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/alirio/services" class={`header__nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__nav-link--active' : ''}`}>Services</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/alirio/pricing" class="header__nav-link">Pricing</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="/alirio/about" class="header__nav-link">About us</a>
-        </li>
+        {navLinks.map(link => (
+          <li class="header__nav-item">
+            <a href={link.href} class={`header__nav-link ${isLinkActive(link.href) ? 'header__nav-link--active' : ''}`}>
+              {link.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
     
@@ -37,8 +67,18 @@ const currentPath = Astro.url.pathname;
         <LanguageDropdown />
       </div>
       <button class="header__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} />
+        <Image src={hamburgerIcon} alt="Menu" width={24} height={24} loading="eager" />
       </button>
+      <a href="tel:+0703350618" class="header__phone-link">
+        <span class="header__phone-link-text">{ui['nav.phone']}</span>
+        
+        <span class="header__phone-link-icon desktop">
+          <Image src={arrowRightIcon} alt="Arrow right" width={20} height={20} loading="eager" />
+        </span>
+        <span class="header__phone-link-icon mobile">
+          <Image src={phoneIcon} alt="Phone" width={20} height={20} loading="eager" />
+        </span>
+      </a>
     </div>
   </div>
   
@@ -55,18 +95,13 @@ const currentPath = Astro.url.pathname;
       
       <nav class="header__mobile-nav-menu">
         <ul class="header__mobile-nav-list">
-          <li class="header__mobile-nav-item">
-            <a href="/alirio/" class={`header__mobile-nav-link ${currentPath === '/alirio/' || currentPath === '/alirio' || currentPath === '/' ? 'header__mobile-nav-link--active' : ''}`}>Home</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/alirio/services" class={`header__mobile-nav-link ${currentPath === '/alirio/services' || currentPath === '/alirio/services/' || currentPath === '/services' || currentPath === '/services/' ? 'header__mobile-nav-link--active' : ''}`}>Services</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/alirio/pricing" class="header__mobile-nav-link">Pricing</a>
-          </li>
-          <li class="header__mobile-nav-item">
-            <a href="/alirio/about" class="header__mobile-nav-link">About us</a>
-          </li>
+          {navLinks.map(link => (
+            <li class="header__mobile-nav-item">
+              <a href={link.href} class={`header__mobile-nav-link ${isLinkActive(link.href) ? 'header__mobile-nav-link--active' : ''}`}>
+                {link.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

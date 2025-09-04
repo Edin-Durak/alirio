@@ -53,4 +53,66 @@
       }
     }
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+  &__phone-link {
+    background-color: $brand-red-400;
+    color: $white;
+    padding: $spacing-3 $spacing-4;
+    border-radius: $rounded-2xs;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    &:hover {
+      background-color: $brand-red-500;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &-text {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
+    }
+    &-icon.desktop {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
+    }
+    &-icon.mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+.arabic {
+  .header__container,
+  .header__nav-list,
+  .header__actions,
+  .header__phone-link {
+    flex-direction: row-reverse;
+  }
+
+  .header__phone-link {
+    img {
+      rotate: 180deg;
+    }
+  }
 }
