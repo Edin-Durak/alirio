@@ -253,7 +253,7 @@ const { content } = getTranslations(lang);
 					-->
 					<div class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
-							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
+							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-mirza`} data-team="mirza" class="meet-the-team-section__card meet-the-team-section__card--link">
 							<Image src={mirzaImage} alt="Mirza - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-two']} />
 							</a>
 						</div>
@@ -274,7 +274,7 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
-							<a href={getRelativeLocaleUrl(lang, content.routes.about)} data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
+							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-ulf`} data-team="ulf" class="meet-the-team-section__card meet-the-team-section__card--link">
 							
 							<Image src={ulfImage} alt="Ulf - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
 							</a>
@@ -347,5 +347,27 @@ const { content } = getTranslations(lang);
 				actualImage.src = actualSrc;
 			}
 		}
+
+				// Handle team card navigation
+				const teamCards = document.querySelectorAll('.meet-the-team-section__card--link');
+		teamCards.forEach(card => {
+			card.addEventListener('click', (e) => {
+				const teamMember = card.getAttribute('data-team');
+				const isMobile = window.innerWidth < 992;
+				
+				if (teamMember) {
+					if (isMobile) {
+						// For mobile/tablet: navigate with hash for scroll positioning
+						window.location.href = `/en/about#team-${teamMember}`;
+					} else {
+						// For desktop: navigate without hash to avoid layout shift
+						window.location.href = `/en/about`;
+						
+						// Store the team member in sessionStorage for desktop tab switching
+						sessionStorage.setItem('selectedTeamMember', teamMember);
+					}
+				}
+			});
+		});
 	});
 </script>
