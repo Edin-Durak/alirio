@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import mirvaImage from '../assets/images/mirva-img.jpg';
 import mirzaImage from '../assets/images/mirza-img.webp';
 import ulfImage from '../assets/images/ulf-img.webp';
-import logoImage from '../assets/images/alirio-logo.svg';
+import locationImage from '../assets/images/location-img.webp';
 import '../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../i18n/ui';
 
@@ -283,24 +283,20 @@ const { content } = getTranslations(lang);
 
         <section class="about-location" aria-labelledby="about-location-title">
           <div class="about-location__inner container">
-            <!--  
                 <span class="about-location__pretitle">
                 {content.about.location.pretitle}
                 </span>
-                -->
                 <h2 class="about-location__title" id="about-location-title">
                 {content.about.location.title}
                 </h2>
-                <!-- 
                 <p class="about-location__description">{content.about.location.description}</p>
-                 -->
                 <div class="about-location__image">
-                    <Image src={logoImage} alt="Our location" width={500} height={500} loading="lazy" />
+                    <Image src={locationImage} alt="Our location" width={1000} height={1000} loading="lazy" />
                 </div>
                 <div class="about-location__info">
                     <span class="about-location__info-title">{content.about.location.info.title}</span>
                     <p class="about-location__info-working-hours">{content.about.location.info.workingHours}</p>
-                    <a href="tel:+46793483298" class="about-location__info-link">{content.about.location.info.phone}</a>
+                    <a href="tel:+0703350618" class="about-location__info-link">{content.about.location.info.phone}</a>
                 </div>
           </div>
         </section>

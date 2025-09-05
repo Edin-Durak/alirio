@@ -65,6 +65,12 @@
         height: 175px;
       }
     }
+
+    &__image {
+      background-color: $white;
+      border-radius: $rounded-xs;
+      padding: $spacing-6;
+    }
   }
 
   .our-benefits-section {
