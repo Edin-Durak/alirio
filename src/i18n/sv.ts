@@ -202,16 +202,16 @@ export const sv = {
       description:
         "Skriv lite text här som noggrant beskriver varför användare bör välja Alirios hemtjänst, utan för mycket text. Tydlig och beslutsam.",
       statistics: {
-        description: "Tjänstgöring tillhandahålls årligen",
+        description: "talade språk",
       },
       statistics2: {
-        description: "engagemang gentemot användare",
+        description: "kundens engagemang",
       },
       statistics3: {
-        description: "Ett års erfarenhet inom vård och omsorg",
+        description: "år av erfarenhet",
       },
       statistics4: {
-        description: "nöjda användare",
+        description: "kundnöjdhetsmål",
       },
     },
   },

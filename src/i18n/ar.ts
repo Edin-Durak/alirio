@@ -201,16 +201,16 @@ export const ar = {
       description:
         "هنا أكتب بعض النصوص التي تصف بشكل متقارب ما يجب أن تختار المستخدمون بالضرورة Alirio home care service، بدون الكثير من النصوص. واضح وقراري.",
       statistics: {
-        description: "الخدمة المقدمة من خلال السنة",
+        description: "اللغات المنطوقة",
       },
       statistics2: {
-        description: "الاستعداد للعمل بما يتناسب مع احتياجات العملاء",
+        description: "تفاني العملاء",
       },
       statistics3: {
         description: "سنوات من الخبرة",
       },
       statistics4: {
-        description: "العملاء الراضين",
+        description: "رضا العملاء غوال",
       },
     },
   },

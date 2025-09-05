@@ -202,16 +202,16 @@ export const en = {
       description:
         "Here write some text that closely describes why users should definitely choose the Alirio home care service, without too much text. Clear and decisive.",
       statistics: {
-        description: "Annual service provided",
+        description: "spoken languages",
       },
       statistics2: {
-        description: "Customer satisfaction",
+        description: "customer dedication",
       },
       statistics3: {
-        description: "Years of experience",
+        description: "years of experience",
       },
       statistics4: {
-        description: "Satisfied customers",
+        description: "customer satisfaction goal",
       },
     },
   },

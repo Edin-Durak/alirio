@@ -201,7 +201,7 @@ export const bs = {
       description:
         "Ovdje napisati neki text koji blisko opisuje zbog čega bi korisnici baš trebali odabrati Alirio home care uslugu, bez previše texta. Jasno i decidno.",
       statistics: {
-        description: "Usluga pruženih usluga godišnje",
+        description: "Govorornih jezika",
       },
       statistics2: {
         description: "Posvećenost korisnicima",
@@ -210,7 +210,7 @@ export const bs = {
         description: "Godina iskustva",
       },
       statistics4: {
-        description: "Zadovoljnih korisnika",
+        description: "Cilj zadovoljstva korisnika",
       },
     },
   },
