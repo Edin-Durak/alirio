@@ -1,6 +1,5 @@
 ---
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 import Layout from '../../layouts/Layout.astro';
 import { Image } from "astro:assets";
 import heroImagePlaceholder from '../../assets/images/hero-img.webp';
@@ -41,7 +40,6 @@ const { content } = getTranslations(lang);
   keywords="prijava za kućnu njegu, Alirio Omsorg usluge, kako se prijaviti za kućnu njegu, usluge stare njege, švedska kućna njega, kontakt osoba, procjena pomoći"
   ogImage="/src/assets/images/thumbnails/home-page-bs.webp"
 >
-	<Header />
 	<main class="main-home-page">
 		<section class="hero-section" aria-labelledby="hero-title">
 			<div class="hero-section__inner container">
@@ -328,7 +326,6 @@ const { content } = getTranslations(lang);
 		</section>
 		<!-- Your main content will go here -->
 	</main>
-	<Footer />
 </Layout>
 
 <script>

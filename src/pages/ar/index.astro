@@ -1,6 +1,4 @@
 ---
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
 import { Image } from "astro:assets";
 import heroImagePlaceholder from '../../assets/images/hero-img.webp';
@@ -40,7 +38,6 @@ const { content } = getTranslations(lang);
   keywords="التقديم للرعاية المنزلية, خدمات عليريو أومسورج, كيفية التقديم للرعاية المنزلية, خدمات الرعاية المنزلية, الرعاية المنزلية السويدية, الاتصال بالشخص, تقييم الدعم"
   ogImage="/src/assets/images/thumbnails/home-page-ar.webp"
 >
-	<Header />
 	<main class="main-home-page">
 		<section class="hero-section" aria-labelledby="hero-title">
 			<div class="hero-section__inner container">
@@ -324,7 +321,6 @@ const { content } = getTranslations(lang);
 		</section>
 		<!-- Your main content will go here -->
 	</main>
-	<Footer />
 </Layout>
 
 <script>

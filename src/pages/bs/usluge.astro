@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { Image } from "astro:assets";
 import arrowRightIcon from '../../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../../assets/images/service-hero-img.jpg';
@@ -21,7 +19,6 @@ const { content } = getTranslations(lang);
   keywords="prijava za kućnu njegu, Alirio Omsorg usluge, kako se prijaviti za kućnu njegu, usluge stare njege, švedska kućna njega, kontakt osoba, procjena pomoći"
   ogImage="/src/assets/images/thumbnails/services-page-bs.webp"
 >
-  <Header />
   
   <main class="services-page">
     <section class="hero-section" aria-labelledby="services-hero-title">
@@ -147,5 +144,4 @@ const { content } = getTranslations(lang);
     </section>
   </main>
 
-  <Footer />
 </Layout>

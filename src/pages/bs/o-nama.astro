@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { Image } from "astro:assets";
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
@@ -21,7 +19,6 @@ const { content } = getTranslations(lang);
   keywords="Alirio Omsorg ime, kućna njega Örebro, Mirza Haris, švedska kućna njega, multikulturalna njega, starije osobe"
   ogImage="/src/assets/images/thumbnails/about-page-bs.webp"
 >
-  <Header />
   
   <main class="about-page">
 
@@ -306,7 +303,6 @@ const { content } = getTranslations(lang);
     </section>
   </main>
 
-  <Footer />
 </Layout>
 
 <script>

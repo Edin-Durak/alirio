@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { Image } from "astro:assets";
 import arrowRightIcon from '../../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../../assets/images/service-hero-img.jpg';
@@ -21,7 +19,6 @@ const { content } = getTranslations(lang);
   keywords="التقديم للرعاية المنزلية, خدمات عليريو أومسورج, كيفية التقديم للرعاية المنزلية, خدمات الرعاية المنزلية, الرعاية المنزلية السويدية, الاتصال بالشخص, تقييم الدعم"
   ogImage="/src/assets/images/thumbnails/services-page-ar.webp"
 >
-  <Header />
   
   <main class="services-page">
     <section class="hero-section" aria-labelledby="services-hero-title">
@@ -147,5 +144,4 @@ const { content } = getTranslations(lang);
     </section>
   </main>
 
-  <Footer />
 </Layout>

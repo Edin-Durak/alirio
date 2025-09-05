@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { Image } from "astro:assets";
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
@@ -21,7 +19,6 @@ const { content } = getTranslations(lang);
   keywords="Alirio Omsorg حول, رعاية منزلية أوريبرو, Mirza Haris, رعاية منزلية سويدية, رعاية متعددة الثقافات, خدمات الرعاية المنزلية المعنية"
   ogImage="/src/assets/images/thumbnails/about-page-ar.webp"
 >
-  <Header />
   
   <main class="about-page">
 
@@ -306,7 +303,6 @@ const { content } = getTranslations(lang);
     </section>
   </main>
 
-  <Footer />
 </Layout>
 
 <script>

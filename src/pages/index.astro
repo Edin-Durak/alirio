@@ -1,6 +1,4 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 import { Image } from "astro:assets";
 import heroImagePlaceholder from '../assets/images/hero-img.webp';
@@ -36,7 +34,6 @@ const { content } = getTranslations(lang);
 ---
 
 <Layout>
-	<Header />
 	<main class="main-home-page">
 		<section class="hero-section" aria-labelledby="hero-title">
 			<div class="hero-section__inner container">
@@ -322,7 +319,6 @@ const { content } = getTranslations(lang);
 			</div>
 		</section>
 	</main>
-	<Footer />
 </Layout>
 
 <script>

@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 import { Image } from "astro:assets";
 import arrowRightIcon from '../../assets/images/icons/arrow-right-icon.svg';
 import serviceHeroImage from '../../assets/images/service-hero-img.jpg';
@@ -20,7 +19,6 @@ const { content } = getTranslations(lang);
   keywords="home care application, Alirio Omsorg services, how to apply for home care, elderly care services, Swedish home care, contact person, aid assessment"
   ogImage="/src/assets/images/thumbnails/services-page-en.webp"
 >
-  <Header />
   
   <main class="services-page">
     <section class="hero-section" aria-labelledby="services-hero-title">
@@ -146,5 +144,4 @@ const { content } = getTranslations(lang);
     </section>
   </main>
 
-  <Footer />
 </Layout>
