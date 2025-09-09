@@ -80,19 +80,19 @@ export const en = {
       subtitle:
         "Alirio Omsorg's mission is to provide you with care with consideration",
       service1: {
-        title: "Service one",
+        title: "Personal care",
         description:
-          "How do you create compelling presentations that wow your colleagues and impress your managers?",
+          "Assistance with personal hygiene and showering, Support with dressing and undressing.",
       },
       service2: {
-        title: "Service two",
+        title: "Service activities",
         description:
-          "How do you create compelling presentations that wow your colleagues and impress your managers?",
+          "Cleaning and housework, Washing and care of clothes, Shopping for food and groceries.",
       },
       service3: {
-        title: "Service three",
+        title: "Social care",
         description:
-          "How do you create compelling presentations that wow your colleagues and impress your managers?",
+          "Society and conversation, Follow-up to medical appointments, Help with contacts with the authorities",
       },
     },
     // Testimonials Section
