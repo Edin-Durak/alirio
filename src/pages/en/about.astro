@@ -411,10 +411,25 @@ const { content } = getTranslations(lang);
     }
   }
 
-  // Initialize team tabs when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    new TeamTabs();
-  });
+  // Initialize team tabs
+  function initializeTeamTabs() {
+    // Only initialize if not already initialized
+    if (!document.querySelector('.about-team[data-tabs-initialized]')) {
+      new TeamTabs();
+      
+      // Mark as initialized
+      const teamSection = document.querySelector('.about-team');
+      if (teamSection) {
+        teamSection.setAttribute('data-tabs-initialized', 'true');
+      }
+    }
+  }
+
+  // Initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', initializeTeamTabs);
+  
+  // Initialize on page load (for view transitions)
+  document.addEventListener('astro:page-load', initializeTeamTabs);
 
   // Handle hash changes
   window.addEventListener('hashchange', () => {

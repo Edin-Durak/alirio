@@ -242,14 +242,22 @@ const routeMappings = {
   }
   
   // Initialize all language dropdowns
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdowns = document.querySelectorAll('.language-dropdown');
-    dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
-  });
+  function initializeDropdowns() {
+    const dropdowns = document.querySelectorAll('.language-dropdown:not([data-initialized])');
+    dropdowns.forEach(dropdown => {
+      new LanguageDropdown(dropdown);
+      dropdown.setAttribute('data-initialized', 'true');
+    });
+  }
+  
+  // Initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', initializeDropdowns);
+  
+  // Initialize on page load (for view transitions)
+  document.addEventListener('astro:page-load', initializeDropdowns);
   
   // Also try to initialize immediately if DOM is already loaded
   if (document.readyState !== 'loading') {
-    const dropdowns = document.querySelectorAll('.language-dropdown');
-    dropdowns.forEach(dropdown => new LanguageDropdown(dropdown));
+    initializeDropdowns();
   }
 </script> 

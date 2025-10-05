@@ -190,10 +190,19 @@ const isLinkActive = (linkHref: string) => {
   }
   
   // Initialize mobile navigation
-  document.addEventListener('DOMContentLoaded', () => {
-    new MobileNavigation();
+  function initializeMobileNav() {
+    // Only initialize if not already initialized
+    if (!document.querySelector('.header[data-mobile-nav-initialized]')) {
+      new MobileNavigation();
+      
+      // Mark as initialized
+      const header = document.querySelector('.header');
+      if (header) {
+        header.setAttribute('data-mobile-nav-initialized', 'true');
+      }
+    }
     
-    // Add scroll effect to header
+    // Add scroll effect to header (always run this)
     const header = document.querySelector('.header');
     if (header) {
       window.addEventListener('scroll', () => {
@@ -204,6 +213,12 @@ const isLinkActive = (linkHref: string) => {
         }
       });
     }
-  });
+  }
+  
+  // Initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', initializeMobileNav);
+  
+  // Initialize on page load (for view transitions)
+  document.addEventListener('astro:page-load', initializeMobileNav);
 </script>
 
