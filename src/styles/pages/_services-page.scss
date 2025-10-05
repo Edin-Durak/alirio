@@ -474,6 +474,16 @@
 
   .why-choose-us-section__content {
     flex-direction: row-reverse;
+
+    @include tablet-landscape {
+      flex-direction: column;
+      gap: $spacing-8;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-6;
+    }
   }
 
   .why-choose-us-section__statistics-item-number {
