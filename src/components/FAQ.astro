@@ -180,7 +180,22 @@ const faqData = [
   }
 
   // Initialize FAQ accordion
-  document.addEventListener('DOMContentLoaded', () => {
-    new FAQAccordion();
-  });
+  function initializeFAQ() {
+    // Only initialize if not already initialized
+    if (!document.querySelector('.faq-section[data-faq-initialized]')) {
+      new FAQAccordion();
+      
+      // Mark as initialized
+      const faqSection = document.querySelector('.faq-section');
+      if (faqSection) {
+        faqSection.setAttribute('data-faq-initialized', 'true');
+      }
+    }
+  }
+
+  // Initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', initializeFAQ);
+  
+  // Initialize on page load (for view transitions)
+  document.addEventListener('astro:page-load', initializeFAQ);
 </script>
