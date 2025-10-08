@@ -272,10 +272,10 @@ export const sv = {
           email: "ulf@alirio.se",
         },
         haris: {
-          name: "Haris Kikic",
-          role: "Koordinator",
-          description:
-            "Haris arbetar som vår koordinator, säkerställer att kommunikationen mellan vårt team och de familjer vi stöttar är smidig. Hans organiseringsfärdigheter och uppmärksamhet på detaljer hjälper oss att tillhandahålla det bästa möjliga vårdserfarenheten.",
+          name: "Haris",
+          role: "VD",
+          description: "",
+          email: "haris@alirio.se",
         },
         lejla: {
           name: "Lejla",
