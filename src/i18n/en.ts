@@ -78,6 +78,12 @@ export const en = {
           email: "haris@alirio.se",
           phone: "",
         },
+        anna: {
+          name: "Anna",
+          role: "Economist",
+          email: "",
+          phone: "",
+        },
       },
     },
     // Services Section
@@ -278,11 +284,10 @@ export const en = {
           description:
             "Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.",
         },
-        lejla: {
-          name: "Lejla",
-          role: "Employee",
-          description:
-            "Lejla is a dedicated member of our care team, bringing warmth and compassion to every interaction. Her multilingual skills and cultural understanding help us provide personalized care that respects each individual's background and preferences.",
+        anna: {
+          name: "Anna",
+          role: "Economist",
+          description: "",
         },
       },
     },

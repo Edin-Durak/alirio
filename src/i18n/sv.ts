@@ -77,6 +77,12 @@ export const sv = {
           email: "haris@alirio.se",
           phone: "",
         },
+        anna: {
+          name: "Anna",
+          role: "Ekonom",
+          email: "",
+          phone: "",
+        },
       },
     },
     // Services Section
@@ -277,11 +283,10 @@ export const sv = {
           description: "",
           email: "haris@alirio.se",
         },
-        lejla: {
-          name: "Lejla",
-          role: "Anställd",
-          description:
-            "Lejla är en dedikerad medlem av vårt vårdsteam, som bringar värme och medkänsla i alla interaktioner. Hon har flerspråkiga färdigheter och kulturell förståelse som hjälper oss att tillhandahålla personlig vård som respekterar varje individs bakgrund och behov.",
+        anna: {
+          name: "Anna",
+          role: "Ekonom",
+          description: "",
         },
       },
     },

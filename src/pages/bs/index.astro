@@ -15,6 +15,7 @@ import peopleIcon from '../../assets/images/icons/people-icon.svg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
 import ulfImage from '../../assets/images/ulf-img.webp';
 import harisImage from '../../assets/images/haris-img.webp';
+import annaImage from '../../assets/images/anna-img.webp';
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import serviceCardImageOne from '../../assets/images/card-one.webp';
 import serviceCardImageTwo from '../../assets/images/card-two.webp';
@@ -310,6 +311,28 @@ const { content } = getTranslations(lang);
 							</a>
 							<a href="tel:+46793483298" class="meet-the-team-section__card-link">
 								{content.home.team.members.ulf.phone}
+							</a>
+						</div>						
+					</div>
+					<div class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
+							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-anna`} data-team="anna" class="meet-the-team-section__card meet-the-team-section__card--link">
+							
+							<Image src={annaImage} alt="Anna - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							</a>
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.anna.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.anna.role}
+							</p>
+							<a href=mailto:anna@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.anna.email}
+							</a>
+							<a href="tel:+46793483298" class="meet-the-team-section__card-link">
+								{content.home.team.members.anna.phone}
 							</a>
 						</div>
 					</div>

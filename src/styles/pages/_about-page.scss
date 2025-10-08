@@ -423,6 +423,7 @@
       display: flex;
       flex-direction: column;
       gap: $spacing-2;
+      width: 100%;
     }
 
     &__member-name {

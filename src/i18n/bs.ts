@@ -76,6 +76,12 @@ export const bs = {
           email: "haris@alirio.se",
           phone: "",
         },
+        anna: {
+          name: "Anna",
+          role: "Ekonom",
+          email: "",
+          phone: "",
+        },
       },
     },
     // Services Section
@@ -276,11 +282,11 @@ export const bs = {
           description:
             "Haris radi kao naš koordinator, osiguravajući glatku komunikaciju između našeg tima i porodica koje pomažemo. Njegove organizacione vještine i pažnja na detalje nam pomažu da pružimo najbolje moguće iskustvo njegovanja.",
         },
-        lejla: {
-          name: "Lejla",
-          role: "Zaposleni",
-          description:
-            "Lejla je posvećeni član našeg tima za njegu, donoseći toplinu i suosjećanje u svakoj interakciji. Njene višejezične vještine i kulturno razumijevanje nam pomažu da pružimo personaliziranu njegu koja poštuje pozadinu i želje svakog pojedinca.",
+        anna: {
+          name: "Anna",
+          role: "Ekonomista",
+          description: "",
+          email: "",
         },
       },
     },
