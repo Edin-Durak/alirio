@@ -24,6 +24,9 @@ import arrowUpHoverIcon from '../../assets/images/icons/arrow-up-right-hover-ico
 import FAQ from '../../components/FAQ.astro';
 import mirzaAvatarImage from '../../assets/images/mirza-avatar-img.webp';
 import ulfAvatarImage from '../../assets/images/ulf-avatar-img.webp';
+import harisAvatarImage from '../../assets/images/haris-avatar-img.webp';
+import annaAvatarImage from '../../assets/images/anna-avatar-img.webp';
+import perihanAvatarImage from '../../assets/images/perihan-avatar-img.webp';
 import mirvaAvatarImage from '../../assets/images/mirva-avatar-img.jpg';
 import { getTranslations, getLangFromUrl } from '../../i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
@@ -352,6 +355,9 @@ const { content } = getTranslations(lang);
 						
 						<Image src={ulfAvatarImage} alt="Ulf avatar" width={48} height={48} loading={'lazy'} class:list={['image-one']} />
 						<Image src={mirzaAvatarImage} alt="Mirza avatar" width={48} height={48} loading={'lazy'} class:list={['image-two']} />
+						<Image src={harisAvatarImage} alt="Haris avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
+						<Image src={annaAvatarImage} alt="Anna avatar" width={48} height={48} loading={'lazy'} class:list={['image-four']} />
+						<Image src={perihanAvatarImage} alt="Perihan avatar" width={48} height={48} loading={'lazy'} class:list={['image-five']} />
 						<!--  
 						<Image src={mirvaAvatarImage} alt="Mirvat avatar" width={48} height={48} loading={'lazy'} class:list={['image-three']} />
 						-->

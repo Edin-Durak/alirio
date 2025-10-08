@@ -700,6 +700,7 @@
       align-items: center;
       margin-bottom: $spacing-6;
       position: relative;
+      flex-wrap: wrap;
 
       img {
         border-radius: 50%;
@@ -714,16 +715,11 @@
 
       .image-one {
         z-index: 1;
-        margin-right: $spacing-10;
-        margin-left: $spacing-10;
       }
 
       .image-two {
         z-index: 2;
         position: static;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
       }
 
       .image-three {
@@ -737,11 +733,21 @@
 
       .image-two:hover {
         z-index: 11;
-        transform: translateX(-50%) scale(1.1);
+        transform: scale(1.1);
       }
 
       .image-three:hover {
         z-index: 12;
+        transform: scale(1.1);
+      }
+
+      .image-four:hover {
+        z-index: 13;
+        transform: scale(1.1);
+      }
+
+      .image-five:hover {
+        z-index: 14;
         transform: scale(1.1);
       }
     }
