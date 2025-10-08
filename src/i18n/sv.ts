@@ -71,6 +71,12 @@ export const sv = {
           email: "ulf@alirio.se",
           phone: "",
         },
+        haris: {
+          name: "Haris",
+          role: "VD",
+          email: "haris@alirio.se",
+          phone: "",
+        },
       },
     },
     // Services Section

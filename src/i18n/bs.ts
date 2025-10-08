@@ -70,6 +70,12 @@ export const bs = {
           email: "ulf@alirio.se",
           phone: "",
         },
+        haris: {
+          name: "Haris",
+          role: "VD",
+          email: "haris@alirio.se",
+          phone: "",
+        },
       },
     },
     // Services Section
