@@ -82,6 +82,12 @@ export const ar = {
           email: "",
           phone: "",
         },
+        perihan: {
+          name: "بريهان",
+          role: "المنظم",
+          description: "",
+          email: "",
+        },
       },
     },
     // Services Section
@@ -285,6 +291,12 @@ export const ar = {
           name: "أنا",
           role: "المحاسب",
           description: "",
+        },
+        perihan: {
+          name: "بريهان",
+          role: "المنظم",
+          description: "",
+          email: "",
         },
       },
     },

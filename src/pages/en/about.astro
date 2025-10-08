@@ -4,6 +4,9 @@ import { Image } from "astro:assets";
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
 import ulfImage from '../../assets/images/ulf-img.webp';
+import harisImage from '../../assets/images/haris-img.webp';
+import annaImage from '../../assets/images/anna-img.webp';
+import perihanImage from '../../assets/images/perihan-img.webp';
 import locationImage from '../../assets/images/location-img.webp';
 import '../../styles/main.scss';
 import { getTranslations, getLangFromUrl } from '../../i18n/ui';
@@ -93,6 +96,16 @@ const { content } = getTranslations(lang);
                     
                   </div>
                 </button>
+                <button class="about-team__tab" data-tab="haris" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={harisImage} alt="haris" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.haris.role}</p>
+                    
+                  </div>
+                </button>
                 
                 <button class="about-team__tab" data-tab="ulf" aria-selected="false">
                   <div class="about-team__tab-image">
@@ -101,6 +114,26 @@ const { content } = getTranslations(lang);
                   <div class="about-team__tab-info">
                     <h3 class="about-team__tab-name">{content.about.team.members.ulf.name}</h3>
                     <p class="about-team__tab-role">{content.about.team.members.ulf.role}</p>
+                    
+                  </div>
+                </button>
+                <button class="about-team__tab" data-tab="anna" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={annaImage} alt="Anna" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.anna.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.anna.role}</p>
+                    
+                  </div>
+                </button>
+                <button class="about-team__tab" data-tab="perihan" aria-selected="false">
+                  <div class="about-team__tab-image">
+                    <Image src={perihanImage} alt="Perihan" width={200} height={230} loading="lazy" />
+                  </div>
+                  <div class="about-team__tab-info">
+                    <h3 class="about-team__tab-name">{content.about.team.members.perihan.name}</h3>
+                    <p class="about-team__tab-role">{content.about.team.members.perihan.role}</p>
                     
                   </div>
                 </button>
@@ -162,6 +195,18 @@ const { content } = getTranslations(lang);
                     </a>
                   </div>
                 </div>
+                <div class="about-team__panel" data-panel="haris" id="team-haris">
+                  <div class="about-team__panel-image">
+                    <Image src={harisImage} alt="Haris" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.haris.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.haris.description}</p>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="about-team__panel" data-panel="ulf" id="team-ulf">
                   <div class="about-team__panel-image">
@@ -176,6 +221,30 @@ const { content } = getTranslations(lang);
                     <a href=mailto:ulf@alirio.se class="meet-the-team-section__card-link">
                       {content.about.team.members.ulf.email}
                     </a>
+                  </div>
+                </div>
+                <div class="about-team__panel" data-panel="anna" id="team-anna">
+                  <div class="about-team__panel-image">
+                    <Image src={annaImage} alt="Anna" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.anna.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.anna.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.anna.description}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-team__panel" data-panel="perihan" id="team-perihan">
+                  <div class="about-team__panel-image">
+                    <Image src={perihanImage} alt="Perihan" width={225} height={225} loading="lazy" />
+                  </div>
+                  <div class="about-team__panel-info">
+                    <h3 class="about-team__panel-name">{content.about.team.members.perihan.name}</h3>
+                    <p class="about-team__panel-role">{content.about.team.members.perihan.role}</p>
+                    <div class="about-team__panel-description">
+                      <p>{content.about.team.members.perihan.description}</p>
+                    </div>
                   </div>
                 </div>
  <!-- 
@@ -238,6 +307,21 @@ const { content } = getTranslations(lang);
                     </a>
                   </div>
                 </div>
+                <div class="about-team__member" id="team-haris-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={harisImage} alt="Haris" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.haris.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.haris.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.haris.description}</p>
+                    </div>
+                    <a href=mailto:haris@alirio.se class="meet-the-team-section__card-link">
+                      {content.about.team.members.haris.email}
+                    </a>
+                  </div>
+                </div>
 
                 <div class="about-team__member" id="team-ulf-mobile">
                   <div class="about-team__member-image">
@@ -252,6 +336,30 @@ const { content } = getTranslations(lang);
                     <a href=mailto:ulf@alirio.se class="meet-the-team-section__card-link">
                       {content.about.team.members.ulf.email}
                     </a>
+                  </div>
+                </div>
+                <div class="about-team__member" id="team-anna-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={annaImage} alt="Anna" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.anna.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.anna.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.anna.description}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-team__member" id="team-perihan-mobile">
+                  <div class="about-team__member-image">
+                    <Image src={perihanImage} alt="Perihan" width={150} height={120} loading= "lazy" />
+                  </div>
+                  <div class="about-team__member-info">
+                    <h3 class="about-team__member-name">{content.about.team.members.perihan.name}</h3>
+                    <p class="about-team__member-role">{content.about.team.members.perihan.role}</p>
+                    <div class="about-team__member-description">
+                      <p>{content.about.team.members.perihan.description}</p>
+                    </div>
                   </div>
                 </div>
                 <!-- 

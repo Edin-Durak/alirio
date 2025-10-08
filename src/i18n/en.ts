@@ -84,6 +84,12 @@ export const en = {
           email: "",
           phone: "",
         },
+        perihan: {
+          name: "Perihan",
+          role: "Coordinator",
+          description: "",
+          email: "",
+        },
       },
     },
     // Services Section
@@ -288,6 +294,12 @@ export const en = {
           name: "Anna",
           role: "Economist",
           description: "",
+        },
+        perihan: {
+          name: "Perihan",
+          role: "Coordinator",
+          description: "",
+          email: "",
         },
       },
     },

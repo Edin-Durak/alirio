@@ -82,6 +82,12 @@ export const bs = {
           email: "",
           phone: "",
         },
+        perihan: {
+          name: "Perihan",
+          role: "Koordinator",
+          description: "",
+          email: "",
+        },
       },
     },
     // Services Section
@@ -285,6 +291,12 @@ export const bs = {
         anna: {
           name: "Anna",
           role: "Ekonomista",
+          description: "",
+          email: "",
+        },
+        perihan: {
+          name: "Perihan",
+          role: "Koordinator",
           description: "",
           email: "",
         },

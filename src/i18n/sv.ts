@@ -83,6 +83,12 @@ export const sv = {
           email: "",
           phone: "",
         },
+        perihan: {
+          name: "Perihan",
+          role: "Samordnare",
+          description: "",
+          email: "",
+        },
       },
     },
     // Services Section
@@ -287,6 +293,12 @@ export const sv = {
           name: "Anna",
           role: "Ekonom",
           description: "",
+        },
+        perihan: {
+          name: "Perihan",
+          role: "Samordnare",
+          description: "",
+          email: "",
         },
       },
     },
