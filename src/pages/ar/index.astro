@@ -15,6 +15,7 @@ import mirzaImage from '../../assets/images/mirza-img.webp';
 import ulfImage from '../../assets/images/ulf-img.webp';
 import harisImage from '../../assets/images/haris-img.webp';
 import annaImage from '../../assets/images/anna-img.webp';
+import perihanImage from '../../assets/images/perihan-img.webp';
 import mirvaImage from '../../assets/images/mirva-img.jpg';
 import serviceCardImageOne from '../../assets/images/card-one.webp';
 import serviceCardImageTwo from '../../assets/images/card-two.webp';
@@ -328,6 +329,22 @@ const { content } = getTranslations(lang);
 							</h3>
 							<p class="meet-the-team-section__card-description">
 								{content.home.team.members.anna.role}
+							</p>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
+							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-perihan`} data-team="perihan" class="meet-the-team-section__card meet-the-team-section__card--link">
+							
+							<Image src={perihanImage} alt="Perihan - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							</a>
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.perihan.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.perihan.role}
 							</p>
 						</div>
 					</div>
