@@ -78,7 +78,7 @@ export const bs = {
         },
         anna: {
           name: "Anna",
-          role: "Ekonom",
+          role: "Ekonomista",
           email: "",
           phone: "",
         },
@@ -277,8 +277,8 @@ export const bs = {
             "Ulf donosi godine iskustva u njegu starijih ljudi u našem timu. Njegova posvećenost pružanju kvalitetne njige i njegovo razumijevanje jedinstvenih potreba svakog pojedinca ga čini nezamjenljivim članom našeg tima.",
         },
         haris: {
-          name: "Haris Kikic",
-          role: "Koordinator",
+          name: "Haris",
+          role: "VD",
           description:
             "Haris radi kao naš koordinator, osiguravajući glatku komunikaciju između našeg tima i porodica koje pomažemo. Njegove organizacione vještine i pažnja na detalje nam pomažu da pružimo najbolje moguće iskustvo njegovanja.",
         },
