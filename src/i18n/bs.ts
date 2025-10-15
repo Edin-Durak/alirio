@@ -11,7 +11,7 @@ export const bs = {
       title: "Individua u centru - blizu vas svaki dan za jači život",
       description:
         "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
-      phone: "+4679-348-32-98",
+      phone: "+4679-348-32-97",
     },
     // Benefits Section
     benefits: {
@@ -309,7 +309,7 @@ export const bs = {
       info: {
         title: "Telefon",
         workingHours: "Pon - Pet: 08:00 - 16:00",
-        phone: "+4679-348-32-98",
+        phone: "+4679-348-32-97",
       },
     },
   },

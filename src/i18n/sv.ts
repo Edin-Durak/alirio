@@ -11,7 +11,7 @@ export const sv = {
       title: "Individen i centrum - nära dig varje dag för ett starkare liv",
       description:
         "Nu är vi här för dig! Godkända av Örebro kommun och redo att börja vår resa tillsammans.",
-      phone: "+4679-348-32-98",
+      phone: "+4679-348-32-97",
     },
     // Benefits Section
     benefits: {
@@ -309,7 +309,7 @@ export const sv = {
       info: {
         title: "Telefon",
         workingHours: "Mån - Fre: 08:00 - 16:00",
-        phone: "+4679-348-32-98",
+        phone: "+4679-348-32-97",
       },
     },
   },

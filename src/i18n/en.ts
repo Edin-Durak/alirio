@@ -12,7 +12,7 @@ export const en = {
         "The individual at the center - close to you every day for a stronger life",
       description:
         "We are here for you now! Approved by Örebro Municipality and ready to begin our journey together.",
-      phone: "+4679-348-32-98",
+      phone: "+4679-348-32-97",
     },
     // Benefits Section
     benefits: {
@@ -310,7 +310,7 @@ export const en = {
       info: {
         title: "Phone",
         workingHours: "Mo - Fr: 08:00 - 16:00",
-        phone: "+4679-348-32-98",
+        phone: "+4679-348-32-97",
       },
     },
   },
