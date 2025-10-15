@@ -56,7 +56,7 @@ export const ar = {
           name: "ميرزا",
           role: "المؤسس والمالك",
           email: "mirza@alirio.se",
-          phone: "+46793483298",
+          phone: "+46793483297",
         },
         mirvat: {
           name: "ميرفت",
