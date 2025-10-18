@@ -70,6 +70,12 @@ export const bs = {
           email: "ulf@alirio.se",
           phone: "",
         },
+        elvina: {
+          name: "Elvina",
+          role: "Menadžer kvaliteta",
+          email: "",
+          phone: "",
+        },
         haris: {
           name: "Haris",
           role: "VD",
@@ -281,6 +287,12 @@ export const bs = {
           email: "ulf@alirio.se",
           description:
             "Ulf donosi godine iskustva u njegu starijih ljudi u našem timu. Njegova posvećenost pružanju kvalitetne njige i njegovo razumijevanje jedinstvenih potreba svakog pojedinca ga čini nezamjenljivim članom našeg tima.",
+        },
+        elvina: {
+          name: "Elvina",
+          role: "Menadžer kvaliteta",
+          description: "",
+          email: "",
         },
         haris: {
           name: "Haris",

@@ -72,6 +72,12 @@ export const en = {
           email: "ulf@alirio.se",
           phone: "",
         },
+        elvina: {
+          name: "Elvina",
+          role: "Quality manager",
+          email: "",
+          phone: "",
+        },
         haris: {
           name: "Haris",
           role: "CEO",
@@ -284,8 +290,14 @@ export const en = {
             "Ulf brings years of experience in elderly care to our team. His dedication to providing quality care and his understanding of the unique needs of each individual make him an invaluable member of our staff.",
           email: "ulf@alirio.se",
         },
+        elvina: {
+          name: "Elvina",
+          role: "Quality manager",
+          description: "",
+          email: "",
+        },
         haris: {
-          name: "Haris Kikic",
+          name: "Haris",
           role: "Coordinator",
           description:
             "Haris works as our coordinator, ensuring smooth communication between our team and the families we serve. His organizational skills and attention to detail help us provide the best possible care experience.",

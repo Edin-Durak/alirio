@@ -13,6 +13,7 @@ import archiveIcon from '../../assets/images/icons/archive-icon.svg';
 import peopleIcon from '../../assets/images/icons/people-icon.svg';
 import mirzaImage from '../../assets/images/mirza-img.webp';
 import ulfImage from '../../assets/images/ulf-img.webp';
+import elvinaImage from '../../assets/images/elvina-img.webp';
 import harisImage from '../../assets/images/haris-img.webp';
 import annaImage from '../../assets/images/anna-img.webp';
 import perihanImage from '../../assets/images/perihan-img.webp';
@@ -28,6 +29,7 @@ import ulfAvatarImage from '../../assets/images/ulf-avatar-img.webp';
 import harisAvatarImage from '../../assets/images/haris-avatar-img.webp';
 import annaAvatarImage from '../../assets/images/anna-avatar-img.webp';
 import perihanAvatarImage from '../../assets/images/perihan-avatar-img.webp';
+import elvinaAvatarImage from '../../assets/images/elvina-avatar-img.webp';
 import mirvaAvatarImage from '../../assets/images/mirva-avatar-img.jpg';
 import { getTranslations, getLangFromUrl } from '../../i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
@@ -320,6 +322,28 @@ const { content } = getTranslations(lang);
 					</div>
 					<div class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
+							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-elvina`} data-team="elvina" class="meet-the-team-section__card meet-the-team-section__card--link">
+							
+							<Image src={elvinaImage} alt="elvina - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							</a>
+						</div>
+						<div class="meet-the-team-section__card-content content-three">
+							<h3 class="meet-the-team-section__card-title">
+								{content.home.team.members.elvina.name}
+							</h3>
+							<p class="meet-the-team-section__card-description">
+								{content.home.team.members.elvina.role}
+							</p>
+							<a href=mailto:elvina@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.elvina.email}
+							</a>
+							<a href="tel:+46793483297" class="meet-the-team-section__card-link">
+								{content.home.team.members.elvina.phone}
+							</a>
+						</div>
+					</div>
+					<div class="meet-the-team-section__card meet-the-team-section__card--link">
+						<div class="meet-the-team-section__card-image">
 							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-anna`} data-team="anna" class="meet-the-team-section__card meet-the-team-section__card--link">
 							
 							<Image src={annaImage} alt="Anna - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
@@ -332,13 +356,19 @@ const { content } = getTranslations(lang);
 							<p class="meet-the-team-section__card-description">
 								{content.home.team.members.anna.role}
 							</p>
+							<a href=mailto:anna@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.anna.email}
+							</a>
+							<a href="tel:+46793483297" class="meet-the-team-section__card-link">
+								{content.home.team.members.anna.phone}
+							</a>
 						</div>
 					</div>
 					<div class="meet-the-team-section__card meet-the-team-section__card--link">
 						<div class="meet-the-team-section__card-image">
 							<a href={`${getRelativeLocaleUrl(lang, content.routes.about)}#team-perihan`} data-team="perihan" class="meet-the-team-section__card meet-the-team-section__card--link">
 							
-							<Image src={perihanImage} alt="Perihan - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
+							<Image src={perihanImage} alt="perihan - team medlem" width={180} height={100} loading={'lazy'} class:list={['image-three']} />
 							</a>
 						</div>
 						<div class="meet-the-team-section__card-content content-three">
@@ -348,6 +378,12 @@ const { content } = getTranslations(lang);
 							<p class="meet-the-team-section__card-description">
 								{content.home.team.members.perihan.role}
 							</p>
+							<a href=mailto:perihan@alirio.se class="meet-the-team-section__card-link">
+								{content.home.team.members.perihan.email}
+							</a>
+							<a href="tel:+46793483297" class="meet-the-team-section__card-link">
+								{content.home.team.members.perihan.phone}
+							</a>
 						</div>
 					</div>
 				</div>
