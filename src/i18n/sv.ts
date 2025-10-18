@@ -77,6 +77,12 @@ export const sv = {
           email: "haris@alirio.se",
           phone: "",
         },
+        elvina: {
+          name: "Elvina",
+          role: "Kvalitetschef",
+          email: "",
+          phone: "",
+        },
         anna: {
           name: "Anna",
           role: "Ekonom",
@@ -282,6 +288,12 @@ export const sv = {
           description:
             "Ulf har år av erfarenhet i äldrevård i vårt team. Han är dedikerad till att tillhandahålla kvalitetsvård och hans förståelse för de enskilda behoven gör honom till en oöverträffad medlem av vårt team.",
           email: "ulf@alirio.se",
+        },
+        elvina: {
+          name: "Elvina",
+          role: "Kvalitetschef",
+          description: "",
+          email: "",
         },
         haris: {
           name: "Haris",
