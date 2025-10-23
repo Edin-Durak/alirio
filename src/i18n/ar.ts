@@ -321,7 +321,7 @@ export const ar = {
       description: "انظر على الخريطة",
       info: {
         title: "هاتف",
-        workingHours: "من الإثنين إلى الأحد 08:00 - 16:00",
+        workingHours: "من الإثنين إلى الأحد 08:00 - 17:00",
         phone: "+4679-348-32-97",
       },
     },

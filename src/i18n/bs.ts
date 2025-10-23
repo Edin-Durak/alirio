@@ -323,7 +323,7 @@ export const bs = {
       description: "Pogledajte nas na mapi",
       info: {
         title: "Telefon",
-        workingHours: "Pon - Pet: 08:00 - 16:00",
+        workingHours: "Pon - Pet: 08:00 - 17:00",
         phone: "+4679-348-32-97",
       },
     },

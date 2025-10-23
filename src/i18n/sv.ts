@@ -323,7 +323,7 @@ export const sv = {
       description: "Se oss på kartan",
       info: {
         title: "Telefon",
-        workingHours: "Mån - Fre: 08:00 - 16:00",
+        workingHours: "Mån - Fre: 08:00 - 17:00",
         phone: "+4679-348-32-97",
       },
     },

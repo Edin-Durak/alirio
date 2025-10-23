@@ -324,7 +324,7 @@ export const en = {
       description: "Look for us on the map",
       info: {
         title: "Phone",
-        workingHours: "Mo - Fr: 08:00 - 16:00",
+        workingHours: "Mo - Fr: 08:00 - 17:00",
         phone: "+4679-348-32-97",
       },
     },
