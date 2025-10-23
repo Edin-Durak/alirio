@@ -293,7 +293,8 @@ export const sv = {
         elvina: {
           name: "Elvina",
           role: "Kvalitetschef",
-          description: "",
+          description:
+            "Elvina har arbetat som sjuksköterska sedan 2008 och har en bred erfarenhet från flera olika områden inom vård och omsorg. Hennes långa yrkeserfarenhet har gett henne en djup förståelse för både verksamhetens struktur och människors individuella behov. Hon drivs av utveckling och förändring, och har en stark vilja att skapa verksamheter där kvalitet, trygghet och engagemang går hand i hand. Som kvalitetschef på Alirio Omsorg brinner Elvina för att bygga en organisation där både personal och kunder känner sig sedda, delaktiga och stolta över att vara en del av helheten. Med sin kombination av professionalitet, värme och tydlighet bidrar Elvina till att säkerställa att Alirio Omsorg alltid levererar omsorg med hjärta, kvalitet och respekt.",
           email: "",
         },
         haris: {

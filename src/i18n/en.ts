@@ -294,7 +294,8 @@ export const en = {
         elvina: {
           name: "Elvina",
           role: "Quality manager",
-          description: "",
+          description:
+            "Elvina has been a nurse since 2008 and has a broad range of experience from several different areas in healthcare and care. Her long years of experience have given her a deep understanding of both the structure of the business and the individual needs of people. She is driven by development and change, and has a strong desire to create businesses where quality, safety and engagement go hand in hand. As the quality manager at Alirio Omsorg, Elvina is passionate about building an organization where both staff and customers feel seen, engaged and proud to be part of the whole. Through her combination of professionalism, warmth and clarity, Elvina contributes to ensuring that Alirio Omsorg always delivers care with heart, quality and respect.",
           email: "",
         },
         haris: {

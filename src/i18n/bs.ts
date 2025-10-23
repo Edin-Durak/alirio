@@ -292,7 +292,8 @@ export const bs = {
         elvina: {
           name: "Elvina",
           role: "Menadžer kvaliteta",
-          description: "",
+          description:
+            "Elvina radi kao medicinska sestra od 2008. godine i ima široko iskustvo u nekoliko različitih oblasti unutar zdravstvenog sektora. Njeno dugogodišnje profesionalno iskustvo joj je pružilo duboko razumijevanje i strukture poslovanja i individualnih potreba ljudi. Pokreću je razvoj i promjene, te ima snažnu želju da stvori poslove u kojima kvalitet, sigurnost i predanost idu ruku pod ruku. Kao menadžerica kvalitete u Alirio Omsorgu, Elvina je strastvena u izgradnji organizacije u kojoj se i osoblje i kupci osjećaju viđeno, uključeno i ponosno što su dio cjeline. Svojom kombinacijom profesionalnosti, topline i jasnoće, Elvina doprinosi tome da Alirio Omsorg uvijek pruža njegu sa srcem, kvalitetom i poštovanjem.",
           email: "",
         },
         haris: {
