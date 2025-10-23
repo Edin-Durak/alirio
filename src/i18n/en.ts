@@ -312,7 +312,8 @@ export const en = {
         perihan: {
           name: "Perihan",
           role: "Coordinator",
-          description: "",
+          description:
+            "Experienced coordinator in home care with a focus on documentation and implementation plans according to IBIC. Experienced working in the Treserva/Lifecare operating system. For me, documentation is not just about routines, but about protecting the users' safety and right to good care.",
           email: "",
         },
       },

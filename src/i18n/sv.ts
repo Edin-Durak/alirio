@@ -311,7 +311,8 @@ export const sv = {
         perihan: {
           name: "Perihan",
           role: "Samordnare",
-          description: "",
+          description:
+            "Erfaren samordnare inom hemtjänsten med fokus på dokumentation och genomförandeplaner enligt IBIC. Van att arbeta i verksamhetssystem Treserva/Lifecare. För mig handlar dokumentation inte bara om rutiner, utan om att värna brukarnas trygghet och rätt till god omsorg.",
           email: "",
         },
       },

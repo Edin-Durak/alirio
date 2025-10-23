@@ -311,7 +311,8 @@ export const bs = {
         perihan: {
           name: "Perihan",
           role: "Koordinator",
-          description: "",
+          description:
+            "Iskusni koordinator u kućnoj njezi s fokusom na dokumentaciju i planove implementacije prema IBIC-u. Iskusan rad u operativnom sistemu Treserva/Lifecare. Za mene, dokumentacija nije samo stvar rutina, već i zaštita sigurnosti korisnika i prava na dobru njegu.",
           email: "",
         },
       },
