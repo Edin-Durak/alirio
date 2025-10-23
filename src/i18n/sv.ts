@@ -12,6 +12,7 @@ export const sv = {
       description:
         "Nu är vi här för dig! Godkända av Örebro kommun och redo att börja vår resa tillsammans.",
       phone: "+4679-348-32-97",
+      snippet: "Välj Alirio som din utförare",
     },
     // Benefits Section
     benefits: {

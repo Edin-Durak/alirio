@@ -12,6 +12,7 @@ export const ar = {
       description:
         "نحن هنا من أجلكم! معتمدون من بلدية أوريبرو، وجاهزون لبدء رحلتنا معًا.",
       phone: "+4679-348-32-97",
+      snippet: "اختر Alirio كمنفذك الشخصي",
     },
     // Benefits Section
     benefits: {

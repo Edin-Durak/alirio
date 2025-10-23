@@ -12,6 +12,7 @@ export const bs = {
       description:
         "Sada smo tu za vas! Odobreni od strane Općine Örebro i spremni da počnemo naše putovanje zajedno.",
       phone: "+4679-348-32-97",
+      snippet: "Odaberite Alirio za svog njegovatelja",
     },
     // Benefits Section
     benefits: {

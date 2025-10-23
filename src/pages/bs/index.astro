@@ -68,17 +68,26 @@ const { content } = getTranslations(lang);
 						</div>
 					</div>
 				</div>
-
+				<!-- Hero image commented out - might be implemented later -->
+				<!-- 
 				<div class="hero-section__image">
 					<Image 
 						id="hero-image" 
 						src={heroImagePlaceholder} 
-						alt="Stariji čovjek i mlada žena" 
+						alt="Gammal man och ung kvinna" 
 						loading={'eager'} 
 						width={597} 
 						height={647} 
 						data-actual-src={heroImage.src}
 					/>
+				</div>
+				-->
+				
+				<!-- New text snippet section -->
+				<div class="hero-section__snippet">
+					<h2 class="hero-section__snippet-text">
+						{content.home.hero.snippet}
+					</h2>
 				</div>
 		</section>
 

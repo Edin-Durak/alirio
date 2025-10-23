@@ -71,6 +71,26 @@
       border-radius: $rounded-xs;
       padding: $spacing-6;
     }
+
+    &__snippet {
+      background-color: $white;
+      border-radius: $rounded-xs;
+      padding: $spacing-8;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+
+    &__snippet-text {
+      font-family: $font-family-heading;
+      font-weight: 700;
+      color: $brand-red;
+      margin: 0;
+      line-height: 1.2;
+      text-align: center;
+    }
   }
 
   .our-benefits-section {

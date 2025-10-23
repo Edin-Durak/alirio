@@ -13,6 +13,7 @@ export const en = {
       description:
         "We are here for you now! Approved by Örebro Municipality and ready to begin our journey together.",
       phone: "+4679-348-32-97",
+      snippet: "Choose Alirio as your caregiver",
     },
     // Benefits Section
     benefits: {

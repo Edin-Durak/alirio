@@ -63,6 +63,8 @@ const { content } = getTranslations(lang);
 					</div>
 				</div>
 
+				<!-- Hero image commented out - might be implemented later -->
+				<!-- 
 				<div class="hero-section__image">
 					<Image 
 						id="hero-image" 
@@ -73,6 +75,14 @@ const { content } = getTranslations(lang);
 						height={647} 
 						data-actual-src={heroImage.src}
 					/>
+				</div>
+				-->
+				
+				<!-- New text snippet section -->
+				<div class="hero-section__snippet">
+					<h2 class="hero-section__snippet-text">
+						{content.home.hero.snippet}
+					</h2>
 				</div>
 		</section>
 
@@ -421,8 +431,10 @@ const { content } = getTranslations(lang);
 </Layout>
 
 <script>
-	// Hero image swap for faster loading
+	// Hero image functionality removed - using text snippet instead
 	document.addEventListener('DOMContentLoaded', () => {
+		// Hero image swap code commented out since we're using text snippet
+		/*
 		const heroImageElement = document.getElementById('hero-image');
 		if (heroImageElement) {
 			const actualSrc = heroImageElement.getAttribute('data-actual-src');
@@ -436,6 +448,7 @@ const { content } = getTranslations(lang);
 				actualImage.src = actualSrc;
 			}
 		}
+		*/
 
 		// Handle team card navigation
 		const teamCards = document.querySelectorAll('.meet-the-team-section__card--link');
